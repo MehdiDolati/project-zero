@@ -1,74 +1,153 @@
 ---
-id:
+id: RGXXX
+type: rule
+
 title:
-status: active
+
+status: draft
+version: 1.0
+
 owner: Project Zero
+
 created:
 last-reviewed:
 ---
 
-# Statement
+# Purpose
 
-The rule.
+Describe the governance objective of this rule.
 
 ---
 
-# Intent
+# Statement
 
-Why this rule exists.
+Specify the normative requirement.
 
-What problem it prevents.
+Use RFC 2119 keywords where appropriate:
+
+- MUST
+- SHOULD
+- MAY
+
+---
+
+# Context
+
+Describe the context in which this rule applies.
 
 ---
 
 # Rationale
 
-The reasoning behind the rule.
+Explain why this rule exists.
+
+---
+
+# Relationships
+
+Reference related artifacts.
+
+Examples:
+
+- derives-from:
+- supersedes:
+- supports:
+- enforced-by:
+- related-to:
+
+---
+
+# Representations
+
+- Markdown
+
+---
+
+# Constraints
+
+Document any assumptions or limitations.
+
+If none:
+
+> None.
+
+---
+
+# Review
+
+Describe when this rule should be reviewed.
+
+Examples:
+
+- Governance changes
+- Repository restructuring
+- New automation
 
 ---
 
 # Origin
 
-How this rule emerged.
+Describe how this rule emerged.
 
 Examples:
 
-- Research session
+- Research finding
 - Architecture discussion
-- Repeated failure
-- Industry practice
-- Literature
+- Retrospective
+- Industry best practice
+- Failure analysis
+
+Reference the originating artifact whenever possible.
 
 ---
 
-# Consequences
+# Scope
 
-Benefits of following the rule.
+Specify where this rule applies.
 
-Risks of violating it.
+Examples:
+
+- Repository
+- Governance
+- Research
+- Documentation
+- Automation
 
 ---
 
-# Applies To
+# Enforcement
 
-Artifacts or processes affected.
+Current enforcement:
+
+- Manual
+- Checklist
+- Automated
+- Mixed
+
+Describe how compliance is currently verified.
 
 ---
 
 # Exceptions
 
-Explicitly documented exceptions.
+Document approved exceptions.
 
----
+If none:
 
-# Related Artifacts
-
-Referenced artifacts.
+> None.
 
 ---
 
 # Future Automation
 
-Potential validation or enforcement ideas.
+Describe potential automated validation.
 
-Current enforcement remains manual unless explicitly implemented.
+Do not describe implementation details.
+
+---
+
+# Revision History
+
+| Version | Date | Summary |
+|---------|------|---------|
+| 1.0 | YYYY-MM-DD | Initial version |
