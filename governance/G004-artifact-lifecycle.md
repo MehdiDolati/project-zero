@@ -4,13 +4,13 @@ type: governance
 
 title: Artifact Lifecycle
 
-status: draft
-version: 1.0
+status: active
+version: 1.1
 
 owner: Project Zero
 
-created: YYYY-MM-DD
-last-reviewed: YYYY-MM-DD
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Purpose
@@ -154,4 +154,5 @@ These extensions MUST remain compatible with the common Artifact Lifecycle.
 
 | Version | Date | Summary |
 |---------|------|---------|
-| 1.0 | YYYY-MM-DD | Initial version |
+| 1.0 | 2026-07-28 | Initial version (draft) |
+| 1.1 | 2026-09-04 | Promoted from draft to active; metadata completed |

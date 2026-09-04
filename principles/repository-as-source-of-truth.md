@@ -1,3 +1,18 @@
+---
+id: PR001
+type: document
+
+title: Repository as Source of Truth
+
+status: active
+version: 1.0
+
+owner: Project Zero
+
+created: 2026-07-28
+last-reviewed: 2026-09-04
+---
+
 # Repository as Source of Truth
 
 ## Principle

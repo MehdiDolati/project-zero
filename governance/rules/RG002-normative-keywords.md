@@ -1,12 +1,16 @@
 ---
 id: RG002
+type: rule
 
 title: Use Normative Keywords
 
 status: active
+version: 1.0
 
 owner: Project Zero
 
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Statement
@@ -61,4 +65,4 @@ Exceptions require explicit documented justification.
 
 # Related Artifacts
 
-- G000-governance-model
+- governance/G000-governance-model.md (G000)

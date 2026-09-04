@@ -4,13 +4,13 @@ type: governance
 
 title: Traceability Model
 
-status: draft
-version: 1.0
+status: active
+version: 1.1
 
 owner: Project Zero
 
-created: YYYY-MM-DD
-last-reviewed: YYYY-MM-DD
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Purpose
@@ -131,8 +131,10 @@ Future validators SHOULD detect:
 
 # Related Artifacts
 
-- G003 Artifact Model
-- G004 Artifact Lifecycle
+- governance/G003-artifact-model.md (G003)
+- governance/G004-artifact-lifecycle.md (G004)
+- governance/G006-relationships.md (G006)
+- governance/rules/RG004-first-class-relationships.md (RG004)
 
 ---
 
@@ -140,4 +142,5 @@ Future validators SHOULD detect:
 
 | Version | Date | Summary |
 |---------|------|---------|
-| 1.0 | YYYY-MM-DD | Initial version |
+| 1.0 | 2026-07-28 | Initial version (draft) |
+| 1.1 | 2026-09-04 | Promoted from draft to active; metadata completed |

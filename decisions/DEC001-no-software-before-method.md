@@ -1,12 +1,16 @@
 ---
 id: DEC001
+type: decision
 
 title: No Software Before Method
 
 status: accepted
+version: 1.0
 
-date: 2026-07-28
+owner: Project Zero
 
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Decision
@@ -91,8 +95,10 @@ The burden of proof is on automation, not on manual work.
 
 ---
 
-# Related Documents
+# Relationships
 
-- research/000-north-star.md
-- research/003-research-methodology.md
-- hypotheses/H000-project-should-not-exist.md
+- derives-from: research/003-research-methodology.md (research-003)
+- enforced-by: governance/rules/RG001-automation-follows-stability.md (RG001)
+- related-to: hypotheses/H000-project-should-not-exist.md (H000)
+- related-to: research/000-north-star.md (research-000)
+- created-in: research/sessions/S000-project-zero.md (S000)

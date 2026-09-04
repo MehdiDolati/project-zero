@@ -1,12 +1,16 @@
 ---
 id: RG005
+type: rule
 
 title: Benchmark Before Innovation
 
 status: active
+version: 1.0
 
 owner: Project Zero
 
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Statement
@@ -55,5 +59,5 @@ When exploring genuinely novel problems with no established body of knowledge.
 
 # Related Artifacts
 
-- research methodology
-- research sessions
+- research/003-research-methodology.md (research-003)
+- research/sessions/S000-project-zero.md (S000)

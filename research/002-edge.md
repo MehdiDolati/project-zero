@@ -1,14 +1,16 @@
 ---
 id: research-002
+type: document
 
 title: Edge Definition
 
-status: hypothesis
+status: active
+version: 1.0
 
-confidence: 0.5
+owner: Project Zero
 
 created: 2026-07-28
-
+last-reviewed: 2026-09-04
 ---
 
 # Edge Definition
@@ -26,16 +28,6 @@ It is an emergent property created by the interaction between:
 - risk management,
 - execution capability,
 - continuous adaptation.
-
----
-
-# Current Hypothesis
-
-Sustainable trading edge emerges from discovering and exploiting persistent patterns created by participants' behavior within complex market systems.
-
-These patterns are difficult to discover because markets are adaptive and chaotic.
-
-An observed edge may decay over time as market conditions, participants, or competitive dynamics change.
 
 ---
 
@@ -87,6 +79,19 @@ Discovery → Validation → Deployment → Monitoring → Adaptation → Retire
 
 ---
 
+# Relationship to H001
+
+This document defines the working concept of edge.
+
+The falsifiable claim that sustainable trading edge is an emergent property of
+a complete system is formalized in hypotheses/H001-edge-is-emergent.md (H001),
+which carries predictions, falsification criteria, and confidence.
+
+H001 is the canonical statement of that hypothesis. When this document and H001
+disagree, H001 prevails.
+
+---
+
 # Open Questions
 
 - Can edge be measured directly or only inferred?
@@ -94,3 +99,12 @@ Discovery → Validation → Deployment → Monitoring → Adaptation → Retire
 - How can false discoveries be minimized?
 - How can edge decay be detected?
 - What minimum evidence is required before allocating capital?
+
+---
+
+# Relationships
+
+- motivates: hypotheses/H001-edge-is-emergent.md (H001)
+- related-to: research/001-problem-definition.md (research-001)
+- related-to: research/003-research-methodology.md (research-003)
+- created-in: research/sessions/S000-project-zero.md (S000)

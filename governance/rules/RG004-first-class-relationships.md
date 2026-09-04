@@ -1,12 +1,16 @@
 ---
 id: RG004
+type: rule
 
 title: Relationships are First-Class
 
 status: active
+version: 1.0
 
 owner: Project Zero
 
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Statement
@@ -51,5 +55,6 @@ None currently defined.
 
 # Related Artifacts
 
-- G003-artifact-model
-- G006-traceability-model (future)
+- governance/G003-artifact-model.md (G003)
+- governance/G005-traceability.md (G005)
+- governance/G006-relationships.md (G006)

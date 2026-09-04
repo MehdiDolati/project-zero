@@ -1,12 +1,16 @@
 ---
 id: RG006
+type: rule
 
 title: Persist Agreed Rules
 
 status: active
+version: 1.0
 
 owner: Project Zero
 
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Statement
@@ -51,5 +55,5 @@ Proposed rules awaiting discussion MAY remain in conversation until accepted.
 
 # Related Artifacts
 
-- repository-as-source-of-truth
-- G002-documentation-governance
+- principles/repository-as-source-of-truth.md (PR001)
+- governance/G002-documentation-governance.md (G002)

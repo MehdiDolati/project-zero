@@ -1,16 +1,18 @@
 ---
 id: H000
+type: hypothesis
 
 title: Project Should Not Exist
 
 status: active
+version: 1.0
+
+owner: Project Zero
 
 confidence: 0.8
 
 created: 2026-07-28
-
-last_reviewed: 2026-07-28
-
+last-reviewed: 2026-09-04
 ---
 
 # Hypothesis: Project Should Not Exist
@@ -111,3 +113,12 @@ It is valuable only if it improves the process of discovering truth under uncert
 Can a solo researcher build a repeatable system that creates a meaningful advantage in discovering and managing trading opportunities?
 
 This question remains unanswered.
+
+---
+
+# Relationships
+
+- challenges: research/000-north-star.md (research-000)
+- related-to: research/001-problem-definition.md (research-001)
+- related-to: research/003-research-methodology.md (research-003)
+- created-in: research/sessions/S000-project-zero.md (S000)

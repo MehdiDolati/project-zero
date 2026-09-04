@@ -1,12 +1,16 @@
 ---
 id: G001
+type: governance
 
 title: Research Governance
 
 status: active
+version: 1.0
 
 owner: Project Zero
 
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Purpose

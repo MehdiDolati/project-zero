@@ -1,12 +1,16 @@
 ---
 id: G003
+type: governance
 
 title: Artifact Model
 
 status: active
+version: 1.0
 
 owner: Project Zero
 
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Purpose
@@ -214,3 +218,13 @@ Files exist to persist Artifacts.
 # Future Evolution
 
 Future automation, validation, search, visualization, and AI reasoning should operate primarily on Artifacts and Relationships rather than individual files.
+
+---
+
+# Related Artifacts
+
+- governance/G004-artifact-lifecycle.md (G004)
+- governance/G005-traceability.md (G005)
+- governance/G006-relationships.md (G006)
+- governance/rules/RG003-artifact-identity.md (RG003)
+- governance/rules/RG004-first-class-relationships.md (RG004)

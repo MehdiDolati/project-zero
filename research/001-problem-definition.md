@@ -1,16 +1,18 @@
 ---
 id: research-001
+type: document
 
 title: Problem Definition
 
 status: active
+version: 1.0
+
+owner: Project Zero
 
 confidence: 0.7
 
 created: 2026-07-28
-
-last_reviewed: 2026-07-28
-
+last-reviewed: 2026-09-04
 ---
 
 # Problem Definition
@@ -140,3 +142,14 @@ Those may become future automation opportunities, but they are not the current p
 # Research Question
 
 How can an independent researcher build a repeatable, evidence-based system for discovering and managing sustainable trading edge?
+
+---
+
+# Relationships
+
+- derives-from: research/000-north-star.md (research-000)
+- related-to: research/002-edge.md (research-002)
+- related-to: research/003-research-methodology.md (research-003)
+- related-to: hypotheses/H000-project-should-not-exist.md (H000)
+- motivates: hypotheses/H001-edge-is-emergent.md (H001)
+- created-in: research/sessions/S000-project-zero.md (S000)

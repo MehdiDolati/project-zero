@@ -1,16 +1,18 @@
 ---
 id: research-000
+type: document
 
 title: North Star
 
 status: active
+version: 1.0
+
+owner: Project Zero
 
 confidence: 0.9
 
 created: 2026-07-28
-
-last_reviewed: 2026-07-28
-
+last-reviewed: 2026-09-04
 ---
 
 # North Star
@@ -166,3 +168,11 @@ Those questions belong to future research.
 # Final Statement
 
 This project exists to discover whether a disciplined, evidence-based system can transform uncertainty into better decisions and create a path toward sustainable freedom.
+
+---
+
+# Relationships
+
+- related-to: research/001-problem-definition.md (research-001)
+- related-to: research/003-research-methodology.md (research-003)
+- created-in: research/sessions/S000-project-zero.md (S000)

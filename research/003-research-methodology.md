@@ -1,16 +1,18 @@
 ---
 id: research-003
+type: document
 
 title: Research Methodology
 
 status: active
+version: 1.0
+
+owner: Project Zero
 
 confidence: 0.7
 
 created: 2026-07-28
-
-last_reviewed: 2026-07-28
-
+last-reviewed: 2026-09-04
 ---
 
 # Research Methodology
@@ -226,3 +228,14 @@ The goal is making better decisions under uncertainty.
 The methodology itself is subject to continuous improvement.
 
 Every part of this process may be revised if evidence demonstrates a better approach.
+
+---
+
+# Relationships
+
+- derives-from: research/001-problem-definition.md (research-001)
+- related-to: research/002-edge.md (research-002)
+- related-to: governance/G001-research-governance.md (G001)
+- related-to: governance/rules/RG005-benchmark-before-invention.md (RG005)
+- related-to: decisions/DEC001-no-software-before-method.md (DEC001)
+- created-in: research/sessions/S000-project-zero.md (S000)

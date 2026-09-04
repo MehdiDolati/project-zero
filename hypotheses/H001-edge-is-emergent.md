@@ -1,16 +1,18 @@
 ---
 id: H001
+type: hypothesis
 
 title: Edge is an Emergent Property
 
 status: active
+version: 1.0
+
+owner: Project Zero
 
 confidence: 0.5
 
 created: 2026-07-28
-
-last_reviewed: 2026-07-28
-
+last-reviewed: 2026-09-04
 ---
 
 # Hypothesis: Edge is an Emergent Property
@@ -129,3 +131,13 @@ This hypothesis is a starting point for investigation, not a confirmed belief.
 The purpose of this project is not to prove this hypothesis correct.
 
 The purpose is to discover whether it survives rigorous testing.
+
+---
+
+# Relationships
+
+- derives-from: research/002-edge.md (research-002)
+- related-to: research/001-problem-definition.md (research-001)
+- related-to: research/003-research-methodology.md (research-003)
+- created-in: research/sessions/S000-project-zero.md (S000)
+- tested-by: experiments/EXP001-*.md (EXP001) [planned]

@@ -78,6 +78,12 @@ Long-term project rules.
 
 Knowledge flows through these stages as confidence increases.
 
+Research sessions are recorded under research/sessions/.
+
+As of 2026-09-04 the experiments/ and discoveries/ stages exist but are
+intentionally empty: no experiment has been executed yet. See their READMEs
+for the requirements an artifact must meet before entering those stages.
+
 ---
 
 # Guiding Principles

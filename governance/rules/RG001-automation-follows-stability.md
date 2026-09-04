@@ -1,12 +1,16 @@
 ---
 id: RG001
+type: rule
 
 title: Automation Follows Stable Manual Practice
 
 status: active
+version: 1.0
 
 owner: Project Zero
 
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Statement
@@ -54,5 +58,5 @@ Exceptions require explicit documented justification.
 
 # Related Artifacts
 
-- DEC001-no-software-before-method
-- G001-research-governance
+- decisions/DEC001-no-software-before-method.md (DEC001)
+- governance/G001-research-governance.md (G001)

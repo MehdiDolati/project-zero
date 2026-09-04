@@ -1,12 +1,16 @@
 ---
 id: S000
+type: session
 
 title: Project Zero
 
-date: 2026-07-28
-
 status: completed
+version: 1.0
 
+owner: Project Zero
+
+created: 2026-07-28
+last-reviewed: 2026-09-04
 ---
 
 # Session Objective
@@ -90,3 +94,16 @@ The repository should capture not only conclusions but also reasoning, failed id
 Project Zero officially replaces software-first thinking with research-first thinking.
 
 Future development should begin with validated methodology rather than implementation.
+
+---
+
+# Relationships
+
+- creates:
+  - research/000-north-star.md (research-000)
+  - research/001-problem-definition.md (research-001)
+  - research/002-edge.md (research-002)
+  - research/003-research-methodology.md (research-003)
+  - hypotheses/H000-project-should-not-exist.md (H000)
+  - hypotheses/H001-edge-is-emergent.md (H001)
+  - decisions/DEC001-no-software-before-method.md (DEC001)
