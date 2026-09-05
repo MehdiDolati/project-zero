@@ -1,0 +1,119 @@
+{
+  "registry-version": "1.0.0",
+  "updated": "2026-09-05",
+  "description": "Machine-addressable index of Project Zero artifacts by stable identity. Resolve an artifact identity here before assuming a file is missing or renamed.",
+  "artifacts": [
+    {
+      "id": "G000",
+      "type": "governance",
+      "title": "Governance Model",
+      "path": "governance/G000-governance-model.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "G001",
+      "type": "governance",
+      "title": "Research Governance",
+      "path": "governance/G001-research-governance.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "G002",
+      "type": "governance",
+      "title": "Documentation Governance",
+      "path": "governance/G002-documentation-governance.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "G003",
+      "type": "governance",
+      "title": "Artifact Model",
+      "path": "governance/G003-artifact-model.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "G004",
+      "type": "governance",
+      "title": "Artifact Lifecycle",
+      "path": "governance/G004-artifact-lifecycle.md",
+      "version": "1.1",
+      "status": "active"
+    },
+    {
+      "id": "G005",
+      "type": "governance",
+      "title": "Traceability Model",
+      "path": "governance/G005-traceability.md",
+      "version": "1.1",
+      "status": "active"
+    },
+    {
+      "id": "G006",
+      "type": "governance",
+      "title": "Relationships Model",
+      "path": "governance/G006-relationships.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "RG001",
+      "type": "rule",
+      "title": "Automation Follows Stable Manual Practice",
+      "path": "governance/rules/RG001-automation-follows-stability.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "RG002",
+      "type": "rule",
+      "title": "Use Normative Keywords",
+      "path": "governance/rules/RG002-normative-keywords.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "RG003",
+      "type": "rule",
+      "title": "Stable Artifact Identity",
+      "path": "governance/rules/RG003-artifact-identity.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "RG004",
+      "type": "rule",
+      "title": "Relationships are First-Class",
+      "path": "governance/rules/RG004-first-class-relationships.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "RG005",
+      "type": "rule",
+      "title": "Benchmark Before Innovation",
+      "path": "governance/rules/RG005-benchmark-before-invention.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "RG006",
+      "type": "rule",
+      "title": "Persist Agreed Rules",
+      "path": "governance/rules/RG006-persist-agreed-rules.md",
+      "version": "1.1",
+      "status": "active"
+    },
+    {
+      "id": "RG007",
+      "type": "rule",
+      "title": "Governed Work Records Its Governance",
+      "path": "governance/rules/RG007-governance-execution.md",
+      "version": "1.0",
+      "status": "active"
+    }
+  ]
+}

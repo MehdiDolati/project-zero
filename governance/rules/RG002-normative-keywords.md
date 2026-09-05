@@ -10,7 +10,7 @@ version: 1.0
 owner: Project Zero
 
 created: 2026-07-28
-last-reviewed: 2026-09-04
+last-reviewed: 2026-09-05
 ---
 
 # Statement
@@ -66,3 +66,5 @@ Exceptions require explicit documented justification.
 # Related Artifacts
 
 - governance/G000-governance-model.md (G000)
+- governance/rules/RG007-governance-execution.md (RG007)
+- governance/manifest.json (manifest)

@@ -1,0 +1,120 @@
+{
+  "manifest-version": "1.0.0",
+  "effective-as-of": "2026-09-05",
+  "governance-version": "1.1.0",
+  "generated-from": "governance/README.md and artifact-registry.json",
+  "active-artifacts": {
+    "G000": {
+      "id": "G000",
+      "type": "governance",
+      "title": "Governance Model",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/G000-governance-model.md"
+    },
+    "G001": {
+      "id": "G001",
+      "type": "governance",
+      "title": "Research Governance",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/G001-research-governance.md"
+    },
+    "G002": {
+      "id": "G002",
+      "type": "governance",
+      "title": "Documentation Governance",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/G002-documentation-governance.md"
+    },
+    "G003": {
+      "id": "G003",
+      "type": "governance",
+      "title": "Artifact Model",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/G003-artifact-model.md"
+    },
+    "G004": {
+      "id": "G004",
+      "type": "governance",
+      "title": "Artifact Lifecycle",
+      "version": "1.1",
+      "status": "active",
+      "path": "governance/G004-artifact-lifecycle.md"
+    },
+    "G005": {
+      "id": "G005",
+      "type": "governance",
+      "title": "Traceability Model",
+      "version": "1.1",
+      "status": "active",
+      "path": "governance/G005-traceability.md"
+    },
+    "G006": {
+      "id": "G006",
+      "type": "governance",
+      "title": "Relationships Model",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/G006-relationships.md"
+    },
+    "RG001": {
+      "id": "RG001",
+      "type": "rule",
+      "title": "Automation Follows Stable Manual Practice",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/rules/RG001-automation-follows-stability.md"
+    },
+    "RG002": {
+      "id": "RG002",
+      "type": "rule",
+      "title": "Use Normative Keywords",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/rules/RG002-normative-keywords.md"
+    },
+    "RG003": {
+      "id": "RG003",
+      "type": "rule",
+      "title": "Stable Artifact Identity",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/rules/RG003-artifact-identity.md"
+    },
+    "RG004": {
+      "id": "RG004",
+      "type": "rule",
+      "title": "Relationships are First-Class",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/rules/RG004-first-class-relationships.md"
+    },
+    "RG005": {
+      "id": "RG005",
+      "type": "rule",
+      "title": "Benchmark Before Innovation",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/rules/RG005-benchmark-before-invention.md"
+    },
+    "RG006": {
+      "id": "RG006",
+      "type": "rule",
+      "title": "Persist Agreed Rules",
+      "version": "1.1",
+      "status": "active",
+      "path": "governance/rules/RG006-persist-agreed-rules.md"
+    },
+    "RG007": {
+      "id": "RG007",
+      "type": "rule",
+      "title": "Governed Work Records Its Governance",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/rules/RG007-governance-execution.md"
+    }
+  }
+}

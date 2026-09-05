@@ -146,6 +146,17 @@ Do not describe implementation details.
 
 ---
 
+# Governed By / Manifest Snapshot
+
+If this rule is intended to govern other work, it SHOULD be listed in the
+governance manifest so that governed-work records can reference it by stable
+identity and version.
+
+New rules SHOULD record, at acceptance, the governing manifest version under
+which they were accepted.
+
+---
+
 # Revision History
 
 | Version | Date | Summary |

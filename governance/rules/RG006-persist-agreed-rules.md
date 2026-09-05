@@ -5,13 +5,21 @@ type: rule
 title: Persist Agreed Rules
 
 status: active
-version: 1.0
+version: 1.1
 
 owner: Project Zero
 
 created: 2026-07-28
-last-reviewed: 2026-09-04
+last-reviewed: 2026-09-05
 ---
+
+# Relationships
+
+- enforced-by:
+  - governance/manifest.json (manifest)
+  - governance/artifact-registry.json (artifact-registry)
+- related-to:
+  - governance/rules/RG007-governance-execution.md (RG007)
 
 # Statement
 

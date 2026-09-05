@@ -32,7 +32,7 @@ research methodology as everything else.
 
 ---
 
-# Rules (RG001-RG006)
+# Rules (RG001-RG007)
 
 | ID | Title | Requirement |
 |----|-------|-------------|
@@ -42,6 +42,7 @@ research methodology as everything else.
 | [RG004](rules/RG004-first-class-relationships.md) | Relationships are First-Class | Relationships MUST be explicit and typed |
 | [RG005](rules/RG005-benchmark-before-invention.md) | Benchmark Before Innovation | Established practice SHOULD be studied first |
 | [RG006](rules/RG006-persist-agreed-rules.md) | Persist Agreed Rules | Accepted rules MUST be persisted in the repository |
+| [RG007](rules/RG007-governance-execution.md) | Governed Work Records Its Governance | Every implementation MUST record the governance that applied to it |
 
 ---
 
@@ -70,13 +71,61 @@ Draft → Review → Active → Deprecated → Archived
 
 ---
 
+# Reading This Repository Without Prior Context
+
+This governance layer exists so that any person or agent can take over any
+piece of work without relying on undocumented convention or tribal knowledge.
+
+The entry points are, in order:
+
+1. The task's own **governance record** (for experiments, the
+   `GOVERNANCE.md` inside the experiment folder). That record says what the
+   work is governed by.
+2. The **governance manifest** (`governance/manifest.json`), which resolves
+   the governing artifact identities to their current versions and status.
+3. The **artifact registry** (`governance/artifact-registry.json`), which
+   resolves artifact identities to their canonical files.
+4. The governing **artifacts themselves**, read in full.
+
+The single most important convention is that governance is addressed by
+**stable identity + version**, never by filename or folder alone. Files move;
+identities and versions do not. If a file you are looking for has been
+renamed or relocated, resolve it through the registry or the manifest rather
+than assuming it vanished.
+
+---
+
 # How Governance Changes
 
 1. **Propose** the change as a draft artifact or rule (use the templates).
 2. **Benchmark** existing practice before inventing a new rule
    ([RG005](rules/RG005-benchmark-before-invention.md)).
 3. **Review** against evidence.
-4. **Accept** the change (move to active) and update this README and the root
-   [artifact registry](../README.md#artifact-registry).
+4. **Accept** the change (move to active) and update this README, the root
+   [artifact registry](../README.md#artifact-registry), and the
+   [governance manifest](manifest.json).
 5. **Record** the change in a session, since governance changes are always
    significant project events ([G001](G001-research-governance.md)).
+
+---
+
+# Effective Rulebook
+
+The [governance manifest](manifest.json) is the machine-readable snapshot of
+the current active governance.
+
+It records which artifact identities are active and at which version.
+It is the reference point that governed work uses to declare what governed it.
+
+When a new agent or person takes over a task, they read the task's governance
+record first. That record points to the manifest snapshot that was in force at
+the time, which in turn resolves every governing artifact by stable identity
+and version. The underlying files may move or be reorganized; the identities
+and versions in the manifest and the governed-work record are what preserve
+traceability ([G005](G005-traceability.md)).
+
+The manifest is updated whenever active governance changes. It is not
+a substitute for reading the governing artifacts themselves; it is the index
+that makes reading them reproducible and bounded. For the operational rules
+that govern how governance changes, version bumps, deprecation, and
+enforcement work, see [RG007](rules/RG007-governance-execution.md).
