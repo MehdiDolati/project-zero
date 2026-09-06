@@ -37,16 +37,33 @@ Experiment → Evidence → Decision → Knowledge
 
 ---
 
+# Layout
+
+Each experiment lives in its own directory containing:
+
+| File | Role |
+|------|------|
+| `EXPNNN-<slug>.md` | The experiment artifact: design, criteria, assumptions, procedure |
+| `GOVERNANCE.md` | Governance record pinning governing artifacts by identity and version ([RG007](../governance/rules/RG007-governance-execution.md)) |
+| `evidence/` | Raw data with provenance, derived series, execution log. Immutable once written |
+| `RESULTS.md` | Findings, written on execution |
+
+---
+
 # Status
 
-This directory is intentionally empty.
+| ID | Title | Status | Location |
+|----|-------|--------|----------|
+| EXP001 | Manual Replication of a Published Momentum Anomaly | draft | [EXP001/](EXP001/EXP001-momentum-replication.md) |
 
-As of 2026-09-04 no experiment has been executed. The first experiment
-(EXP001) is planned to test the central hypothesis
-[H001-edge-is-emergent](../hypotheses/H001-edge-is-emergent.md), and must be
-performed manually before any automation is considered
+EXP001 is designed but **not executed**. No evidence exists yet, so no
+experiment has produced project knowledge.
+
+Execution is manual — spreadsheet only, no custom software
 ([DEC001](../decisions/DEC001-no-software-before-method.md),
 [RG001](../governance/rules/RG001-automation-follows-stability.md)).
+
+---
 
 New experiments are created from
 [governance/templates/artifact-template.md](../governance/templates/artifact-template.md)

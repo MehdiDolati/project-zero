@@ -20,20 +20,24 @@ typed units of knowledge connected by explicit relationships
 
 # Status
 
-Snapshot as of 2026-09-04:
+Snapshot as of 2026-09-06:
 
 | Area | State |
 |------|-------|
 | Research foundation | Complete: problem, edge concept, methodology defined |
-| Governance framework | Complete and self-consistent (G000-G006, RG001-RG006) |
+| Governance framework | Complete and self-consistent (G000-G006, RG001-RG007) |
 | Hypotheses | H000 (project should not exist) and H001 (edge is emergent) are active, untested |
-| Experiments | None yet — pipeline intentionally unexercised until the first hypothesis is tested manually |
+| Experiments | EXP001 designed, **not executed**. No evidence exists yet |
+| Discoveries | None. Correct: no evidence has been produced |
 | Software | None. Deliberate: [DEC001](decisions/DEC001-no-software-before-method.md) prohibits custom software until the manual method proves itself |
-| Sessions | S000 (founding), S001 (framework hardening) |
+| Sessions | S000 (founding), S001 (framework hardening), S002 (first experiment design) |
 
 The framework is deliberately "method before automation"
 ([RG001](governance/rules/RG001-automation-follows-stability.md)). The next
-milestone is not code — it is the first manual experiment.
+milestone is not code — it is executing
+[EXP001](experiments/EXP001/EXP001-momentum-replication.md) manually and keeping
+its [execution log](experiments/EXP001/evidence/execution-log.md) honest about
+what the process costs.
 
 ---
 
@@ -56,6 +60,7 @@ New contributors (human or AI) should read in this order:
 7. [hypotheses/H001-edge-is-emergent.md](hypotheses/H001-edge-is-emergent.md) — the central research hypothesis
 8. [decisions/DEC001-no-software-before-method.md](decisions/DEC001-no-software-before-method.md) — the founding architectural decision
 9. [research/sessions/S000-project-zero.md](research/sessions/S000-project-zero.md) — how the project restarted from first principles
+10. [experiments/EXP001/EXP001-momentum-replication.md](experiments/EXP001/EXP001-momentum-replication.md) — the first experiment, and what the framework looks like under load
 
 ---
 
@@ -69,10 +74,10 @@ concepts to trusted knowledge as confidence increases.
 | [principles/](principles/) | Timeless beliefs | PR001 repository-as-source-of-truth |
 | [research/](research/README.md) | Foundational concepts and research documents | research-000 to 003; sessions/ |
 | [hypotheses/](hypotheses/) | Testable claims | H000, H001 |
-| [experiments/](experiments/README.md) | Executed investigations | Empty by design |
-| [discoveries/](discoveries/README.md) | Evidence-backed findings | Empty by design |
+| [experiments/](experiments/README.md) | Investigations and their evidence | EXP001 (designed, not executed) |
+| [discoveries/](discoveries/README.md) | Evidence-backed findings | Empty — no evidence produced yet |
 | [decisions/](decisions/) | Operational and architectural decisions | DEC001 |
-| [governance/](governance/README.md) | Long-term project rules | G000-G006, rules RG001-RG006, templates |
+| [governance/](governance/README.md) | Long-term project rules | G000-G006, rules RG001-RG007, templates, manifest, registry |
 | [software/](software/README.md) | Implementation | Empty by design (DEC001) |
 
 The full governance model, including how governance itself evolves, is
@@ -108,6 +113,12 @@ index; new artifacts MUST be registered here.
 | H000 | Project Should Not Exist | active | 0.8 | [hypotheses/H000-project-should-not-exist.md](hypotheses/H000-project-should-not-exist.md) |
 | H001 | Edge is an Emergent Property | active | 0.5 | [hypotheses/H001-edge-is-emergent.md](hypotheses/H001-edge-is-emergent.md) |
 
+## Experiments
+
+| ID | Title | Status | Executed | Tests | Location |
+|----|-------|--------|----------|-------|----------|
+| EXP001 | Manual Replication of a Published Momentum Anomaly | draft | no | H001 (sub-claim C1) | [experiments/EXP001/EXP001-momentum-replication.md](experiments/EXP001/EXP001-momentum-replication.md) |
+
 ## Decisions
 
 | ID | Title | Status | Location |
@@ -120,6 +131,7 @@ index; new artifacts MUST be registered here.
 |----|-------|--------|----------|
 | S000 | Project Zero (founding) | completed | [research/sessions/S000-project-zero.md](research/sessions/S000-project-zero.md) |
 | S001 | Framework Hardening | completed | [research/sessions/S001-framework-hardening.md](research/sessions/S001-framework-hardening.md) |
+| S002 | First Experiment Design | completed | [research/sessions/S002-first-experiment-design.md](research/sessions/S002-first-experiment-design.md) |
 
 ## Governance
 
@@ -143,9 +155,12 @@ index; new artifacts MUST be registered here.
 | RG004 | Relationships are First-Class | active | [governance/rules/RG004-first-class-relationships.md](governance/rules/RG004-first-class-relationships.md) |
 | RG005 | Benchmark Before Innovation | active | [governance/rules/RG005-benchmark-before-invention.md](governance/rules/RG005-benchmark-before-invention.md) |
 | RG006 | Persist Agreed Rules | active | [governance/rules/RG006-persist-agreed-rules.md](governance/rules/RG006-persist-agreed-rules.md) |
+| RG007 | Governed Work Records Its Governance | active | [governance/rules/RG007-governance-execution.md](governance/rules/RG007-governance-execution.md) |
 
 Templates for creating new artifacts and rules live in
-[governance/templates/](governance/templates/).
+[governance/templates/](governance/templates/). The machine-readable index is
+[governance/artifact-registry.json](governance/artifact-registry.json) and the
+effective rulebook is [governance/manifest.json](governance/manifest.json).
 
 ---
 

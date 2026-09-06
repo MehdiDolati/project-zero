@@ -1,7 +1,8 @@
 {
-  "registry-version": "1.0.0",
-  "updated": "2026-09-05",
+  "registry-version": "1.1.0",
+  "updated": "2026-09-06",
   "description": "Machine-addressable index of Project Zero artifacts by stable identity. Resolve an artifact identity here before assuming a file is missing or renamed.",
+  "coverage-note": "Coverage is currently governance artifacts, rules, and experiments. Documents, principles, hypotheses, decisions, and sessions are registered in README.md only. Closing that gap is an open governance issue, not an intentional scope limit.",
   "artifacts": [
     {
       "id": "G000",
@@ -114,6 +115,17 @@
       "path": "governance/rules/RG007-governance-execution.md",
       "version": "1.0",
       "status": "active"
+    },
+    {
+      "id": "EXP001",
+      "type": "experiment",
+      "title": "Manual Replication of a Published Momentum Anomaly",
+      "path": "experiments/EXP001/EXP001-momentum-replication.md",
+      "version": "1.0",
+      "status": "draft",
+      "governance-record": "experiments/EXP001/GOVERNANCE.md",
+      "tests": ["H001"],
+      "executed": false
     }
   ]
 }

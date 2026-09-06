@@ -140,4 +140,4 @@ The purpose is to discover whether it survives rigorous testing.
 - related-to: research/001-problem-definition.md (research-001)
 - related-to: research/003-research-methodology.md (research-003)
 - created-in: research/sessions/S000-project-zero.md (S000)
-- tested-by: experiments/EXP001-*.md (EXP001) [planned]
+- tested-by: experiments/EXP001/EXP001-momentum-replication.md (EXP001) — tests sub-claim C1 only, bearing on prediction 2

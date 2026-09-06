@@ -133,8 +133,12 @@ an observation is not evidence, and evidence is not knowledge.
 The experiment is the atomic unit of learning. No claim becomes project
 knowledge without experimental evidence ([research-003](research/003-research-methodology.md)).
 
-1. Create `experiments/EXP00NN-<kebab-case-title>.md` from the artifact
-   template, starting in `status: draft`.
+1. Create a folder `experiments/EXP00NN/` containing
+   `EXP00NN-<kebab-case-title>.md` from the artifact template, starting in
+   `status: draft`. The folder also holds `GOVERNANCE.md`, an `evidence/`
+   directory, and (after execution) `RESULTS.md`. See
+   [EXP001](experiments/EXP001/EXP001-momentum-replication.md) for the shape.
+
 2. Satisfy the experiment requirements ([G001](governance/G001-research-governance.md),
    [experiments/README.md](experiments/README.md)). The experiment MUST:
    - reference one or more hypotheses,
@@ -162,9 +166,9 @@ knowledge without experimental evidence ([research-003](research/003-research-me
    ```markdown
    # Relationships
 
-   - tested-by: experiments/EXP001-proposal.md (EXP001)
    - depends-on: hypotheses/H001-edge-is-emergent.md (H001)
-   - created-in: research/sessions/S002-example-session.md (S002) [planned]
+   - derives-from: research/003-research-methodology.md (research-003)
+   - produces: experiments/EXP001/evidence/ (EXP001-evidence) [planned]
    ```
 
    Format per entry: relationship type, relative path, stable identity in
@@ -178,10 +182,13 @@ The first experiment must be executed manually — no automation
 ## Step 3 — Execute and Record Evidence
 
 1. Run the experiment as designed, following the recorded methodology.
-2. **Preserve raw evidence** alongside the experiment. Evidence MUST originate
-   from the experiment, remain immutable after creation, and preserve
-   provenance ([G001](governance/G001-research-governance.md)). Never edit
-   evidence after the fact — record corrections as new artifacts or notes.
+2. **Preserve raw evidence** in the experiment's `evidence/` folder. Evidence
+   MUST originate from the experiment, remain immutable after creation, and
+   preserve provenance ([G001](governance/G001-research-governance.md)). Keep
+   `raw/` (exactly as retrieved, with source, retrieval date, and hash)
+   separate from `derived/` (regenerable from raw). Never edit evidence after
+   the fact — correct it by adding a superseding file with a note.
+
 3. Record negative results too. A failed experiment is a successful research
    outcome when preserved with its reasoning; it reduces uncertainty and
    prevents repeated mistakes.
