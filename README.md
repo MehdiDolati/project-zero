@@ -37,6 +37,12 @@ milestone is not code — it is the first manual experiment.
 
 ---
 
+For a practical, step-by-step walkthrough of doing work in this framework
+(creating artifacts, running experiments, registering knowledge, changing
+governance), see [GUIDE.md](GUIDE.md).
+
+---
+
 # Reading Order
 
 New contributors (human or AI) should read in this order:
