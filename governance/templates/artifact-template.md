@@ -10,6 +10,12 @@ owner: Project Zero
 
 created:
 last-reviewed:
+
+created-by-type:
+created-by:
+created-by-version:
+production-tools:
+created-at:
 ---
 
 # Purpose

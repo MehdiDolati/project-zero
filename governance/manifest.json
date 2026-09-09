@@ -1,7 +1,7 @@
 {
   "manifest-version": "1.0.0",
-  "effective-as-of": "2026-09-05",
-  "governance-version": "1.1.0",
+  "effective-as-of": "2026-09-09",
+  "governance-version": "1.2.0",
   "generated-from": "governance/README.md and artifact-registry.json",
   "active-artifacts": {
     "G000": {
@@ -115,6 +115,14 @@
       "version": "1.0",
       "status": "active",
       "path": "governance/rules/RG007-governance-execution.md"
+    },
+    "RG008": {
+      "id": "RG008",
+      "type": "rule",
+      "title": "Artifact Authorship and Production-Tool Provenance",
+      "version": "1.0",
+      "status": "active",
+      "path": "governance/rules/RG008-authorship-provenance.md"
     }
   }
 }

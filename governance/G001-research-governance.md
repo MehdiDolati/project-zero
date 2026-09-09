@@ -113,9 +113,20 @@ Evidence MUST:
 
 - originate from an experiment,
 - remain immutable,
-- preserve provenance.
+- preserve provenance,
+- record authorship and production-tool metadata.
 
 Evidence MUST NOT be modified after creation.
+
+Authorship and tool metadata MUST include:
+
+- `created-by-type`: `human` or `agent`
+- `created-by`: person's name, or agent name and provider
+- `created-by-version`: agent/model version if applicable; `not available` if it cannot be observed
+- `production-tools`: tool names and versions when available (e.g., VS Code, language version, CLI tools)
+- `created-at`: timestamp with timezone
+
+These fields MUST appear in the artifact front matter (YAML) or, for evidence documents, at the head of the file. Missing version information MUST be stated explicitly rather than guessed.
 
 ---
 

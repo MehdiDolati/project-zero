@@ -97,10 +97,11 @@ A governance record minimally records:
 - the governing artifact identities and versions that applied,
 - the governance manifest version or snapshot reference in force at the time,
 - whether any exceptions, waivers, or deliberate out-of-scope items apply,
+- authorship and production-tool metadata (same fields as Evidence in G001),
 - and a pointer to where the full governing artifacts live.
 
 A governance record does not need to restate the contents of the governing
-artifacts. It needs to make them reconstructable and bounded.
+artifacts. It needs to make them reconstructable, bounded, and attributed.
 
 ## Version pins, not path pins
 

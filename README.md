@@ -156,6 +156,7 @@ index; new artifacts MUST be registered here.
 | RG005 | Benchmark Before Innovation | active | [governance/rules/RG005-benchmark-before-invention.md](governance/rules/RG005-benchmark-before-invention.md) |
 | RG006 | Persist Agreed Rules | active | [governance/rules/RG006-persist-agreed-rules.md](governance/rules/RG006-persist-agreed-rules.md) |
 | RG007 | Governed Work Records Its Governance | active | [governance/rules/RG007-governance-execution.md](governance/rules/RG007-governance-execution.md) |
+| RG008 | Artifact Authorship and Production-Tool Provenance | active | [governance/rules/RG008-authorship-provenance.md](governance/rules/RG008-authorship-provenance.md) |
 
 Templates for creating new artifacts and rules live in
 [governance/templates/](governance/templates/). The machine-readable index is
