@@ -32,7 +32,7 @@ research methodology as everything else.
 
 ---
 
-# Rules (RG001-RG007)
+# Rules (RG001-RG009)
 
 | ID | Title | Requirement |
 |----|-------|-------------|
@@ -43,6 +43,8 @@ research methodology as everything else.
 | [RG005](rules/RG005-benchmark-before-invention.md) | Benchmark Before Innovation | Established practice SHOULD be studied first |
 | [RG006](rules/RG006-persist-agreed-rules.md) | Persist Agreed Rules | Accepted rules MUST be persisted in the repository |
 | [RG007](rules/RG007-governance-execution.md) | Governed Work Records Its Governance | Every implementation MUST record the governance that applied to it |
+| [RG008](rules/RG008-authorship-provenance.md) | Artifact Authorship and Production-Tool Provenance | Every artifact MUST record who or what produced it, when, and with which tools |
+| [RG009](rules/RG009-claim-provenance.md) | Claim Provenance | Artifacts relying on external claims MUST cite registered sources (SRC artifacts) via `cites` |
 
 ---
 

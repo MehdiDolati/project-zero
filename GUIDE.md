@@ -36,6 +36,7 @@ hypotheses/   testable claims
 experiments/  executed investigations
 discoveries/  evidence-backed findings
 decisions/    operational and architectural decisions
+sources/      registered external sources cited by artifacts
 governance/   long-term project rules
 ```
 
@@ -87,10 +88,15 @@ artifact to satisfy process — artifacts exist to reduce uncertainty
    existing hypotheses. Does a hypothesis already cover this? Is your idea a
    new hypothesis, or evidence for an existing one?
 2. **Benchmark before inventing** ([RG005](governance/rules/RG005-benchmark-before-invention.md)).
-   Study established practice before proposing something novel.
+   Study established practice before proposing something novel. Register the
+   sources you rely on as `SRC` artifacts and cite them
+   ([RG009](governance/rules/RG009-claim-provenance.md),
+   [sources/](sources/README.md)) — claims traced to "the literature" without
+   a citation are not project knowledge.
 3. **Assign an identity.** ID families are: `research-NNN` (documents),
    `PR` (principles), `H` (hypotheses), `EXP` (experiments), `DEC` (decisions),
-   `S` (sessions), `G` (governance), `RG` (rules). Take the next free number
+   `S` (sessions), `G` (governance), `RG` (rules), `SRC` (external sources).
+   Take the next free number
    (e.g., `H002`). Identity is stable forever — it never changes, even if the
    file is renamed or moved.
 4. **Name the file** `<ID>-<kebab-case-title>.md`, e.g.
@@ -331,6 +337,7 @@ Governance is not exempt from evidence. To change a rule or add one
 | creates | source → created | Decision → Rule |
 | enforced-by | source → enforcer | Rule → Governance |
 | related-to | either direction | anything else |
+| cites | artifact → source | Experiment → registered external source |
 
 **What NOT to do:**
 
@@ -340,6 +347,7 @@ Governance is not exempt from evidence. To change a rule or add one
 - Do not delete outdated documents — deprecate them and reference the replacement (G002, G004).
 - Do not change an artifact's identity, ever (RG003).
 - Do not treat observations as knowledge — everything passes through experimentation (research-003).
+- Do not lean on unnamed external sources — register them as SRC artifacts and cite them (RG009).
 
 ---
 

@@ -20,12 +20,12 @@ typed units of knowledge connected by explicit relationships
 
 # Status
 
-Snapshot as of 2026-09-06:
+Snapshot as of 2026-09-09:
 
 | Area | State |
 |------|-------|
 | Research foundation | Complete: problem, edge concept, methodology defined |
-| Governance framework | Complete and self-consistent (G000-G006, RG001-RG007) |
+| Governance framework | Complete and self-consistent (G000-G006, RG001-RG009) |
 | Hypotheses | H000 (project should not exist) and H001 (edge is emergent) are active, untested |
 | Experiments | EXP001 designed, **not executed**. No evidence exists yet |
 | Discoveries | None. Correct: no evidence has been produced |
@@ -77,7 +77,8 @@ concepts to trusted knowledge as confidence increases.
 | [experiments/](experiments/README.md) | Investigations and their evidence | EXP001 (designed, not executed) |
 | [discoveries/](discoveries/README.md) | Evidence-backed findings | Empty — no evidence produced yet |
 | [decisions/](decisions/) | Operational and architectural decisions | DEC001 |
-| [governance/](governance/README.md) | Long-term project rules | G000-G006, rules RG001-RG007, templates, manifest, registry |
+| [sources/](sources/README.md) | Registered external sources (papers, sites, datasets) | SRC001-SRC003, cited by EXP001 |
+| [governance/](governance/README.md) | Long-term project rules | G000-G006, rules RG001-RG009, templates, manifest, registry |
 | [software/](software/README.md) | Implementation | Empty by design (DEC001) |
 
 The full governance model, including how governance itself evolves, is
@@ -125,6 +126,18 @@ index; new artifacts MUST be registered here.
 |----|-------|--------|----------|
 | DEC001 | No Software Before Method | accepted | [decisions/DEC001-no-software-before-method.md](decisions/DEC001-no-software-before-method.md) |
 
+## Sources
+
+Registered external sources that project artifacts cite
+([RG009](governance/rules/RG009-claim-provenance.md)). See
+[sources/README.md](sources/README.md) for conventions.
+
+| ID | Title | Status | Location |
+|----|-------|--------|----------|
+| SRC001 | Time Series Momentum (Moskowitz, Ooi & Pedersen, 2012) | active | [sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md](sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md) |
+| SRC002 | Absolute Momentum (Antonacci, 2013) | active | [sources/SRC002-antonacci-2013-absolute-momentum.md](sources/SRC002-antonacci-2013-absolute-momentum.md) |
+| SRC003 | A Century of Evidence on Trend-Following Investing (Hurst, Ooi & Pedersen, 2017) | active | [sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md](sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md) |
+
 ## Sessions
 
 | ID | Title | Status | Location |
@@ -157,6 +170,7 @@ index; new artifacts MUST be registered here.
 | RG006 | Persist Agreed Rules | active | [governance/rules/RG006-persist-agreed-rules.md](governance/rules/RG006-persist-agreed-rules.md) |
 | RG007 | Governed Work Records Its Governance | active | [governance/rules/RG007-governance-execution.md](governance/rules/RG007-governance-execution.md) |
 | RG008 | Artifact Authorship and Production-Tool Provenance | active | [governance/rules/RG008-authorship-provenance.md](governance/rules/RG008-authorship-provenance.md) |
+| RG009 | Claim Provenance | active | [governance/rules/RG009-claim-provenance.md](governance/rules/RG009-claim-provenance.md) |
 
 Templates for creating new artifacts and rules live in
 [governance/templates/](governance/templates/). The machine-readable index is
@@ -171,7 +185,7 @@ Every new artifact follows the same procedure:
 
 1. **Determine the type and identity.** Use the appropriate ID family:
    research-NNN, H (hypothesis), EXP (experiment), DEC (decision), S (session),
-   G (governance), RG (rule). Identities are stable forever
+   G (governance), RG (rule), SRC (external source). Identities are stable forever
    ([RG003](governance/rules/RG003-artifact-identity.md)).
 2. **Copy the relevant template** from
    [governance/templates/](governance/templates/). Every artifact requires:

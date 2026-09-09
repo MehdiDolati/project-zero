@@ -5,12 +5,12 @@ type: governance
 title: Relationships Model
 
 status: active
-version: 1.0
+version: 1.1
 
 owner: Project Zero
 
 created: 2026-07-28
-last-reviewed: 2026-09-04
+last-reviewed: 2026-09-09
 ---
 
 # Purpose
@@ -35,6 +35,9 @@ the relationship requirements defined in RG004.
 - Relationship direction MUST be meaningful and consistently applied.
 - Removing an Artifact MUST NOT silently break the relationships it
   participates in.
+- External sources are first-class Artifacts (ID family `SRC`, under
+  `sources/`) so that relationships can point at knowledge that originates
+  outside the repository (RG009).
 
 ---
 
@@ -55,6 +58,7 @@ The following relationship types form the canonical vocabulary of Project Zero.
 | creates | Source brings the target into existence. | Decision -> Rule |
 | enforced-by | Source is made operational by the target. | Rule -> Governance |
 | related-to | Source and target are connected without one of the above meanings. | Concept -> Concept |
+| cites | Artifact relies on a claim, definition, specification, or dataset that originates in the target. Target is a registered external source. | Experiment -> Source |
 
 The relationship types above are normative for new Artifacts.
 
@@ -70,8 +74,9 @@ Each relationship type has a canonical direction.
 - derives-from, depends-on, tested-by, and related-to are symmetric in meaning
   but MUST be expressed from the dependent or derived Artifact toward its
   origin whenever practical.
-- motivates, produces, supports, challenges, supersedes, creates, and
-  enforced-by are directional and MUST point from source to target.
+- motivates, produces, supports, challenges, supersedes, creates,
+  enforced-by, and cites are directional and MUST point from source to target.
+  For `cites`, the citing Artifact points at the cited external Source.
 
 Backward traceability MUST always be possible. When an Artifact declares
 `depends-on: H001`, H001 SHOULD be discoverable as a dependency even if it
@@ -89,6 +94,7 @@ Relationships MUST be represented explicitly in the Artifact body under a
 
 - derives-from: research/002-edge.md (research-002)
 - tested-by: experiments/EXP001-proposal.md (EXP001) [planned]
+- cites: sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md (SRC001)
 ```
 
 Each entry consists of:
@@ -145,6 +151,8 @@ Future validators SHOULD detect:
 - G005-traceability.md (G005)
 - governance/rules/RG004-first-class-relationships.md (RG004)
 - governance/rules/RG003-artifact-identity.md (RG003)
+- governance/rules/RG009-claim-provenance.md (RG009)
+- sources/README.md (SRC registry)
 
 ---
 
@@ -153,3 +161,4 @@ Future validators SHOULD detect:
 | Version | Date | Summary |
 |---------|------|---------|
 | 1.0 | 2026-09-04 | Initial version. Fills the placeholder created on 2026-07-28. |
+| 1.1 | 2026-09-09 | Registered the `cites` relationship type for external sources (RG009). |

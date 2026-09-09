@@ -21,6 +21,8 @@ Every experiment MUST, per
 - record assumptions,
 - record methodology,
 - record authorship and production-tool provenance,
+- cite registered external sources for any claim, definition, or specification
+  taken from outside the repository,
 - be reproducible.
 
 No claim becomes project knowledge without experimental evidence. A failed
@@ -61,6 +63,19 @@ This README change is recorded as follows:
 | `created-by-version` | `not available` |
 | `production-tools` | VS Code/Copilot SDK; `apply_patch` |
 | `created-at` | `2026-09-09T08:42:05+03:30` |
+
+---
+
+# Claim Provenance
+
+An experiment that replicates or tests a published claim MUST cite the sources
+that document that claim and the source that defines the specification it
+follows
+([RG009-claim-provenance](../governance/rules/RG009-claim-provenance.md)).
+Sources are registered as `SRC` artifacts under [sources/](../sources/README.md)
+and referenced with the `cites` relationship type
+([G006-relationships](../governance/G006-relationships.md)). Period boundaries
+justified by publication history MUST cite the publication.
 
 ---
 

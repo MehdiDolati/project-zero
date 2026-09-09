@@ -56,6 +56,20 @@ Examples:
 - challenges:
 - supersedes:
 - related-to:
+- cites:
+
+---
+
+# References
+
+List registered external sources this artifact relies on
+([RG009](../rules/RG009-claim-provenance.md)). Each entry MUST correspond to a
+`cites` relationship declared under `# Relationships` and resolve to a
+registered source artifact under `sources/`.
+
+If none:
+
+> None.
 
 ---
 

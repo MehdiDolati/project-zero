@@ -5,12 +5,18 @@ type: experiment
 title: Manual Replication of a Published Momentum Anomaly
 
 status: draft
-version: 1.0
+version: 1.1
 
 owner: Project Zero
 
 created: 2026-09-06
-last-reviewed: 2026-09-06
+last-reviewed: 2026-09-09
+
+created-by-type: agent
+created-by: AI assistant (Buffy) in Freebuff
+created-by-version: not available
+production-tools: Freebuff (Buffy coding agent)
+created-at: 2026-09-09T15:52:19+03:30
 ---
 
 # Purpose
@@ -50,9 +56,20 @@ the process works. Starting with a known signal isolates the process.
 
 The claim under test is time-series (absolute) momentum on a broad equity index:
 hold the index when its trailing 12-month return is positive, hold cash
-otherwise. This is the simplest published form of trend following, documented in
-academic and practitioner literature for decades, which makes it a fair
-benchmark and a poor candidate for accidental discovery.
+otherwise. The effect was named and documented academically by Moskowitz, Ooi &
+Pedersen (2012)
+([SRC001](../../sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md))
+and is documented across roughly a century of practitioner data by Hurst, Ooi &
+Pedersen (2017)
+([SRC003](../../sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md)),
+which makes it a fair benchmark and a poor candidate for accidental discovery.
+
+The exact specification below follows the published "absolute momentum" rule of
+Antonacci (2013)
+([SRC002](../../sources/SRC002-antonacci-2013-absolute-momentum.md)): 12-month
+lookback, broad US equity index versus T-bills, all-or-nothing monthly
+switching. SRC002 is the specification anchor for this experiment; SRC001 names
+the effect, and SRC003 documents its long history.
 
 ---
 
@@ -99,6 +116,10 @@ from raw data by following the procedure below.
 Fixed before any data is examined. Parameters are not to be adjusted during
 execution; see Assumptions.
 
+The specification follows Antonacci (2013)
+([SRC002](../../sources/SRC002-antonacci-2013-absolute-momentum.md)). Where this
+document differs from SRC002, this document governs the experiment.
+
 - **Signal:** at the last trading day of month *t*, compute the trailing
   12-month total return of the index, R12 = (P_t / P_{t-12}) - 1.
 - **Position for month *t+1*:** if R12 > 0, hold the index for the whole of
@@ -111,15 +132,24 @@ execution; see Assumptions.
 
 ## Periods
 
-- **In-sample (IS):** 1950-01 through 2005-12. Represents the era covered by the
-  literature that documents the effect.
-- **Out-of-sample (OOS):** 2006-01 through the last complete month at execution
-  time. Represents the post-publication period.
+- **In-sample (IS):** 1950-01 through 2013-12. Represents the era before the
+  specification source's publication; the effect is documented across much of
+  this window ([SRC001](../../sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md),
+  [SRC003](../../sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md)).
+- **Out-of-sample (OOS):** 2014-01 through the last complete month at execution
+  time. Represents the post-publication period, anchored to the publication of
+  the specification source (SRC002, 2013).
 
 The IS period is not used to fit anything. It exists to confirm that the rule as
 specified reproduces the published-era result at all. If it does not, the
 specification or the data is wrong, and that must be resolved before OOS results
 are interpreted.
+
+**Period anchor note (v1.1).** The IS/OOS boundary is set by the publication
+year of the specification source (SRC002, 2013). "Post-publication" therefore
+means after the published specification under test. The v1.0 boundary
+(2005-12) predates all three cited sources and was revised before execution,
+while the specification was still frozen and before any data was retrieved.
 
 ## Metrics
 
@@ -265,6 +295,30 @@ can be discounted correctly.
 
 ---
 
+# References
+
+Registered external sources cited by this experiment
+([RG009](../../governance/rules/RG009-claim-provenance.md)):
+
+- [SRC001](../../sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md)
+  — Moskowitz, T. J., Ooi, Y. H., & Pedersen, L. H. (2012). Time series
+  momentum. *Journal of Financial Economics*, 104(2), 228–250.
+  DOI: 10.1016/j.jfineco.2011.11.003. Names and documents the effect.
+- [SRC002](../../sources/SRC002-antonacci-2013-absolute-momentum.md)
+  — Antonacci, G. (2013). Absolute Momentum: A Simple Rule-Based Strategy and
+  Universal Trend-Following Overlay. SSRN 2244633.
+  DOI: 10.2139/ssrn.2244633. Defines the replicated specification;
+  **specification anchor**.
+- [SRC003](../../sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md)
+  — Hurst, B., Ooi, Y. H., & Pedersen, L. H. (2017). A Century of Evidence on
+  Trend-Following Investing. *The Journal of Portfolio Management*, 44(1),
+  15–29. Documents the effect across roughly a century.
+
+Citation metadata is maintained in the source artifacts, which also record what
+was verified and whether the full text has been read.
+
+---
+
 # Rationale
 
 This experiment exists because the framework has never been run. A governance
@@ -291,6 +345,9 @@ The project must be able to produce evidence against itself.
 - related-to: research/002-edge.md (research-002)
 - related-to: decisions/DEC001-no-software-before-method.md (DEC001)
 - related-to: governance/rules/RG005-benchmark-before-invention.md (RG005)
+- cites: sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md (SRC001)
+- cites: sources/SRC002-antonacci-2013-absolute-momentum.md (SRC002)
+- cites: sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md (SRC003)
 - produces: experiments/EXP001/evidence/ (EXP001-evidence) [planned]
 - created-in: research/sessions/S002-first-experiment-design.md (S002)
 
@@ -333,3 +390,4 @@ This design SHOULD be reviewed:
 | Version | Date | Summary |
 |---------|------|---------|
 | 1.0 | 2026-09-06 | Initial design. Not yet executed. |
+| 1.1 | 2026-09-09 | Cited registered sources SRC001-SRC003 per RG009; re-anchored the IS/OOS boundary to the specification source's publication year (2013) before execution; added authorship provenance fields per RG008. |

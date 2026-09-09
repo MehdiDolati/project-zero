@@ -61,6 +61,50 @@ stable identity and version, not by file path alone.
 
 ---
 
+---
+
+## Revision v1.1 (2026-09-09) — claim provenance
+
+EXP001 was revised from v1.0 to v1.1 before execution, while the specification
+was still frozen and before any data was retrieved. The revision:
+
+- cites three registered sources (SRC001, SRC002, SRC003) per
+  [RG009](../../governance/rules/RG009-claim-provenance.md),
+- re-anchors the IS/OOS boundary from 2005-12 to 2013-12 (OOS starts 2014-01),
+  because the v1.0 boundary predated every source that documents the rule. This
+  is a versioned design change recorded here and in the artifact revision
+  history — not an undocumented substitution (see the artifact's Review
+  section),
+- adds authorship and production-tool provenance fields per
+  [RG008](../../governance/rules/RG008-authorship-provenance.md).
+
+Manifest snapshot in force for this revision:
+
+- **manifest-version**: 1.0.0
+- **governance-version**: 1.3.0
+- **effective-as-of**: 2026-09-09
+
+Governing set additions and version changes for this revision:
+
+| Artifact ID | Title | Version | Status | Change |
+|-------------|-------|---------|--------|--------|
+| RG008 | Artifact Authorship and Production-Tool Provenance | 1.0 | active | added |
+| RG009 | Claim Provenance | 1.0 | active | added |
+| G005 | Traceability Model | 1.2 | active | version change (1.1 → 1.2) |
+| G006 | Relationships Model | 1.1 | active | version change (1.0 → 1.1) |
+
+How the added rules are satisfied:
+
+| Artifact | How it applies to EXP001 v1.1 |
+|----------|-------------------------------|
+| RG008 | The artifact front matter now carries `created-by-type`, `created-by`, `created-by-version`, `production-tools`, and `created-at`. |
+| RG009 | The experiment cites SRC001 (effect named), SRC002 (specification anchor), and SRC003 (long-history documentation) via `cites` relationships and a References section; period boundaries are justified by citation. |
+
+The v1.0 manifest snapshot recorded above is retained as the historical record
+of the original design.
+
+---
+
 ## Referenced but not governing
 
 These artifacts are referenced by EXP001 as subject matter or context, not as
@@ -74,6 +118,9 @@ governance:
 | research-002 | Conceptual definition of edge |
 | research-003 | Methodology whose loop the experiment exercises |
 | DEC001 | Decision that constrains the experiment to manual execution |
+| SRC001 | Moskowitz, Ooi & Pedersen (2012), Time Series Momentum — names the effect replicated |
+| SRC002 | Antonacci (2013), Absolute Momentum — defines the replicated specification |
+| SRC003 | Hurst, Ooi & Pedersen (2017), A Century of Evidence on Trend-Following Investing — documents the effect across a century |
 
 DEC001 is listed here rather than above because it is a decision, not a
 governance artifact; it is made operational by RG001, which is listed as
@@ -114,6 +161,8 @@ authorization is required.
 
 ## Last updated
 
-- **date**: 2026-09-06
-- **by**: S002 — first experiment design
-- **manifest-version**: 1.0.0
+- **date**: 2026-09-09
+- **by**: revision v1.1 — claim provenance (see revision section above; this
+  update is explicit, not a silent re-snapshot)
+- **manifest-version**: 1.0.0 (governance-version 1.3.0, effective 2026-09-09)
+- **previous**: 2026-09-06, S002 — first experiment design, manifest-version 1.0.0

@@ -1,8 +1,8 @@
 {
-  "registry-version": "1.1.0",
-  "updated": "2026-09-06",
+  "registry-version": "1.2.1",
+  "updated": "2026-09-09",
   "description": "Machine-addressable index of Project Zero artifacts by stable identity. Resolve an artifact identity here before assuming a file is missing or renamed.",
-  "coverage-note": "Coverage is currently governance artifacts, rules, and experiments. Documents, principles, hypotheses, decisions, and sessions are registered in README.md only. Closing that gap is an open governance issue, not an intentional scope limit.",
+  "coverage-note": "Coverage is currently governance artifacts, rules, experiments, and sources. Documents, principles, hypotheses, decisions, and sessions are registered in README.md only. Closing that gap is an open governance issue, not an intentional scope limit.",
   "artifacts": [
     {
       "id": "G000",
@@ -49,7 +49,7 @@
       "type": "governance",
       "title": "Traceability Model",
       "path": "governance/G005-traceability.md",
-      "version": "1.1",
+      "version": "1.2",
       "status": "active"
     },
     {
@@ -57,7 +57,7 @@
       "type": "governance",
       "title": "Relationships Model",
       "path": "governance/G006-relationships.md",
-      "version": "1.0",
+      "version": "1.1",
       "status": "active"
     },
     {
@@ -117,14 +117,55 @@
       "status": "active"
     },
     {
+      "id": "RG008",
+      "type": "rule",
+      "title": "Artifact Authorship and Production-Tool Provenance",
+      "path": "governance/rules/RG008-authorship-provenance.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "RG009",
+      "type": "rule",
+      "title": "Claim Provenance",
+      "path": "governance/rules/RG009-claim-provenance.md",
+      "version": "1.1",
+      "status": "active"
+    },
+    {
+      "id": "SRC001",
+      "type": "source",
+      "title": "Time Series Momentum (Moskowitz, Ooi & Pedersen, 2012)",
+      "path": "sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "SRC002",
+      "type": "source",
+      "title": "Absolute Momentum (Antonacci, 2013)",
+      "path": "sources/SRC002-antonacci-2013-absolute-momentum.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "SRC003",
+      "type": "source",
+      "title": "A Century of Evidence on Trend-Following Investing (Hurst, Ooi & Pedersen, 2017)",
+      "path": "sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
       "id": "EXP001",
       "type": "experiment",
       "title": "Manual Replication of a Published Momentum Anomaly",
       "path": "experiments/EXP001/EXP001-momentum-replication.md",
-      "version": "1.0",
+      "version": "1.1",
       "status": "draft",
       "governance-record": "experiments/EXP001/GOVERNANCE.md",
       "tests": ["H001"],
+      "cites": ["SRC001", "SRC002", "SRC003"],
       "executed": false
     }
   ]

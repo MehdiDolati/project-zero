@@ -5,12 +5,12 @@ type: governance
 title: Traceability Model
 
 status: active
-version: 1.1
+version: 1.2
 
 owner: Project Zero
 
 created: 2026-07-28
-last-reviewed: 2026-09-04
+last-reviewed: 2026-09-09
 ---
 
 # Purpose
@@ -37,6 +37,10 @@ Traceability MUST survive repository evolution.
 Project knowledge SHOULD form connected chains.
 
 Typical examples include:
+
+Source (external)
+
+↓
 
 Question
 
@@ -79,6 +83,11 @@ Not every chain requires every element.
 # Traceability Requirements
 
 Artifacts SHOULD reference their immediate dependencies.
+
+Artifacts whose content depends on claims, definitions, specifications, or data
+that originate outside the repository MUST be traceable to registered external
+sources (ID family `SRC`, under `sources/`; see RG009). A chain MAY originate
+in an external source rather than in a project question.
 
 Backward traceability MUST always be possible.
 
@@ -135,6 +144,8 @@ Future validators SHOULD detect:
 - governance/G004-artifact-lifecycle.md (G004)
 - governance/G006-relationships.md (G006)
 - governance/rules/RG004-first-class-relationships.md (RG004)
+- governance/rules/RG009-claim-provenance.md (RG009)
+- sources/README.md (SRC registry)
 
 ---
 
@@ -144,3 +155,4 @@ Future validators SHOULD detect:
 |---------|------|---------|
 | 1.0 | 2026-07-28 | Initial version (draft) |
 | 1.1 | 2026-09-04 | Promoted from draft to active; metadata completed |
+| 1.2 | 2026-09-09 | External sources added as a chain origin (RG009) |
