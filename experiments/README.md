@@ -20,11 +20,47 @@ Every experiment MUST, per
 - preserve raw evidence,
 - record assumptions,
 - record methodology,
+- record authorship and production-tool provenance,
 - be reproducible.
 
 No claim becomes project knowledge without experimental evidence. A failed
 experiment is a successful research outcome when it is preserved with its
 reasoning.
+
+---
+
+# Authorship and Tool Provenance
+
+Every experiment artifact and execution log MUST identify who produced it and
+how it was produced. This metadata describes the producer; it does not replace
+the artifact owner or the governing-work record required by
+[RG007-governance-execution](../governance/rules/RG007-governance-execution.md).
+
+Use the following fields in the artifact front matter or, for evidence, at the
+top of the execution log:
+
+| Field | Required value |
+|-------|----------------|
+| `created-by-type` | `human` or `agent` |
+| `created-by` | Human name, or agent name and provider |
+| `created-by-version` | Agent/model version when applicable; `not available` when it cannot be observed |
+| `production-tools` | Tool names and versions when available (for example, VS Code and its extension or CLI) |
+| `created-at` | Timestamp with timezone |
+
+An agent MUST NOT be recorded as a human. If several people or agents
+contributed, record each contributor and distinguish the primary producer from
+reviewers. Missing version information MUST be stated explicitly rather than
+guessed.
+
+This README change is recorded as follows:
+
+| Field | Value |
+|-------|-------|
+| `created-by-type` | `agent` |
+| `created-by` | AI assistant using Copilot SDK in VS Code |
+| `created-by-version` | `not available` |
+| `production-tools` | VS Code/Copilot SDK; `apply_patch` |
+| `created-at` | `2026-09-09T08:42:05+03:30` |
 
 ---
 
