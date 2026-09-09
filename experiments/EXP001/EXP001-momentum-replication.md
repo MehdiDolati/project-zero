@@ -5,7 +5,7 @@ type: experiment
 title: Manual Replication of a Published Momentum Anomaly
 
 status: active
-version: 1.2
+version: 1.3
 
 owner: Project Zero
 
@@ -101,9 +101,9 @@ the literature would have missed.
 |------|--------|--------|
 | Market | US broad equity index, total return | Longest reliable free history |
 | Primary series | Monthly closes | Rule operates monthly; avoids intraday data |
-| Proxy | S&P 500 total return series (index level, dividends reinvested) | Free, widely available, avoids ETF inception limits |
-| Cash proxy | 3-month US Treasury bill, monthly yield | Standard risk-free stand-in |
-| Source | Single free public source, recorded with URL, retrieval date, and file hash | Provenance is required evidence |
+| Equity series | S&P Composite / S&P 500 monthly price, dividends, and total-return price from [SRC004](../../sources/SRC004-shiller-ie-data-monthly-stock.md) (Shiller `ie_data.xls`) | Free, public, from 1871; avoids ETF inception limits |
+| Cash proxy | 3-month US Treasury bill secondary market rate, monthly, from [SRC005](../../sources/SRC005-fred-tb3ms-monthly.md) (FRED TB3MS) | Official free series from 1934; standard risk-free stand-in |
+| Source | Free public sources as above, each recorded with URL, retrieval date, and file hash at download | Provenance is required evidence |
 
 Data MUST be downloaded once, stored unmodified under `evidence/raw/`, and never
 edited. All derived series live in `evidence/derived/` and MUST be regenerable
@@ -269,14 +269,23 @@ Recorded before execution, because they are the most likely reasons a positive
 result would be wrong:
 
 - Monthly close data is accurate and survivorship-free at index level.
-- Total return series correctly reinvests dividends; a price-only series would
-  bias the benchmark downward and flatter the rule.
+- The Shiller S&P Composite price column is a **monthly average of daily
+  closes**, not a month-end close (SRC004). Signals, switch timing, and
+  drawdowns computed on it are smoothed accordingly; month-end drawdowns are
+  understated to the extent intramonth paths differ.
+- Pre-1957 the equity series is the S&P Composite (smaller constituent set),
+  used as the long-history proxy for a US broad equity index (SRC004).
+- Total return correctly reinvests dividends; the nominal total-return price
+  is derived from the workbook's real total-return series and CPI (SRC004); a
+  price-only treatment would bias the benchmark downward and flatter the rule.
 - 10 bps per switch approximates real transaction costs for a retail
   participant; the true figure varies by era and would have been much higher
   before the 1990s. The IS result is therefore optimistic by construction.
 - Taxes are ignored. This is unrealistic for a taxable account and materially
   favours the rule, which realizes gains more often.
-- Cash earns the T-bill rate with no friction.
+- Cash earns the T-bill rate with no friction. TB3MS is a **discount-basis**
+  rate of business-day averages (SRC005); the monthly cash return and Sharpe
+  risk-free input use a stated conversion, recorded in `evidence/derived/`.
 - Backtested results assume the rule would have been followed exactly, which
   ignores decision psychology (research-001, section 3) entirely.
 
@@ -313,6 +322,15 @@ Registered external sources cited by this experiment
   — Hurst, B., Ooi, Y. H., & Pedersen, L. H. (2017). A Century of Evidence on
   Trend-Following Investing. *The Journal of Portfolio Management*, 44(1),
   15–29. Documents the effect across roughly a century.
+- [SRC004](../../sources/SRC004-shiller-ie-data-monthly-stock.md)
+  — Shiller, R. J. US Stock Market Data (`ie_data.xls`), monthly, 1871–present.
+  https://shillerdata.com/. Equity series: price, dividends, total-return
+  price.
+- [SRC005](../../sources/SRC005-fred-tb3ms-monthly.md)
+  — Board of Governors of the Federal Reserve System (US). 3-Month Treasury
+  Bill Secondary Market Rate, Discount Basis (TB3MS), monthly, 1934–present,
+  via FRED. https://fred.stlouisfed.org/series/TB3MS. Cash leg and Sharpe
+  risk-free rate.
 
 Citation metadata is maintained in the source artifacts, which also record what
 was verified and whether the full text has been read.
@@ -348,6 +366,8 @@ The project must be able to produce evidence against itself.
 - cites: sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md (SRC001)
 - cites: sources/SRC002-antonacci-2013-absolute-momentum.md (SRC002)
 - cites: sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md (SRC003)
+- cites: sources/SRC004-shiller-ie-data-monthly-stock.md (SRC004)
+- cites: sources/SRC005-fred-tb3ms-monthly.md (SRC005)
 - produces: experiments/EXP001/evidence/ (EXP001-evidence) [planned]
 - created-in: research/sessions/S002-first-experiment-design.md (S002)
 
@@ -416,3 +436,4 @@ Watch items recorded for execution (no revision required):
 | 1.0 | 2026-09-06 | Initial design. Not yet executed. |
 | 1.1 | 2026-09-09 | Cited registered sources SRC001-SRC003 per RG009; re-anchored the IS/OOS boundary to the specification source's publication year (2013) before execution; added authorship provenance fields per RG008. |
 | 1.2 | 2026-09-09 | Pre-execution review passed; status draft → active (design accepted for execution). No specification changes. Post-execution review remains required. |
+| 1.3 | 2026-09-09 | Execution step 1: intended data sources recorded before any download (SRC004 equity, SRC005 cash); coverage verified against publisher records (1871-01+ and 1934-01+ respectively); data-shape assumptions added (monthly-average close, discount-basis rate). |

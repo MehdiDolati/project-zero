@@ -21,5 +21,7 @@ place.
 
 ## Status
 
-Empty. EXP001 is designed but not executed. See
-[EXP001-momentum-replication.md](../EXP001-momentum-replication.md).
+Execution step 1 complete: data sources identified and verified before any
+download, recorded in [execution-log.md](execution-log.md). `raw/` and
+`derived/` are still empty. See
+[EXP001-momentum-replication.md](../EXP001-momentum-replication.md) (v1.3).

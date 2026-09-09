@@ -50,6 +50,8 @@ not mirror the source's content.
 | SRC001 | Time Series Momentum (Moskowitz, Ooi & Pedersen, 2012) | paper | active | [SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md](SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md) |
 | SRC002 | Absolute Momentum (Antonacci, 2013) | paper | active | [SRC002-antonacci-2013-absolute-momentum.md](SRC002-antonacci-2013-absolute-momentum.md) |
 | SRC003 | A Century of Evidence on Trend-Following Investing (Hurst, Ooi & Pedersen, 2017) | paper | active | [SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md](SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md) |
+| SRC004 | Shiller US Stock Market Data (ie_data.xls), 1871–present | dataset | active | [SRC004-shiller-ie-data-monthly-stock.md](SRC004-shiller-ie-data-monthly-stock.md) |
+| SRC005 | FRED TB3MS — 3-Month Treasury Bill Secondary Market Rate, Monthly, 1934–present | dataset | active | [SRC005-fred-tb3ms-monthly.md](SRC005-fred-tb3ms-monthly.md) |
 
 Original project ideas are not sources and do not belong in this directory;
 they live under `research/` and `hypotheses/` with no citation required

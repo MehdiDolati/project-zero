@@ -27,7 +27,7 @@ Snapshot as of 2026-09-09:
 | Research foundation | Complete: problem, edge concept, methodology defined |
 | Governance framework | Complete and self-consistent (G000-G006, RG001-RG009) |
 | Hypotheses | H000 (project should not exist) and H001 (edge is emergent) are active, untested |
-| Experiments | EXP001 design active (accepted for execution), **not executed**. No evidence exists yet |
+| Experiments | EXP001 design active; execution started — step 1 (data sources identified and verified pre-download) complete, no data retrieved yet |
 | Discoveries | None. Correct: no evidence has been produced |
 | Software | None. Deliberate: [DEC001](decisions/DEC001-no-software-before-method.md) prohibits custom software until the manual method proves itself |
 | Sessions | S000 (founding), S001 (framework hardening), S002 (first experiment design) |

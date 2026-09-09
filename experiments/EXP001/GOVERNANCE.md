@@ -135,6 +135,8 @@ governance:
 | SRC001 | Moskowitz, Ooi & Pedersen (2012), Time Series Momentum — names the effect replicated |
 | SRC002 | Antonacci (2013), Absolute Momentum — defines the replicated specification |
 | SRC003 | Hurst, Ooi & Pedersen (2017), A Century of Evidence on Trend-Following Investing — documents the effect across a century |
+| SRC004 | Shiller US Stock Market Data (ie_data.xls) — equity series used at execution |
+| SRC005 | FRED TB3MS — cash leg and Sharpe risk-free rate used at execution |
 
 DEC001 is listed here rather than above because it is a decision, not a
 governance artifact; it is made operational by RG001, which is listed as
@@ -175,9 +177,11 @@ authorization is required.
 
 ## Last updated
 
-- **date**: 2026-09-09 (pre-execution review; EXP001 v1.2, draft → active)
-- **by**: revision v1.1 — claim provenance (see revision section above; this
-  update is explicit, not a silent re-snapshot); lifecycle transition added
-  same day
+- **date**: 2026-09-09 (execution step 1; EXP001 v1.3 — intended data sources
+  recorded and verified before download; execution log opened)
+- **by**: v1.3 — SRC004/SRC005 registered and cited; v1.2 — pre-execution
+  review, draft → active; v1.1 — claim provenance (all revisions explicit,
+  none silent)
 - **manifest-version**: 1.0.0 (governance-version 1.3.1, effective 2026-09-09)
+- **previous**: 2026-09-09 — pre-execution review, EXP001 v1.2, draft → active
 - **previous**: 2026-09-06, S002 — first experiment design, manifest-version 1.0.0

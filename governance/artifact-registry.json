@@ -157,15 +157,31 @@
       "status": "active"
     },
     {
+      "id": "SRC004",
+      "type": "source",
+      "title": "Shiller US Stock Market Data (ie_data.xls)",
+      "path": "sources/SRC004-shiller-ie-data-monthly-stock.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "SRC005",
+      "type": "source",
+      "title": "FRED TB3MS — 3-Month Treasury Bill Secondary Market Rate, Monthly",
+      "path": "sources/SRC005-fred-tb3ms-monthly.md",
+      "version": "1.0",
+      "status": "active"
+    },
+    {
       "id": "EXP001",
       "type": "experiment",
       "title": "Manual Replication of a Published Momentum Anomaly",
       "path": "experiments/EXP001/EXP001-momentum-replication.md",
-      "version": "1.2",
+      "version": "1.3",
       "status": "active",
       "governance-record": "experiments/EXP001/GOVERNANCE.md",
       "tests": ["H001"],
-      "cites": ["SRC001", "SRC002", "SRC003"],
+      "cites": ["SRC001", "SRC002", "SRC003", "SRC004", "SRC005"],
       "executed": false
     }
   ]
