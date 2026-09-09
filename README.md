@@ -27,7 +27,7 @@ Snapshot as of 2026-09-09:
 | Research foundation | Complete: problem, edge concept, methodology defined |
 | Governance framework | Complete and self-consistent (G000-G006, RG001-RG009) |
 | Hypotheses | H000 (project should not exist) and H001 (edge is emergent) are active, untested |
-| Experiments | EXP001 designed, **not executed**. No evidence exists yet |
+| Experiments | EXP001 design active (accepted for execution), **not executed**. No evidence exists yet |
 | Discoveries | None. Correct: no evidence has been produced |
 | Software | None. Deliberate: [DEC001](decisions/DEC001-no-software-before-method.md) prohibits custom software until the manual method proves itself |
 | Sessions | S000 (founding), S001 (framework hardening), S002 (first experiment design) |
@@ -118,7 +118,7 @@ index; new artifacts MUST be registered here.
 
 | ID | Title | Status | Executed | Tests | Location |
 |----|-------|--------|----------|-------|----------|
-| EXP001 | Manual Replication of a Published Momentum Anomaly | draft | no | H001 (sub-claim C1) | [experiments/EXP001/EXP001-momentum-replication.md](experiments/EXP001/EXP001-momentum-replication.md) |
+| EXP001 | Manual Replication of a Published Momentum Anomaly | active | no | H001 (sub-claim C1) | [experiments/EXP001/EXP001-momentum-replication.md](experiments/EXP001/EXP001-momentum-replication.md) |
 
 ## Decisions
 

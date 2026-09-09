@@ -105,9 +105,10 @@ Each experiment lives in its own directory containing:
 
 | ID | Title | Status | Location |
 |----|-------|--------|----------|
-| EXP001 | Manual Replication of a Published Momentum Anomaly | draft | [EXP001/](EXP001/EXP001-momentum-replication.md) |
+| EXP001 | Manual Replication of a Published Momentum Anomaly | active (design accepted; not executed) | [EXP001/](EXP001/EXP001-momentum-replication.md) |
 
-EXP001 is designed but **not executed**. No evidence exists yet, so no
+EXP001's design passed pre-execution review on 2026-09-09 and is **active**;
+the experiment itself is **not executed**. No evidence exists yet, so no
 experiment has produced project knowledge.
 
 Execution is manual — spreadsheet only, no custom software

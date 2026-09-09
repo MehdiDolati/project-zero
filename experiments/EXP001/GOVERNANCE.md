@@ -105,6 +105,20 @@ of the original design.
 
 ---
 
+## Lifecycle transition (2026-09-09): draft → active
+
+Pre-execution review passed; the design artifact moved to `active` under G004
+(Review → Active on acceptance). Per G004's separation of governance lifecycle
+from domain lifecycle, this means the **design is accepted**; execution remains
+pending, and the post-execution review required by the artifact's Review
+section is still mandatory. The v1.0 statement above ("transition to active
+requires execution and review") described the plan at design time; the
+transition recorded here follows the generic G004 model instead and is the
+current state. It is recorded explicitly rather than silently overwriting that
+historical statement.
+
+---
+
 ## Referenced but not governing
 
 These artifacts are referenced by EXP001 as subject matter or context, not as
@@ -161,8 +175,9 @@ authorization is required.
 
 ## Last updated
 
-- **date**: 2026-09-09
+- **date**: 2026-09-09 (pre-execution review; EXP001 v1.2, draft → active)
 - **by**: revision v1.1 — claim provenance (see revision section above; this
-  update is explicit, not a silent re-snapshot)
-- **manifest-version**: 1.0.0 (governance-version 1.3.0, effective 2026-09-09)
+  update is explicit, not a silent re-snapshot); lifecycle transition added
+  same day
+- **manifest-version**: 1.0.0 (governance-version 1.3.1, effective 2026-09-09)
 - **previous**: 2026-09-06, S002 — first experiment design, manifest-version 1.0.0

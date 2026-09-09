@@ -4,8 +4,8 @@ type: experiment
 
 title: Manual Replication of a Published Momentum Anomaly
 
-status: draft
-version: 1.1
+status: active
+version: 1.2
 
 owner: Project Zero
 
@@ -383,6 +383,30 @@ This design SHOULD be reviewed:
   MUST be recorded as a change to this artifact rather than an undocumented
   substitution.
 
+## Pre-execution review outcome (2026-09-09)
+
+Reviewed against G001 experiment requirements, G004 transition rules, and the
+frozen specification. Outcome: **passed; status moved draft → active** (design
+accepted for execution). No specification changes were required.
+
+- All G001 experiment MUSTs verified: hypotheses referenced, success and
+  failure criteria defined, raw-evidence preservation, assumptions,
+  methodology, reproducibility, authorship (RG008) and claim (RG009)
+  provenance.
+- Specification freeze confirmed: no data has been retrieved; the v1.1
+  period re-anchoring predates execution.
+
+Watch items recorded for execution (no revision required):
+
+1. **Data coverage.** A free S&P 500 monthly total-return series and a 3-month
+   T-bill monthly series must be verified to cover the full IS window
+   (from 1950-01) *before* the first download. If either does not, any
+   substitution or IS-start adjustment is a versioned change to this artifact,
+   not a silent swap.
+2. **Discretionary threshold.** The "small" Sharpe-difference bound (< 0.1) in
+   the findings criteria is pre-declared but arbitrary; when applied, record it
+   in `evidence/execution-log.md` as a discretionary choice.
+
 ---
 
 # Revision History
@@ -391,3 +415,4 @@ This design SHOULD be reviewed:
 |---------|------|---------|
 | 1.0 | 2026-09-06 | Initial design. Not yet executed. |
 | 1.1 | 2026-09-09 | Cited registered sources SRC001-SRC003 per RG009; re-anchored the IS/OOS boundary to the specification source's publication year (2013) before execution; added authorship provenance fields per RG008. |
+| 1.2 | 2026-09-09 | Pre-execution review passed; status draft → active (design accepted for execution). No specification changes. Post-execution review remains required. |
