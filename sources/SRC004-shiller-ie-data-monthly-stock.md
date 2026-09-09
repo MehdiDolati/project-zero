@@ -76,11 +76,19 @@ includes a total-return price series (Bunn & Shiller 2014; Jivraj & Shiller
 
 Publisher page read on 2026-09-09 (shillerdata.com); coverage claim (1871-01
 onward, monthly) and file name confirmed from the publisher's own description.
-The workbook file itself has NOT been downloaded or inspected as of this
-registration; per RG009 statement 5, the file will be verified at retrieval
-before any use, and the retrieval (URL used, timestamp, hash) recorded in the
-experiment's `evidence/raw/provenance.md`. The workbook is volatile (monthly
-updates); the downloaded copy is the evidence, not the live file.
+
+Retrieved 2026-09-09T13:33:09Z for
+[EXP001](../experiments/EXP001/EXP001-momentum-replication.md): 1,674,752
+bytes, SHA-256 `46a7fd194c53a5bd81b374e59f8a058ecf9ce15f94068a3b80d00efdf094f3e2`,
+server `Last-Modified: 2026-09-02` (consistent with the monthly update
+cadence). File format verified (OLE2 Excel compound document) together with
+embedded publisher metadata (Author `RShiller`). Full retrieval record in the
+experiment's `evidence/raw/provenance.md`. Cell contents are not yet
+programmatically verified (no legacy-Excel reader available; none installed
+per DEC001); content verification is assigned to EXP001 execution step 2, when
+the workbook is first opened manually in Excel, before any derived series is
+built. The workbook is volatile (monthly updates); the downloaded copy is the
+evidence, not the live file.
 
 ---
 

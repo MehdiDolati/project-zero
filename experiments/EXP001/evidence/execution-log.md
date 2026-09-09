@@ -69,6 +69,7 @@ reason. Include choices that were tempting and rejected.
 |---|------|-------------|--------------|--------|
 | 1 | 2026-09-09 | Use Shiller monthly-average-of-daily-closes price column as-is | Splice in a month-end-close series from another source; switch to an ETF-based series | A spliced series introduces a structural break at the splice date and complicates reproducibility more than the smoothing does; ETF inception is far too late for the IS window. Deviation recorded as an EXP001 assumption (v1.3). |
 | 2 | 2026-09-09 | Derive monthly cash return from TB3MS with a stated simple conversion (discount-basis rate ÷ 12) | Use a different risk-free series; compound the discount rate to a bond-equivalent yield first | TB3MS is the official long free series; the discount-to-yield gap is small and directionally known. Conversion will be recorded in `evidence/derived/`. |
+| 3 | 2026-09-09 | Retrieve TB3MS from federalreserve.gov (H.15 Data Download Program) after FRED connection failures | Keep retrying FRED; use a third-party mirror (DBnomics); defer retrieval | federalreserve.gov is the **primary** source of the series FRED redistributes; mirrors add a layer without adding authority. Substitution and anchor-match check (1934-01 = 0.72 identical on both routes) recorded in `raw/provenance.md`. |
 
 ---
 
@@ -98,7 +99,31 @@ produced the data-shape assumptions above, which are research-relevant.
 
 ---
 
-## Effort
+## Retrieval record — 2026-09-09 — Step 1 completed: files retrieved, hashed, verified
+
+Both files were retrieved once, stored byte-for-byte in `raw/`, and hashed
+(SHA-256). Full details, URLs, HTTP headers, and the route substitution for
+TB3MS are in [raw/provenance.md](raw/provenance.md). Summary:
+
+| File | Size | SHA-256 (first 12) | Content verification |
+|------|------|--------------------|----------------------|
+| `ie_data.xls` (SRC004) | 1,674,752 B | `46a7fd194c53` | Format + publisher metadata verified; **cell contents pending** (no legacy-Excel reader available; no package installed per DEC001). Verification assigned to step 2, when the workbook is first opened manually in Excel. |
+| `TB3MS.csv` (SRC005, via federalreserve.gov) | 115,160 B | `edd3c63effb2` | **PASSED**: 920 months 1950-01→2026-08, 0 missing, 0 calendar gaps; 1934-01 anchor matches FRED's published table; spot values plausible. |
+
+Notes:
+
+- The coverage gate (watch item 1 from the pre-execution review) is now
+  **closed with retrieved data for the cash leg**; the equity leg closes at
+  step 2 when the workbook is opened.
+- FRED was unreachable from the execution network (repeated connection
+  resets); retrieval used the series' primary source instead. Recorded as
+  discretionary choice #3 and in provenance.
+- Agent-assisted time (search, retrieval, verification) is not counted in the
+  manual-effort table below, which measures the researcher's manual execution
+  per the experiment's process-metric design. Agent-assisted steps are
+  timestamped in provenance instead.
+
+---
 
 | Phase | Minutes |
 |-------|---------|
@@ -112,9 +137,11 @@ produced the data-shape assumptions above, which are research-relevant.
 
 ## Status
 
-Execution started 2026-09-09. Step 1 (source identification and verification)
-complete; **no data retrieved yet** — `raw/` and `derived/` remain empty.
-Next: download `ie_data.xls` and the TB3MS CSV once, unmodified, into `raw/`;
-write `raw/provenance.md` with source URL, retrieval timestamp, and SHA-256
-hash for each file; verify each file's actual coverage against the claims
-above before any derived work begins.
+Updated 2026-09-09 after retrieval. Step 1 complete: sources verified
+pre-download (above), both files retrieved once, hashed, and provenance
+recorded in `raw/provenance.md`. TB3MS content fully verified (coverage,
+continuity, anchor match). `ie_data.xls` contents verify at step 2 on first
+manual open in Excel, before any derived series is built. `derived/` remains
+empty. Next: build the monthly table (procedure step 2), record the workbook
+content verification in this log, and start the effort clock for the manual
+phases.

@@ -61,5 +61,7 @@ they live under `research/` and `hypotheses/` with no citation required
 
 # Status
 
-Created 2026-09-09 with the first three registered sources, cited by
-[EXP001](../experiments/EXP001/EXP001-momentum-replication.md).
+Created 2026-09-09 with three literature sources (SRC001-SRC003); expanded the
+same day with the two datasets cited by
+[EXP001](../experiments/EXP001/EXP001-momentum-replication.md) at execution
+(SRC004, SRC005).

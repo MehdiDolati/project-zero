@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Content-Type: application/vnd.ms-excel
+x-version: 0.7.3+sha-fa2a35c
+ETag: "0c3a89aacdc84b0c1e2555c39da23e94"
+Last-Modified: Wed, 02 Sep 2026 17:51:53 GMT
+x-amzn-trace-id: Root=1-6a986238-4a1f59a913efb3803b7a7c30
+x-forwarded-port: 443
+X-Forwarded-For: 50.63.4.70
+x-forwarded-proto: https
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Methods: GET
+Access-Control-Max-Age: 86400
+Cache-Control: public, max-age=31536000
+Expires: Thu, 09 Sep 2027 13:33:39 GMT
+Date: Wed, 09 Sep 2026 13:33:39 GMT
+Transfer-Encoding:  chunked
+Connection: keep-alive
+Connection: Transfer-Encoding
+Timing-Allow-Origin: *
+Access-Control-Allow-Origin: *
+

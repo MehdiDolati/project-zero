@@ -21,7 +21,9 @@ place.
 
 ## Status
 
-Execution step 1 complete: data sources identified and verified before any
-download, recorded in [execution-log.md](execution-log.md). `raw/` and
-`derived/` are still empty. See
-[EXP001-momentum-replication.md](../EXP001-momentum-replication.md) (v1.3).
+Step 1 complete: `raw/` holds `ie_data.xls`, `TB3MS.csv`, their HTTP header
+captures, and [raw/provenance.md](raw/provenance.md) with SHA-256 hashes and
+verification results. TB3MS content verified (coverage, continuity, anchor
+match); workbook cell contents verify at execution step 2 on first manual
+open. `derived/` remains empty. Log:
+[execution-log.md](execution-log.md).

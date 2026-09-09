@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Date: Wed, 09 Sep 2026 13:40:22 GMT
+Content-Type: text/csv
+Transfer-Encoding: chunked
+Connection: keep-alive
+set-cookie: __cf_bm=s6EIWswS7LRHVYzCUQf_CRcbevcGrny1yWfcmmbDGeU-1788961222.6727724-1.0.1.1-Pj4qRjW6aqCf.DFWQqmKAfA5IiWhfj2A0CkBfM7OjJUNePBznQh9b6ddpkBJa1YrNLfASqACdyhK17gDNcqgT7zvw8zvkOOCsj2TCMSS3bLhrGNpMYQOrfqxx4PTdEhc; HttpOnly; SameSite=None; Secure; Path=/; Domain=federalreserve.gov; Expires=Wed, 09 Sep 2026 14:10:22 GMT
+set-cookie: _cfuvid=NQmJrfJkSx.NalXZq0l4I9GExMhK70XGcZFjSwyv7Gg-1788961222.6727724-1.0.1.1-WBZfNyRAm8Zb_r9vUT9sk7f2SpCXj2JyeLBD7dKxgPM; HttpOnly; SameSite=None; Secure; Path=/; Domain=federalreserve.gov
+CF-Ray: a3869ab9bfd5e4af-OTP
+CF-Cache-Status: EXPIRED
+Cache-Control: private
+Content-Disposition: attachment; filename=FRB_H15.csv
+Last-Modified: Wed, 09 Sep 2026 13:40:22 GMT
+Server: cloudflare
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+

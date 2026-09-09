@@ -68,11 +68,20 @@ artifacts can cite it by stable identity
 
 FRED's own data page read on 2026-09-09; title, source, release, frequency,
 units, and date range (1934-01-01 to 2026-08-01, last updated 2026-09-01)
-confirmed directly from the publisher record. The CSV file has NOT been
-downloaded as of this registration; it will be verified at retrieval and the
-download (URL, timestamp, hash) recorded in the experiment's
-`evidence/raw/provenance.md`. FRED preserves this series stably; the
-downloaded copy is the evidence regardless.
+confirmed directly from the publisher record.
+
+Retrieved 2026-09-09 for
+[EXP001](../experiments/EXP001/EXP001-momentum-replication.md) from the
+series' **primary source** (federalreserve.gov, H.15 Data Download Program)
+after FRED endpoints proved unreachable from the execution network; the H.15
+column `RIFSGFSM03_N.M` is this series. Retrieved file verified: 1,112 monthly
+rows spanning 1934-01 to 2026-08; the window required by EXP001 (1950-01
+onward) is complete — 920 months, 0 missing values, 0 calendar gaps; anchor
+value 1934-01 = 0.72 is identical to FRED's published table, confirming route
+equivalence. SHA-256
+`edd3c63effb2100e5b2a7e47ae10aa8e04289d3910b1823f32125be1b8e93308`; full
+retrieval record in the experiment's `evidence/raw/provenance.md`. The
+downloaded copy is the evidence regardless of route.
 
 ---
 
