@@ -20,14 +20,14 @@ typed units of knowledge connected by explicit relationships
 
 # Status
 
-Snapshot as of 2026-09-09:
+Snapshot as of 2026-09-15:
 
 | Area | State |
 |------|-------|
 | Research foundation | Complete: problem, edge concept, methodology defined |
 | Governance framework | Complete and self-consistent (G000-G006, RG001-RG009) |
 | Hypotheses | H000 (project should not exist) and H001 (edge is emergent) are active, untested |
-| Experiments | EXP001 design active; execution step 1 complete — sources verified pre-download, raw data retrieved, hashed, and provenance-recorded (TB3MS verified; workbook verifies at step 2) |
+| Experiments | EXP001 design active; execution step 1 complete — sources verified pre-download, raw data retrieved, hashed, and provenance-recorded (TB3MS verified; workbook verifies at step 2). The manual computation phase (steps 2–7) is fully pre-registered — spreadsheet recipes, metric definitions, robustness variants, and the stage-gated [RESULTS.md](experiments/EXP001/RESULTS.md) scaffold, all committed and pushed before any data examination; the manual build has not started |
 | Discoveries | None. Correct: no evidence has been produced |
 | Software | None. Deliberate: [DEC001](decisions/DEC001-no-software-before-method.md) prohibits custom software until the manual method proves itself |
 | Sessions | S000 (founding), S001 (framework hardening), S002 (first experiment design) |
@@ -35,9 +35,11 @@ Snapshot as of 2026-09-09:
 The framework is deliberately "method before automation"
 ([RG001](governance/rules/RG001-automation-follows-stability.md)). The next
 milestone is not code — it is executing
-[EXP001](experiments/EXP001/EXP001-momentum-replication.md) manually and keeping
-its [execution log](experiments/EXP001/evidence/execution-log.md) honest about
-what the process costs.
+[EXP001](experiments/EXP001/EXP001-momentum-replication.md) manually, starting
+with the workbook verification in its
+[step-2 recipe](experiments/EXP001/evidence/derived/step2-spreadsheet-recipe.md),
+and keeping its [execution log](experiments/EXP001/evidence/execution-log.md)
+honest about what the process costs.
 
 ---
 
@@ -74,10 +76,10 @@ concepts to trusted knowledge as confidence increases.
 | [principles/](principles/) | Timeless beliefs | PR001 repository-as-source-of-truth |
 | [research/](research/README.md) | Foundational concepts and research documents | research-000 to 003; sessions/ |
 | [hypotheses/](hypotheses/) | Testable claims | H000, H001 |
-| [experiments/](experiments/README.md) | Investigations and their evidence | EXP001 (designed, not executed) |
+| [experiments/](experiments/README.md) | Investigations and their evidence | EXP001 (design accepted; computation phase pre-registered; not executed) |
 | [discoveries/](discoveries/README.md) | Evidence-backed findings | Empty — no evidence produced yet |
 | [decisions/](decisions/) | Operational and architectural decisions | DEC001 |
-| [sources/](sources/README.md) | Registered external sources (papers, sites, datasets) | SRC001-SRC003, cited by EXP001 |
+| [sources/](sources/README.md) | Registered external sources (papers, sites, datasets) | SRC001-SRC005, cited by EXP001 |
 | [governance/](governance/README.md) | Long-term project rules | G000-G006, rules RG001-RG009, templates, manifest, registry |
 | [software/](software/README.md) | Implementation | Empty by design (DEC001) |
 
@@ -137,6 +139,8 @@ Registered external sources that project artifacts cite
 | SRC001 | Time Series Momentum (Moskowitz, Ooi & Pedersen, 2012) | active | [sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md](sources/SRC001-moskowitz-ooi-pedersen-2012-time-series-momentum.md) |
 | SRC002 | Absolute Momentum (Antonacci, 2013) | active | [sources/SRC002-antonacci-2013-absolute-momentum.md](sources/SRC002-antonacci-2013-absolute-momentum.md) |
 | SRC003 | A Century of Evidence on Trend-Following Investing (Hurst, Ooi & Pedersen, 2017) | active | [sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md](sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md) |
+| SRC004 | Shiller US Stock Market Data (ie_data.xls) | active | [sources/SRC004-shiller-ie-data-monthly-stock.md](sources/SRC004-shiller-ie-data-monthly-stock.md) |
+| SRC005 | FRED TB3MS — 3-Month Treasury Bill Secondary Market Rate, Monthly | active | [sources/SRC005-fred-tb3ms-monthly.md](sources/SRC005-fred-tb3ms-monthly.md) |
 
 ## Sessions
 
