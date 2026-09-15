@@ -74,20 +74,35 @@ somewhere — stop and find it).
 
 Add a sixth tab, `Metrics`. New constant on `README`: `B7` = last complete month
 (2026-08), same date type as column A, with the same sanity test as B4/B5.
+`B7` is the OOS start constant — the single-condition OOS formulas above key
+on `">="&B7` — and, once entered, it also serves as the boundary spot value
+for the step-2 checklist item 7 (a `K` cell at or after `B7` MUST be blank).
 
 For each of {rule, benchmark} × {IS, OOS}, compute (rule shown; benchmark swaps
-`I`→`J`, `L`→`M`, `N`→`O`):
+`I`→`J`, `L`→`M`, `N`→`O`; % invested and switches are rule-construction
+columns, so the benchmark's cells there are 100% and 0 by construction):
 
 | Metric | IS formula | OOS formula |
 |--------|------------|-------------|
-| n months | `=COUNTIFS(Data!$A$15:$A$934,">="&README!$B$4,Data!$A$15:$A$934,"<="&README!$B$5)` | same with `>=README!$B$7` |
+| n months | `=COUNTIFS(Data!$A$15:$A$934,">="&README!$B$4,Data!$A$15:$A$934,"<="&README!$B$5)` | `=COUNTIFS(Data!$A$15:$A$934,">="&README!$B$7)` |
 | annualized return (geometric, headline) | `=L782^(12/768)-1` | `=(L934/L782)^(12/152)-1` |
 | annualized volatility | `=STDEV(Data!$I$15:$I$782)*SQRT(12)` | `=STDEV(Data!$I$783:$I$934)*SQRT(12)` |
 | Sharpe | `=(AVERAGE(Data!$I$15:$I$782)-AVERAGE(Data!$P$15:$P$782))/STDEV(Data!$I$15:$I$782)*SQRT(12)` | same on rows 783–934 |
 | maximum drawdown | `=MAX(Data!$N$15:$N$782)` | `=MAX(Data!$N$783:$N$934)` |
-| % months invested | `=AVERAGEIFS(Data!$G$15:$G$934,Data!$A$15:$A$934,">="&README!$B$4,Data!$A$15:$A$934,"<="&README!$B$5)` | same with `>=README!$B$7` |
-| switches | `=SUMIFS(Data!$H$15:$H$934,Data!$A$15:$A$934,">="&README!$B$4,Data!$A$15:$A$934,"<="&README!$B$5)` | same with `>=README!$B$7` |
+| % months invested | `=AVERAGEIFS(Data!$G$15:$G$934,Data!$A$15:$A$934,">="&README!$B$4,Data!$A$15:$A$934,"<="&README!$B$5)` | `=AVERAGEIFS(Data!$G$15:$G$934,Data!$A$15:$A$934,">="&README!$B$7)` |
+| switches | `=SUMIFS(Data!$H$15:$H$934,Data!$A$15:$A$934,">="&README!$B$4,Data!$A$15:$A$934,"<="&README!$B$5)` | `=SUMIFS(Data!$H$15:$H$934,Data!$A$15:$A$934,">="&README!$B$7)` |
 | total cost drag | `=switches_IS * README!$B$6` | `=switches_OOS * README!$B$6` |
+
+OOS one-condition formulas are written out in full: `COUNTIFS`, `AVERAGEIFS`,
+and `SUMIFS` each take a single criteria pair here, keyed on `">="&README!$B$7` —
+no second condition is needed because OOS is everything after the IS end. If
+Excel rejects one of these on the installed version, use the same function with
+both bounds (`">="&README!$B$7` and `"<="&README!$B$8`) — never a plain
+`COUNT`/`AVERAGE`/`SUM` over a pasted range, which breaks the constants-zone
+principle. Note the cell collision: `README!B8` is otherwise defined at step 7
+as the 0 bps cost constant. If B8 was consumed here as the last complete month,
+the step-7 cost constants MUST take other cells and the step-7 recipe's B8/B9
+references shift accordingly, with the deviation logged.
 
 Definitions and warnings:
 

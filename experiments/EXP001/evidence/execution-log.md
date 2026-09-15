@@ -248,6 +248,58 @@ Execution and the effort clock have not started.
 
 ---
 
+## End-to-end consistency review record — 2026-09-15 — Four pre-registered documents reviewed; five pre-use corrections
+
+Before the manual build starts, the four pre-registered documents (step-2,
+step-5, and step-7 recipes; RESULTS.md scaffold) were reviewed against each
+other, the frozen design artifact (EXP001 v1.3), the registered raw evidence,
+and the source registrations. The review was agent-assisted; the researcher's
+manual build remains the independent check.
+
+**Verified consistent (no action):**
+
+- Row anchors and window arithmetic agree across all four documents and the
+  committed step-2 anchors: row 2 = 1948-12; IS rows 15–782 (768); OOS rows
+  783–934 (152); total 920; variant first-applied rows 15/15/16/17/16 (IS n
+  768/767/766); sub-period halves 76 + 76 with boundary rows 858/859
+  (2020-04/2020-05).
+- Constants map is collision-free: `README!B4/B5/B6` (step 2), `B7` (step 5),
+  `B8/B9` (step 7); `Data` columns A–AI with no letter reused.
+- TB3MS spot anchors in the step-2 checklist match the raw file exactly
+  (1948-12 = 1.16, 1950-01 = 1.07, 2007-12 = 3.00, 2020-03 = 0.29,
+  2026-08 = 3.72).
+- Gate and append order is consistent across the step-5 recipe, the step-7
+  recipe, and the RESULTS.md scaffold: §1 before any robustness run, one §2
+  subsection per check before the next runs, §3–§5 only after all four.
+- Formulas re-derived independently: F = P_{t−1}/P_{t−13} − 1 (no look-ahead),
+  the variant signal ratios, the cost-perturbation identity
+  (main return + H×(0.001 − 0.003)), the wealth recursion, and the
+  running-peak drawdown forms.
+
+**Findings and dispositions** (all corrections pre-use; nothing was computed
+from superseded text; no data examined; effort clock not started):
+
+| # | Finding | Disposition |
+|---|---------|-------------|
+| 1 | Step-5 recipe: three OOS formulas abbreviated as "same with `>=README!$B$7`" are not valid as abbreviated — `COUNTIFS`/`AVERAGEIFS`/`SUMIFS` need the criteria range restated; a literal reading yields a broken or wrong formula | Formulas written out in full; `B7`'s role stated (OOS start constant); an Excel-version fallback fixed (never a plain COUNT/AVERAGE/SUM over a pasted range). Step-5 correction record updated. |
+| 2 | Step-5 recipe: implied that % months invested and switches are computed for the benchmark too; they are rule-construction quantities (benchmark: 100% / 0 by construction) | Clarified in the step-5 recipe. |
+| 3 | Step-2 recipe: TB3MS series locator said "column K" of the raw CSV; the series is the 12th header field = column L (raw file and `raw/provenance.md` agree) | Locator corrected; step-2 correction record updated. The series identifier was correct throughout. |
+| 4 | Step-7 recipe: the only one of the four documents without an explicit anchor-shift contingency for a last complete month other than 2026-08 | Contingency added, including the odd-OOS split rule; correction record updated. No expected row number changed. |
+| 5 | Execution log: the step-7 preparation entry was inserted before the step-6 entry, so the preparation records read 2 → 5 → 7 → 6 | Left as written (append-only); this note supersedes the implied order. All three entries are dated 2026-09-15 and no substantive claim depends on their order. |
+
+RESULTS.md scaffold: §2 preamble updated to require the n months on each side
+per robustness subsection (the step-7 recipe already required it; the
+scaffold's checklist omitted it) — scaffold revision 1.1, recorded in its
+revision history. No structural change; still no results exist.
+
+**Honesty note:** the defects were introduced and caught by the same
+agent-assisted preparation process. A self-review is weaker evidence than an
+independent review; this record exists because the corrections are real and
+pre-use, not as evidence that the pipeline is validated. Validation remains
+the researcher's manual execution, checklist by checklist.
+
+---
+
 | Phase | Minutes |
 |-------|---------|
 | Data retrieval and provenance | |
@@ -275,4 +327,7 @@ manual phases. The step-5 metrics recipe, the pre-registered RESULTS.md
 scaffold (procedure step 6), and the pre-registered step-7 robustness recipe
 together complete the computation-phase preparation; the primary result is
 transcribed to RESULTS.md only after the `Metrics` tab passes its checklist,
-and robustness checks run only after that.
+and robustness checks run only after that. An end-to-end consistency review
+of the four pre-registered documents (2026-09-15, record above) found and
+corrected five defects before use; the documents are internally consistent
+and execution-ready.

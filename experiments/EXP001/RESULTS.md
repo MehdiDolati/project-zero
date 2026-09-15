@@ -89,8 +89,8 @@ what could still change it. Written once, at the moment of transcription.
 
 Each check gets one subsection, appended as run, each stating: specification
 variant, where its numbers came from, the Sharpe difference and MDD difference,
-and whether the sign of the Sharpe difference holds. The four checks, in the
-design's order:
+the n months on each side of each comparison, and whether the sign of the
+Sharpe difference holds. The four checks, in the design's order:
 
 ### 2.1 Lookback perturbation (10, 11, 13, 14 months) — [GATE 1.5]
 
@@ -142,3 +142,4 @@ the design's Review section and still mandatory regardless of outcome.
 | Version | Date | Summary |
 |---------|------|---------|
 | 1.0 | 2026-09-15 | Scaffold created before any data was examined. No results exist. |
+| 1.1 | 2026-09-15 | Pre-execution consistency review: §2 preamble updated to require the n months on each side per check (the step-7 recipe already required it; the scaffold's checklist omitted it). No structural change; still no results exist. |

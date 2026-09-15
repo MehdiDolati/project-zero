@@ -116,7 +116,11 @@ versioned change to EXP001, not a workaround.
 
 The retrieved H.15 package is a 30-series CSV; the series is the column with
 unique identifier `H15/H15/RIFSGFSM03_N.M` ("3-month Treasury bill secondary
-market rate, discount basis") — 12th header field, column K of the raw CSV.
+market rate, discount basis") — 12th header field, **column L** of the raw CSV
+(the `Time Period` column is field 1 = column A; this locator matches the
+step-2b instructions, which copy `Time Period` + the series column only, and
+`raw/provenance.md`, which records the series at column index 11 = 12th
+field).
 
 1. Copy from `raw/TB3MS.csv`: rows 1948-12 through the last complete month,
    two columns only — `Time Period`, `RIFSGFSM03_N.M`. Paste as values into
@@ -217,3 +221,4 @@ superseded text.
 | 1 | 2026-09-15 | Initial authoring correction: the `rule_ret_IS` (K) formula was first written with a placeholder condition and constants placed in `Data!A2:A3`/`B2`, which collide with data rows. Fixed to the README constants zone and the `AND(...)` IS-window condition. |
 | 2 | 2026-09-15 | Row anchors corrected: formula examples and tests first said "row 13/14 = 1950-01"; with row 2 = 1948-12 the first IS row is row 15, IS end row 782, last row 934. All formulas, checks, and the constants sanity test updated. |
 | 3 | 2026-09-15 | Column F (`R12_prev`) was first written as `=C13`, a single-month return — not R12. Corrected to the prior-month-end 12-month price ratio `=B14/B2-1` (P_{t−1}/P_{t−13} − 1), and the fill-start rows (G, H, I, J, K from row 15) plus the flat-book entry-cost convention at H15 were made explicit. |
+| 4 | 2026-09-15 | Review correction before first use: the TB3MS series locator said "column K" of the raw CSV; the series is the 12th header field = column L (provenance records column index 11). The field/identifier were correct throughout; only the spreadsheet letter was wrong. |

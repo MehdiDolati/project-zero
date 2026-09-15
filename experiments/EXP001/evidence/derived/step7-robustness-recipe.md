@@ -59,6 +59,15 @@ Reference columns from steps 2/5: `C` m_ret, `E` tbill_monthly, `G` position,
 = 0.001 (main cost). Formulas shown at the first row of each column; fill to
 row 934 unless noted.
 
+**Anchor contingency:** every row number below (782, 783, 858, 859, 934)
+assumes the last complete month is 2026-08, per the step-2 anchors. If the
+step-2 recount found a different last complete month, shift all of them with
+the step-2 rule before writing any formula: IS end = last IS row, OOS starts
+at the next row, the first half is the first ⌈n/2⌉ OOS rows and the second half
+the remainder (if the OOS length is odd, the larger half comes first, recorded
+as a discretionary choice), and the IS n values
+(768/767/766) shift by the same difference.
+
 ### Check 1 + 3 columns — lookback and timing variants
 
 Position at row *t* = 1 if the variant signal at month *t−1* was positive,
@@ -170,3 +179,4 @@ Each failed check is a finding: log it, fix, re-run.
 | # | Date | Correction |
 |---|------|------------|
 | 1 | 2026-09-15 | Authoring correction before first use: the OOS sub-period boundary was first sketched as a calendar-year split (2014→2019 | 2020→2026). The equal-months halves of rows 783–934 are 2014-01→2020-04 and 2020-05→2026-08 (76 + 76). Fixed above. |
+| 2 | 2026-09-15 | Review correction before first use: added the explicit anchor-shift contingency for a last complete month other than 2026-08 (the other three pre-registered documents state one; this one omitted it). No row number changed — 2026-08 remains the expected last complete month. |
