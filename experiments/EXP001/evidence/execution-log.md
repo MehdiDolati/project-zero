@@ -187,6 +187,40 @@ not started.
 
 ---
 
+## Step 7 preparation record — 2026-09-15 — Robustness recipe pre-registered; execution not started
+
+To complete the pre-registered computation-phase pipeline, the four robustness
+checks were specified in advance as
+[step7-robustness-recipe.md](derived/step7-robustness-recipe.md)
+(agent-assisted; the researcher runs them per DEC001). The recipe:
+
+- fixes every variant specification before any data is examined: four lookback
+  variants (10/11/13/14 months, positions written directly as price ratios),
+  two cost variants (0 and 30 bps, positions unchanged from the main rule),
+  the 12-1 timing variant, and the OOS sub-period split,
+- pre-computes all window arithmetic from the committed row anchors: variant
+  warm-up rows, first-applied rows, IS/OOS windows (IS n of 768, 767, or 766
+  by variant; OOS 152 for all; halves of 76 + 76 months, boundary
+  2020-04/2020-05),
+- binds the execution gate and append order of the RESULTS.md scaffold:
+  checks run only after the primary result (§1) is recorded, columns are
+  added in one logged action, and each check's subsection is appended before
+  the next check is computed,
+- fixes reporting conventions: like-for-like windows (benchmark and risk-free
+  computed on the variant's own rows), per-variant wealth anchors, and the
+  full-history running peak for sub-period MDDs,
+- restates the design's scope guards: no additional perturbations, no
+  parameter search, no import of the 0.1 bound into robustness, and no
+  replacement of the frozen main specification by a better-performing
+  variant.
+
+One authoring correction was made before first use (the sub-period boundary
+is the equal-months split, not a calendar-year split); it is recorded in the
+recipe's correction record. No robustness number exists; execution and the
+effort clock have not started.
+
+---
+
 ## Step 6 preparation record — 2026-09-15 — RESULTS.md scaffold created; no result exists
 
 To make procedure step 6 executable without discretionary formatting
@@ -237,7 +271,8 @@ closes the equity-leg coverage gate on first manual open in Excel, before
 any derived series is built. The effort clock has not started. Next: the
 researcher executes recipe steps 2a–2d, records the workbook verification
 and checklist results in this log, and starts the effort clock for the
-manual phases. The step-5 metrics recipe and the pre-registered RESULTS.md
-scaffold (procedure step 6) complete the computation-phase preparation; the
-primary result is transcribed to RESULTS.md only after the `Metrics` tab
-passes its checklist.
+manual phases. The step-5 metrics recipe, the pre-registered RESULTS.md
+scaffold (procedure step 6), and the pre-registered step-7 robustness recipe
+together complete the computation-phase preparation; the primary result is
+transcribed to RESULTS.md only after the `Metrics` tab passes its checklist,
+and robustness checks run only after that.
