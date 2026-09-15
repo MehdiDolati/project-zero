@@ -119,6 +119,76 @@ historical statement.
 
 ---
 
+## Preparation-phase governance (2026-09-15): end-to-end consistency review of the pre-registered documents
+
+Before the manual build begins, the four pre-registered computation-phase
+documents — the step-2 spreadsheet recipe, the step-5 metrics recipe, the
+step-7 robustness recipe, and the RESULTS.md scaffold — were reviewed against
+each other, the frozen design artifact (EXP001 v1.3), the registered raw
+evidence, and the source registrations. The review is a governed preparation
+action under RG007 and is recorded here; the execution-side record (findings,
+corrections, honesty note) is the authoritative entry in
+[evidence/execution-log.md](evidence/execution-log.md), dated 2026-09-15.
+
+**What was done.** Anchor and window arithmetic, the constants map, spot
+values against raw data, cross-document gate and ordering rules, and all
+derivation formulas were re-derived and cross-checked. Five defects were
+found and corrected before first use, none involving data and nothing
+computed from superseded text: invalid abbreviated OOS metric formulas and
+an implied benchmark computation that is by-construction (step-5 recipe); a
+wrong spreadsheet-letter locator for the TB3MS series (step-2 recipe); a
+missing anchor-shift contingency (step-7 recipe); and a RESULTS.md §2
+requirement narrower than the step-7 recipe's reporting requirement. Each
+document's correction record was updated; RESULTS.md moved to revision 1.1.
+No rule exception or waiver was needed.
+
+### Manifest snapshot in force for this action
+
+- **manifest-version**: 1.0.0
+- **governance-version**: 1.3.1
+- **effective-as-of**: 2026-09-09 (unchanged at the time of the action, 2026-09-15)
+
+### Governing artifacts for this action
+
+| Artifact ID | Title | Version | Status | How it governed the action |
+|-------------|-------|---------|--------|----------------------------|
+| G001 | Research Governance | 1.0 | active | Evidence immutability and raw-data preservation constraints the review checked against; corrections routed as dated records, never in-place edits of recorded claims. |
+| G003 | Artifact Model | 1.0 | active | The reviewed documents are typed artifacts with stable identity; corrections are versioned in each document's own correction record. |
+| G004 | Artifact Lifecycle | 1.1 | active | All reviewed artifacts remain `active`; the action reviewed state and did not change it — no lifecycle transition occurred. |
+| G005 | Traceability Model | 1.2 | active | The chain design → pre-registered recipes → scaffold → evidence log remains reconstructable; this record and the log entry are the links. |
+| RG001 | Automation Follows Stable Manual Practice | 1.0 | active | The review was agent-assisted documentation and checking only; no computation was performed and no software was written — the manual build remains the researcher's. |
+| RG002 | Use Normative Keywords | 1.0 | active | MUST/SHOULD language in the reviewed documents was treated as normative when evaluating findings. |
+| RG003 | Stable Artifact Identity | 1.0 | active | Documents were reviewed and corrected under their existing identities; no re-identification. |
+| RG004 | Relationships are First-Class | 1.0 | active | Cross-document references (recipe → recipe → scaffold → design) were themselves part of the consistency check. |
+| RG007 | Governed Work Records Its Governance | 1.0 | active | This record: the action's governance pinned by identity and version, with the manifest snapshot above. |
+| RG008 | Artifact Authorship and Production-Tool Provenance | 1.0 | active | Authorship of the review and corrections is recorded below and in the log entry. |
+| RG009 | Claim Provenance | 1.1 | active | No registered claim altered; source citations (SRC004, SRC005) were re-checked against the raw evidence during review. |
+
+### Observations (recorded, no action required)
+
+- RG006 (Persist Agreed Rules, v1.1) and G002 (Documentation Governance,
+  v1.0) are active and were followed in the ordinary course — corrections
+  were persisted to the repository rather than left in conversation, and
+  documentation was kept synchronized with reality — but they are not listed
+  as governing for this action, because this action changed no rule and
+  triggered none of G002's mandatory documentation-change conditions.
+- This GOVERNANCE.md is not itself registered in `artifact-registry.json`
+  (registered types: governance, rules, sources, experiments). This is
+  consistent with the registry's own coverage note and is left as the open
+  governance issue it declares itself to be.
+
+### Provenance of this record (RG008)
+
+| Field | Value |
+|-------|-------|
+| `created-by-type` | `agent` |
+| `created-by` | AI assistant (Buffy) in Freebuff, on direction of the project owner |
+| `created-by-version` | not available |
+| `production-tools` | Freebuff (Buffy coding agent) |
+| `created-at` | 2026-09-15T14:31:29+03:30 |
+
+---
+
 ## Referenced but not governing
 
 These artifacts are referenced by EXP001 as subject matter or context, not as
@@ -177,11 +247,15 @@ authorization is required.
 
 ## Last updated
 
-- **date**: 2026-09-09 (execution step 1; EXP001 v1.3 — intended data sources
-  recorded and verified before download; execution log opened)
-- **by**: v1.3 — SRC004/SRC005 registered and cited; v1.2 — pre-execution
-  review, draft → active; v1.1 — claim provenance (all revisions explicit,
-  none silent)
+- **date**: 2026-09-15 (preparation phase — end-to-end consistency review of
+  the four pre-registered documents; five pre-use corrections; no data
+  examined, execution not started)
+- **by**: 2026-09-15 — preparation-phase governance recorded (section above);
+  v1.3 — SRC004/SRC005 registered and cited; v1.2 — pre-execution review,
+  draft → active; v1.1 — claim provenance (all revisions explicit, none
+  silent)
 - **manifest-version**: 1.0.0 (governance-version 1.3.1, effective 2026-09-09)
+- **previous**: 2026-09-09 (execution step 1; EXP001 v1.3 — intended data
+  sources recorded and verified before download; execution log opened)
 - **previous**: 2026-09-09 — pre-execution review, EXP001 v1.2, draft → active
 - **previous**: 2026-09-06, S002 — first experiment design, manifest-version 1.0.0
