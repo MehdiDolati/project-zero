@@ -187,6 +187,33 @@ not started.
 
 ---
 
+## Step 6 preparation record — 2026-09-15 — RESULTS.md scaffold created; no result exists
+
+To make procedure step 6 executable without discretionary formatting
+decisions under results-pressure, the findings record was scaffolded in
+advance as [RESULTS.md](../../RESULTS.md) (agent-assisted; the researcher
+fills it during execution per DEC001). The scaffold:
+
+- fixes the section structure in procedure order: primary result (§1, from
+  the `Metrics` tab 2×2 grid), robustness checks (§2, in the design's order),
+  evaluation (§3), decision (§4), trace and session updates (§5),
+- declares stage gates: §1 is filled only after the `Metrics` tab passes its
+  verification checklist; robustness checks are appended one at a time after
+  §1; §3–§5 are written only after all four checks are recorded,
+- contains no result-shaped content: no placeholder carries a value, no
+  metric cell in the workbook is frozen by the scaffold, and the
+  pre-declared 0.1 Sharpe-difference bound quoted in §4's decision criteria
+  comes from the design artifact, not from this scaffold,
+- routes corrections through superseding dated notes rather than edits to
+  recorded numbers.
+
+The design's Representations section lists `RESULTS.md` as written on
+execution; the scaffold holds structure only, and findings content still
+appears only on execution. The scaffold predates any data examination.
+Execution and the effort clock have not started.
+
+---
+
 | Phase | Minutes |
 |-------|---------|
 | Data retrieval and provenance | |
@@ -210,4 +237,7 @@ closes the equity-leg coverage gate on first manual open in Excel, before
 any derived series is built. The effort clock has not started. Next: the
 researcher executes recipe steps 2a–2d, records the workbook verification
 and checklist results in this log, and starts the effort clock for the
-manual phases.
+manual phases. The step-5 metrics recipe and the pre-registered RESULTS.md
+scaffold (procedure step 6) complete the computation-phase preparation; the
+primary result is transcribed to RESULTS.md only after the `Metrics` tab
+passes its checklist.
