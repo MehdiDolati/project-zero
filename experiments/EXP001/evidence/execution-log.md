@@ -148,6 +148,43 @@ the initial `rule_ret_IS` formula and constants placement collided with data
 rows. It is declared in the recipe's own correction record. Nothing was
 computed from the earlier text; no manual effort time elapsed.
 
+## Superseding note to the step 2 preparation record — 2026-09-15
+
+The step 2 preparation entry above states "one authoring correction". The
+recipe's correction record, as finalized before first use, lists three:
+correction 1 (rule_ret_IS formula and constants placement), correction 2
+(row-anchor offsets), correction 3 (the R12_prev column formula, which was
+first written as a single-month return). The earlier entry understates the
+count; the recipe's own correction record is authoritative. Nothing was
+computed from any superseded text, and no manual effort time elapsed.
+
+---
+
+## Step 5 preparation record — 2026-09-15 — Metrics recipe written; execution not started
+
+To keep the computation phase fully specified before any data is touched, the
+metric definitions were written out in advance as
+[step5-metrics-recipe.md](derived/step5-metrics-recipe.md) (agent-assisted;
+the researcher performs the manual build per DEC001). The recipe:
+
+- extends the step-2 table with columns L–P: rule/benchmark wealth (anchored
+  at 1.0000 on the 1949-12 row), running-peak drawdowns, and the monthly
+  risk-free decimal,
+- fixes two conventions that were open in the design artifact — wealth-unit
+  anchoring, and the OOS drawdown read against the full-history peak — both
+  to be entered in the discretionary-choices table when applied,
+- defines the eight metrics per window with exact formulas: geometric
+  annualized return taken from the wealth columns (the ×12 arithmetic form is
+  a robustness footnote only), a single Sharpe definition
+  `(mean(r) − mean(rf)) / stdev(r) × √12`, and window sizes 768 IS + 152 OOS
+  = 920 months if the last complete month is 2026-08,
+- preserves the procedure step-6 ordering safeguard: the primary result is
+  transcribed to RESULTS.md before any robustness check is run.
+
+Three authoring corrections were made to the recipe before first use,
+recorded in its own correction record. Execution and the effort clock have
+not started.
+
 ---
 
 | Phase | Minutes |
