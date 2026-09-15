@@ -125,6 +125,31 @@ Notes:
 
 ---
 
+## Step 2 preparation record — 2026-09-15 — Spreadsheet recipe written; execution not started
+
+To make procedure step 2 reproducible before it begins, the column
+definitions and formulas for the monthly table were written out in advance as
+[step2-spreadsheet-recipe.md](derived/step2-spreadsheet-recipe.md)
+(agent-assisted, per the established division of labor; the researcher
+performs the actual manual build per DEC001). The recipe:
+
+- defines the `Data` tab columns A–K with visible formulas (the derivation
+  record that SRC004 and SRC005 require in `evidence/derived/`),
+- fronts the workbook-content verification of `ie_data.xls` as recipe step 2a,
+  which closes the equity-leg coverage gate open since step 1,
+- sets row anchors (1948-12 pad month; first IS row 1950-01; 933 data rows if
+  the last complete month is 2026-08) and TB3MS spot anchors taken from the
+  raw file,
+- fixes the experiment constants (IS window 1950-01→2013-12, 10 bps per
+  switch) in a single constants zone referenced by all formulas.
+
+One authoring correction was made to the recipe before it was first used:
+the initial `rule_ret_IS` formula and constants placement collided with data
+rows. It is declared in the recipe's own correction record. Nothing was
+computed from the earlier text; no manual effort time elapsed.
+
+---
+
 | Phase | Minutes |
 |-------|---------|
 | Data retrieval and provenance | |
@@ -137,11 +162,15 @@ Notes:
 
 ## Status
 
-Updated 2026-09-09 after retrieval. Step 1 complete: sources verified
-pre-download (above), both files retrieved once, hashed, and provenance
-recorded in `raw/provenance.md`. TB3MS content fully verified (coverage,
-continuity, anchor match). `ie_data.xls` contents verify at step 2 on first
-manual open in Excel, before any derived series is built. `derived/` remains
-empty. Next: build the monthly table (procedure step 2), record the workbook
-content verification in this log, and start the effort clock for the manual
-phases.
+Updated 2026-09-15. Step 1 complete: sources verified pre-download, both
+files retrieved once, hashed, and provenance recorded in `raw/provenance.md`;
+TB3MS content fully verified (coverage, continuity, anchor match).
+Step 2 is **prepared, not started**: the manual spreadsheet recipe
+(columns, formulas, verification checklist, constants zone) is at
+[derived/step2-spreadsheet-recipe.md](derived/step2-spreadsheet-recipe.md),
+including recipe step 2a — the `ie_data.xls` workbook verification that
+closes the equity-leg coverage gate on first manual open in Excel, before
+any derived series is built. The effort clock has not started. Next: the
+researcher executes recipe steps 2a–2d, records the workbook verification
+and checklist results in this log, and starts the effort clock for the
+manual phases.
