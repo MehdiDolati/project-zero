@@ -200,6 +200,19 @@ They are not knowledge.
 
 ---
 
+# Project Principles
+
+The following principles are foundational to Project Zero and must be followed alongside Research Governance:
+
+- No research result without data provenance and fitness evidence.
+- Raw data is immutable; derived data is traceable.
+- Architect for the necessary future, implement for the present need.
+  - This means: Architecture ≠ Implementation Plan.
+- AI is not an optional automation layer. AI is part of the operating model of Project Zero.
+- Project Zero assumes that a human owner can delegate specialized cognitive and engineering work to AI agents while retaining responsibility for decisions, provenance, and final outcomes.
+
+---
+
 # Automation
 
 Automation should reduce cognitive load.
