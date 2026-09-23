@@ -26,7 +26,7 @@
 
 ## EXIT CHECK
 
-- [x] What did I actually do?
+- [ ] What did I actually do?
 - [ ] What did I learn?
 - [ ] What changed?
 - [ ] What is the exact next action?
