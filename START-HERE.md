@@ -298,6 +298,18 @@ If the North Star, assumptions, or current approach genuinely need to change:
 
 ---
 
+## First-Time Setup
+
+If you are using Project Zero on a new machine, configure the repository's Git hooks before starting work:
+
+```powershell
+.\scripts\setup-git-hooks.ps1
+```
+
+This configures the repository's Git hooks, including the Current-State Integrity guard.
+
+You only need to do this once per local clone.
+
 ## 9. The Daily Interface
 
 For normal work, there is one operational file:
