@@ -1,66 +1,46 @@
 #!/bin/sh
 
-# Project Zero — Context Preservation Guard
-
-#
-
-# A push must contain an update to CURRENT.md.
-
-# This keeps the repository resumable after interruptions and context switches.
-
 CURRENT_FILE="operating-system/CURRENT.md"
-
-remote_name="$1"
-remote_url="$2"
-
-has_current_update=0
-has_new_commits=0
 
 while read -r local_ref local_sha remote_ref remote_sha
 do
-# Ignore deleted refs.
-if [ "$local_sha" = "0000000000000000000000000000000000000000" ]; then
-continue
-fi
+    # Deleted branch/tag
+    if [ "$local_sha" = "0000000000000000000000000000000000000000" ]; then
+        continue
+    fi
 
-```
-has_new_commits=1
+    # New remote branch
+    if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
+        changed_files=$(git diff-tree --no-commit-id --name-only -r "$local_sha")
+    else
+        changed_files=$(git diff --name-only "$remote_sha" "$local_sha")
+    fi
 
-# New branch: compare against the root commit.
-if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
-    range="$local_sha"
-else
-    range="$remote_sha..$local_sha"
-fi
+    if printf '%s\n' "$changed_files" | grep -Fxq "$CURRENT_FILE"; then
+        continue
+    fi
 
-if git diff-tree --no-commit-id --name-only -r $range -- "$CURRENT_FILE" | grep -q "^$CURRENT_FILE$"; then
-    has_current_update=1
-    break
-fi
-```
+    echo ""
+    echo "=============================================="
+    echo "  PUSH BLOCKED — Project Zero"
+    echo "=============================================="
+    echo ""
+    echo "CURRENT.md was not updated in this push."
+    echo ""
+    echo "Before pushing, make Project Zero resumable:"
+    echo ""
+    echo "  - What did I complete?"
+    echo "  - What did I learn?"
+    echo "  - What decisions changed?"
+    echo "  - What is the exact NEXT ACTION?"
+    echo ""
+    echo "Update:"
+    echo "  $CURRENT_FILE"
+    echo ""
+    echo "Then commit and push again."
+    echo ""
 
+    exit 1
 done
-
-if [ "$has_new_commits" -eq 1 ] && [ "$has_current_update" -eq 0 ]; then
-echo ""
-echo "=============================================="
-echo "  PUSH BLOCKED — Project Zero"
-echo "=============================================="
-echo ""
-echo "The commits being pushed do not update:"
-echo ""
-echo "  $CURRENT_FILE"
-echo ""
-echo "Before pushing, make the project resumable:"
-echo ""
-echo "  - What did I complete?"
-echo "  - What did I learn?"
-echo "  - What decisions changed?"
-echo "  - What is the exact NEXT ACTION?"
-echo ""
-echo "Update CURRENT.md, commit it, then push again."
-echo ""
-exit 1
-fi
 
 exit 0
