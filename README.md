@@ -26,6 +26,7 @@ Snapshot as of 2026-09-27:
 |------|-------|
 | Research foundation | Complete: problem, edge concept, methodology defined |
 | Questions | Q001 drafted from the first manual Question / Observation workflow run; no claim or evidence accepted |
+| Agent contracts | AC001 drafted to encode the validated manual Question / Observation behavior; no automation approved |
 | Governance framework | Complete and self-consistent (G000-G006, RG001-RG009) |
 | Hypotheses | H000 (project should not exist) and H001 (edge is emergent) are active, untested |
 | Experiments | EXP001 design active; execution step 1 complete — sources verified pre-download, raw data retrieved, hashed, and provenance-recorded (TB3MS verified; workbook verifies at step 2). The manual computation phase (steps 2–7) is fully pre-registered — spreadsheet recipes, metric definitions, robustness variants, and the stage-gated [RESULTS.md](experiments/EXP001/RESULTS.md) scaffold, all committed and pushed before any data examination; the manual build has not started |
@@ -82,7 +83,7 @@ concepts to trusted knowledge as confidence increases.
 | [discoveries/](discoveries/README.md) | Evidence-backed findings | Empty — no evidence produced yet |
 | [decisions/](decisions/) | Operational and architectural decisions | DEC001 |
 | [sources/](sources/README.md) | Registered external sources (papers, sites, datasets) | SRC001-SRC005, cited by EXP001 |
-| [governance/](governance/README.md) | Long-term project rules | G000-G006, rules RG001-RG009, templates, manifest, registry |
+| [governance/](governance/README.md) | Long-term project rules and agent contracts | G000-G006, rules RG001-RG009, templates, agent contracts, manifest, registry |
 | [software/](software/README.md) | Implementation | Empty by design (DEC001) |
 
 The full governance model, including how governance itself evolves, is
@@ -165,6 +166,12 @@ Registered external sources that project artifacts cite
 |----|-------|--------|----------|
 | ART-QUESTION-OBSERVATION | Question / Observation | draft | [governance/templates/question-observation.md](governance/templates/question-observation.md) |
 
+## Agent Contracts
+
+| ID | Title | Status | Location |
+|----|-------|--------|----------|
+| AC001 | Question Formulation Agent Contract | draft | [governance/agent-contracts/AC001-question-formulation.md](governance/agent-contracts/AC001-question-formulation.md) |
+
 ## Governance
 
 | ID | Title | Status | Location |
@@ -204,7 +211,7 @@ Every new artifact follows the same procedure:
 
 1. **Determine the type and identity.** Use the appropriate ID family:
    research-NNN, Q (question), H (hypothesis), EXP (experiment), DEC (decision),
-   S (session), G (governance), RG (rule), SRC (external source). Identities are stable forever
+   S (session), AC (agent contract), G (governance), RG (rule), SRC (external source). Identities are stable forever
    ([RG003](governance/rules/RG003-artifact-identity.md)).
 2. **Copy the relevant template** from
    [governance/templates/](governance/templates/). Every artifact requires:

@@ -60,6 +60,18 @@ from memory alone.
 
 ---
 
+# Agent Contracts
+
+Agent contracts define a specific AI role's inputs, outputs, responsibilities,
+boundaries, and manual review criteria. They are not executable agents or
+active governance rules; a contract remains `draft` until manual use has
+validated it.
+
+- [AC001](agent-contracts/AC001-question-formulation.md) — Question
+  Formulation Agent Contract, draft
+
+---
+
 # The Artifact Lifecycle at a Glance
 
 Every artifact moves through the same states

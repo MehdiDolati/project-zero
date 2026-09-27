@@ -1,8 +1,8 @@
 {
-  "registry-version": "1.3.0",
+  "registry-version": "1.4.0",
   "updated": "2026-09-27",
   "description": "Machine-addressable index of Project Zero artifacts by stable identity. Resolve an artifact identity here before assuming a file is missing or renamed.",
-  "coverage-note": "Coverage includes governance artifacts, rules, templates, questions, experiments, and sources. Documents, principles, hypotheses, decisions, and sessions are registered in README.md only. Closing that gap is an open governance issue, not an intentional scope limit.",
+  "coverage-note": "Coverage includes governance artifacts, rules, templates, agent contracts, questions, experiments, and sources. Documents, principles, hypotheses, decisions, and sessions are registered in README.md only. Closing that gap is an open governance issue, not an intentional scope limit.",
   "artifacts": [
     {
       "id": "G000",
@@ -137,6 +137,14 @@
       "type": "artifact-template",
       "title": "Question / Observation",
       "path": "governance/templates/question-observation.md",
+      "version": "1.0",
+      "status": "draft"
+    },
+    {
+      "id": "AC001",
+      "type": "agent-contract",
+      "title": "Question Formulation Agent Contract",
+      "path": "governance/agent-contracts/AC001-question-formulation.md",
       "version": "1.0",
       "status": "draft"
     },

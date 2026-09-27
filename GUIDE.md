@@ -96,7 +96,7 @@ artifact to satisfy process — artifacts exist to reduce uncertainty
    a citation are not project knowledge.
 3. **Assign an identity.** ID families are: `research-NNN` (documents),
    `PR` (principles), `Q` (questions), `H` (hypotheses), `EXP` (experiments), `DEC` (decisions),
-   `S` (sessions), `G` (governance), `RG` (rules), `SRC` (external sources).
+   `S` (sessions), `AC` (agent contracts), `G` (governance), `RG` (rules), `SRC` (external sources).
    Take the next free number
    (e.g., `H002`). Identity is stable forever — it never changes, even if the
    file is renamed or moved.
@@ -359,6 +359,7 @@ Governance is not exempt from evidence. To change a rule or add one
 | Why the project exists | [research/000-north-star.md](research/000-north-star.md) |
 | How research works | [research/003-research-methodology.md](research/003-research-methodology.md) |
 | Frame a research uncertainty | [questions/README.md](questions/README.md) |
+| Define a manual AI role | [governance/agent-contracts/README.md](governance/agent-contracts/README.md) |
 | What an artifact is | [governance/G003-artifact-model.md](governance/G003-artifact-model.md) |
 | Lifecycle states | [governance/G004-artifact-lifecycle.md](governance/G004-artifact-lifecycle.md) |
 | Relationship vocabulary | [governance/G006-relationships.md](governance/G006-relationships.md) |
