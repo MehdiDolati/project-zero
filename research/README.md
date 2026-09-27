@@ -48,6 +48,12 @@ Foundational concepts and research documents.
 
 ↓
 
+questions/
+
+Structured uncertainties and observations.
+
+↓
+
 hypotheses/
 
 Testable claims.

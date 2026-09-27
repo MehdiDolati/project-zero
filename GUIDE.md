@@ -32,6 +32,7 @@ and artifacts live in directories by maturity:
 
 ```
 research/     foundational concepts and sessions
+questions/    structured uncertainties and observations
 hypotheses/   testable claims
 experiments/  executed investigations
 discoveries/  evidence-backed findings
@@ -94,7 +95,7 @@ artifact to satisfy process — artifacts exist to reduce uncertainty
    [sources/](sources/README.md)) — claims traced to "the literature" without
    a citation are not project knowledge.
 3. **Assign an identity.** ID families are: `research-NNN` (documents),
-   `PR` (principles), `H` (hypotheses), `EXP` (experiments), `DEC` (decisions),
+   `PR` (principles), `Q` (questions), `H` (hypotheses), `EXP` (experiments), `DEC` (decisions),
    `S` (sessions), `G` (governance), `RG` (rules), `SRC` (external sources).
    Take the next free number
    (e.g., `H002`). Identity is stable forever — it never changes, even if the
@@ -357,6 +358,7 @@ Governance is not exempt from evidence. To change a rule or add one
 |------|-------|
 | Why the project exists | [research/000-north-star.md](research/000-north-star.md) |
 | How research works | [research/003-research-methodology.md](research/003-research-methodology.md) |
+| Frame a research uncertainty | [questions/README.md](questions/README.md) |
 | What an artifact is | [governance/G003-artifact-model.md](governance/G003-artifact-model.md) |
 | Lifecycle states | [governance/G004-artifact-lifecycle.md](governance/G004-artifact-lifecycle.md) |
 | Relationship vocabulary | [governance/G006-relationships.md](governance/G006-relationships.md) |

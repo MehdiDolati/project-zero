@@ -6,21 +6,19 @@ Run the first fully manual research workflow.
 
 ## Current Objective
 
-Validate the Question / Observation stage with one real research idea, while
-identifying missing artifacts, decisions, or information before introducing
-automation.
+Define the repeatable manual behavior for converting free-form human input
+into a Question / Observation artifact before introducing automation.
 
 ## NEXT ACTION
 
-Define the canonical identity family and repository location for Question /
-Observation artifacts, then persist the manual AUDCAD, AUDNZD, and NZDCAD
-mean-reversion result.
+Draft the Question Formulation Agent Contract from Q001 and the validated
+manual Question / Observation workflow.
 
 ## Why This Matters
 
-This manual run tests whether unstructured human input can be turned into a
-clear research question without losing evidence, assumptions, or uncertainty.
-It exposes workflow gaps before an agent contract or software is introduced.
+The agent contract should encode validated manual behavior, including the
+distinction between reported results, evidence, assumptions, and independent
+questions. It must not automate a workflow that has not yet been understood.
 
 ## Blockers
 
@@ -28,17 +26,17 @@ It exposes workflow gaps before an agent contract or software is introduced.
 
 ## Last Session
 
-[S002 — First Experiment Design](../research/sessions/S002-first-experiment-design.md)
+[S003 — Question / Observation Workflow Test](../research/sessions/S003-question-observation-workflow.md)
 
 ## EXIT CHECK
 
-- [x] What did I actually do? Applied the draft Question / Observation template
-  manually to the AUDCAD, AUDNZD, and NZDCAD mean-reversion idea.
+- [x] What did I actually do? Persisted Q001 and established `questions/` with
+  the stable `Q` identity family.
 - [x] What did I learn? User-reported backtests need an explicit provenance
   status, and empirical behavior, fundamental explanation, and exploitability
   are independent questions.
-- [x] What changed? The draft template now requires evidence status/provenance
+- [x] What changed? Added Q001, the Questions directory guidance, S003, and
+  registry entries; the draft template now requires evidence status/provenance
   and a decomposition of independent questions.
-- [x] What is the exact next action? Define the canonical identity family and
-  repository location for Question / Observation artifacts, then persist this
-  manual result.
+- [x] What is the exact next action? Draft the Question Formulation Agent
+  Contract from Q001 and the validated manual workflow.

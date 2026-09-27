@@ -20,17 +20,18 @@ typed units of knowledge connected by explicit relationships
 
 # Status
 
-Snapshot as of 2026-09-15:
+Snapshot as of 2026-09-27:
 
 | Area | State |
 |------|-------|
 | Research foundation | Complete: problem, edge concept, methodology defined |
+| Questions | Q001 drafted from the first manual Question / Observation workflow run; no claim or evidence accepted |
 | Governance framework | Complete and self-consistent (G000-G006, RG001-RG009) |
 | Hypotheses | H000 (project should not exist) and H001 (edge is emergent) are active, untested |
 | Experiments | EXP001 design active; execution step 1 complete — sources verified pre-download, raw data retrieved, hashed, and provenance-recorded (TB3MS verified; workbook verifies at step 2). The manual computation phase (steps 2–7) is fully pre-registered — spreadsheet recipes, metric definitions, robustness variants, and the stage-gated [RESULTS.md](experiments/EXP001/RESULTS.md) scaffold, all committed and pushed before any data examination; the manual build has not started |
 | Discoveries | None. Correct: no evidence has been produced |
 | Software | None. Deliberate: [DEC001](decisions/DEC001-no-software-before-method.md) prohibits custom software until the manual method proves itself |
-| Sessions | S000 (founding), S001 (framework hardening), S002 (first experiment design) |
+| Sessions | S000 (founding), S001 (framework hardening), S002 (first experiment design), S003 (Question / Observation workflow test) |
 
 The framework is deliberately "method before automation"
 ([RG001](governance/rules/RG001-automation-follows-stability.md)). The next
@@ -75,6 +76,7 @@ concepts to trusted knowledge as confidence increases.
 |-----------|------|------------------|
 | [principles/](principles/) | Timeless beliefs | PR001 repository-as-source-of-truth |
 | [research/](research/README.md) | Foundational concepts and research documents | research-000 to 003; sessions/ |
+| [questions/](questions/README.md) | Structured uncertainties and observations | Q001, draft |
 | [hypotheses/](hypotheses/) | Testable claims | H000, H001 |
 | [experiments/](experiments/README.md) | Investigations and their evidence | EXP001 (design accepted; computation phase pre-registered; not executed) |
 | [discoveries/](discoveries/README.md) | Evidence-backed findings | Empty — no evidence produced yet |
@@ -102,6 +104,12 @@ index; new artifacts MUST be registered here.
 | research-001 | Problem Definition | active | [research/001-problem-definition.md](research/001-problem-definition.md) |
 | research-002 | Edge Definition | active | [research/002-edge.md](research/002-edge.md) |
 | research-003 | Research Methodology | active | [research/003-research-methodology.md](research/003-research-methodology.md) |
+
+## Questions
+
+| ID | Title | Status | Location |
+|----|-------|--------|----------|
+| Q001 | Conditional Mean Reversion in AUDCAD, AUDNZD, and NZDCAD | draft | [questions/Q001-conditional-mean-reversion-aud-crosses.md](questions/Q001-conditional-mean-reversion-aud-crosses.md) |
 
 ## Principles
 
@@ -149,6 +157,13 @@ Registered external sources that project artifacts cite
 | S000 | Project Zero (founding) | completed | [research/sessions/S000-project-zero.md](research/sessions/S000-project-zero.md) |
 | S001 | Framework Hardening | completed | [research/sessions/S001-framework-hardening.md](research/sessions/S001-framework-hardening.md) |
 | S002 | First Experiment Design | completed | [research/sessions/S002-first-experiment-design.md](research/sessions/S002-first-experiment-design.md) |
+| S003 | Question / Observation Workflow Test | completed | [research/sessions/S003-question-observation-workflow.md](research/sessions/S003-question-observation-workflow.md) |
+
+## Templates
+
+| ID | Title | Status | Location |
+|----|-------|--------|----------|
+| ART-QUESTION-OBSERVATION | Question / Observation | draft | [governance/templates/question-observation.md](governance/templates/question-observation.md) |
 
 ## Governance
 
@@ -188,8 +203,8 @@ effective rulebook is [governance/manifest.json](governance/manifest.json).
 Every new artifact follows the same procedure:
 
 1. **Determine the type and identity.** Use the appropriate ID family:
-   research-NNN, H (hypothesis), EXP (experiment), DEC (decision), S (session),
-   G (governance), RG (rule), SRC (external source). Identities are stable forever
+   research-NNN, Q (question), H (hypothesis), EXP (experiment), DEC (decision),
+   S (session), G (governance), RG (rule), SRC (external source). Identities are stable forever
    ([RG003](governance/rules/RG003-artifact-identity.md)).
 2. **Copy the relevant template** from
    [governance/templates/](governance/templates/). Every artifact requires:
