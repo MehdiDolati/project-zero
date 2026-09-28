@@ -2,23 +2,26 @@
 
 ## Current Direction
 
-Run the first fully manual research workflow.
+Validate the Question / Observation workflow under a second free-form input and
+keep the repository aligned with the result.
 
 ## Current Objective
 
-Validate the draft Question Formulation Agent Contract through another manual
-Question / Observation run before introducing automation.
+Confirm that the draft Question Formulation Agent Contract still preserves the
+required distinctions and boundaries on a materially different idea before
+considering any automation.
 
 ## NEXT ACTION
 
-Apply AC001 to a second free-form research idea and record any deviation,
-missing instruction, or unnecessary clarification it exposes.
+Record the second AC001 result in the project session log, update the artifact
+registry, and decide whether the minor mixed-language-input refinement deserves
+a contract revision.
 
 ## Why This Matters
 
-One manual result is not enough to establish a stable agent behavior. A second,
-different input tests whether AC001 produces the required distinctions without
-forcing the human into a form or prematurely starting research.
+The first manual test established the broad structure. The second run checks
+whether the contract holds on a different kind of input without introducing a
+new form or turning the idea into a hypothesis too early.
 
 ## Blockers
 
@@ -26,16 +29,16 @@ forcing the human into a form or prematurely starting research.
 
 ## Last Session
 
-[S003 — Question / Observation Workflow Test](../research/sessions/S003-question-observation-workflow.md)
+[S004 — Second Question Formulation Test](../research/sessions/S004-question-formulation-second-test.md)
 
 ## EXIT CHECK
 
-- [x] What did I actually do? Drafted AC001 from Q001 and the first manual
-  Question / Observation workflow test.
-- [x] What did I learn? User-reported backtests need an explicit provenance
-  status, and empirical behavior, fundamental explanation, and exploitability
-  are independent questions.
-- [x] What changed? Added the draft AC001 agent contract, its location and
-  identity convention, and registry entries; no automation was introduced.
-- [x] What is the exact next action? Apply AC001 to a second free-form idea and
-  record any deviation, missing instruction, or unnecessary clarification.
+- [x] What did I actually do? Applied AC001 to a second free-form crypto idea
+  and created Q002 as a draft Question / Observation artifact.
+- [x] What did I learn? The contract preserved the empirical/mechanism/exploitability
+  separation, but the mixed-language and informal nature of the input should be
+  acknowledged more explicitly.
+- [x] What changed? Added Q002 and S004, updated questions/README.md and the
+  root README, and refreshed the current state to reflect the second validation.
+- [x] What is the exact next action? Decide whether the minor language-preservation
+  refinement is worth a small AC001 wording change before the next manual review.

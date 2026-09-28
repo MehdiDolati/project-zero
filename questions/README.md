@@ -33,3 +33,4 @@ to create a new question artifact.
 | ID | Title | Status |
 |----|-------|--------|
 | Q001 | Conditional Mean Reversion in AUDCAD, AUDNZD, and NZDCAD | draft |
+| Q002 | Crypto Relative Mean Reversion after Large Dislocations | draft |

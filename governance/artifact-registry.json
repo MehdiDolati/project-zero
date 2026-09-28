@@ -157,6 +157,14 @@
       "status": "draft"
     },
     {
+      "id": "Q002",
+      "type": "question",
+      "title": "Crypto Relative Mean Reversion after Large Dislocations",
+      "path": "questions/Q002-crypto-relative-mean-reversion.md",
+      "version": "1.0",
+      "status": "draft"
+    },
+    {
       "id": "SRC001",
       "type": "source",
       "title": "Time Series Momentum (Moskowitz, Ooi & Pedersen, 2012)",

@@ -25,7 +25,7 @@ Snapshot as of 2026-09-27:
 | Area | State |
 |------|-------|
 | Research foundation | Complete: problem, edge concept, methodology defined |
-| Questions | Q001 drafted from the first manual Question / Observation workflow run; no claim or evidence accepted |
+| Questions | Q001 drafted from the first manual Question / Observation workflow run; Q002 drafted from the second AC001 test; no claim or evidence accepted |
 | Agent contracts | AC001 drafted to encode the validated manual Question / Observation behavior; no automation approved |
 | Governance framework | Complete and self-consistent (G000-G006, RG001-RG009) |
 | Hypotheses | H000 (project should not exist) and H001 (edge is emergent) are active, untested |
@@ -77,7 +77,7 @@ concepts to trusted knowledge as confidence increases.
 |-----------|------|------------------|
 | [principles/](principles/) | Timeless beliefs | PR001 repository-as-source-of-truth |
 | [research/](research/README.md) | Foundational concepts and research documents | research-000 to 003; sessions/ |
-| [questions/](questions/README.md) | Structured uncertainties and observations | Q001, draft |
+| [questions/](questions/README.md) | Structured uncertainties and observations | Q001, Q002, draft |
 | [hypotheses/](hypotheses/) | Testable claims | H000, H001 |
 | [experiments/](experiments/README.md) | Investigations and their evidence | EXP001 (design accepted; computation phase pre-registered; not executed) |
 | [discoveries/](discoveries/README.md) | Evidence-backed findings | Empty — no evidence produced yet |
@@ -111,6 +111,7 @@ index; new artifacts MUST be registered here.
 | ID | Title | Status | Location |
 |----|-------|--------|----------|
 | Q001 | Conditional Mean Reversion in AUDCAD, AUDNZD, and NZDCAD | draft | [questions/Q001-conditional-mean-reversion-aud-crosses.md](questions/Q001-conditional-mean-reversion-aud-crosses.md) |
+| Q002 | Crypto Relative Mean Reversion after Large Dislocations | draft | [questions/Q002-crypto-relative-mean-reversion.md](questions/Q002-crypto-relative-mean-reversion.md) |
 
 ## Principles
 
