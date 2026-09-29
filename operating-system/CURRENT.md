@@ -51,16 +51,26 @@ the freeze. The full files and historical costs remain unvalidated.
 
 [S005 — Gold Question Formulation Test](../research/sessions/S005-gold-question-formulation-test.md)
 
+The 2026-09-29 governance compliance review of Q001–Q003 changed no governance
+rule, methodology, or major assumption, so it required no session artifact
+(G001). Its outcome is recorded in the EXIT CHECK below and in commit
+`1cd7d17`.
+
 ## EXIT CHECK
 
-- [x] What did I actually do? Applied AC001 to the researcher's gold
-  trend-following idea and created Q003; corrected Q002/S004, whose input had
-  been invented by the assistant.
-- [x] What did I learn? Daily observations are selected for the six-year
-  historical backtest; each position has a one-year maximum.
-- [x] What changed? Added Q003 and S005, clarified AC001 v1.1, deprecated Q002,
-  corrected S004 provenance, registered Q003, and updated the indexes and
-  registry.
+- [x] What did I actually do? Verified Q001–Q003 against the governance stack
+  (G001–G006, RG002–RG009, the Question/Observation template, AC001, and all
+  three registries), fixed the findings, and committed them (1cd7d17).
+- [x] What did I learn? The three questions are compliant apart from
+  mechanical gaps. Origin-side back-links must use `related-to`, because G006
+  requires `derives-from` to be expressed from the derived artifact toward
+  its origin. G006 registers no inverse or auxiliary types, so existing
+  `cited-by` (SRC001–SRC006) and `created-in` lines are unregistered
+  vocabulary — a candidate governance evolution, not a blocker.
+- [x] What changed? Filled Q001's empty last-reviewed date; deduplicated
+  Q002's revision history and added an inline invalidation pointer (Q002
+  v1.2, registry synced); gave research-003 v1.1 backward `related-to` links
+  to Q001–Q003 and a revision history.
 - [ ] What is the exact next action? Obtain/inspect the full exports to
   verify one tick per row, equal per-row OHLC, timestamp precision and
   ordering, time-zone interpretation, Bid/Ask timestamp alignment, and
