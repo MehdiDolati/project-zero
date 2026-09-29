@@ -8,7 +8,7 @@ version: 1.0
 owner: Project Zero
 
 created: 2026-09-27
-last-reviewed:
+last-reviewed: 2026-09-27
 
 created-by-type: human + agent
 created-by: |

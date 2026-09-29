@@ -3,12 +3,12 @@ id: Q002
 type: question
 title: Invalid Assistant-Generated Crypto Idea (Deprecated)
 status: deprecated
-version: 1.1
+version: 1.2
 
 owner: Project Zero
 
 created: 2026-09-28
-last-reviewed: 2026-09-28
+last-reviewed: 2026-09-29
 
 created-by-type: agent
 created-by: |
@@ -36,6 +36,14 @@ process error. The actual second user-provided idea is recorded in Q003.
 ---
 
 # Context
+
+> **Invalidated — see the Provenance Correction above.** The paragraphs below
+> were produced from assistant-invented input that was never provided or
+> approved by Mehdi: "the researcher" described nothing. The closing claim
+> that this artifact is "the second manual use of the Question / Observation
+> template and the second test of AC001" is false, and it must not be read as
+> a validation of AC001; the actual second user-provided idea is recorded in
+> Q003. The text below is retained unmodified for historical traceability.
 
 The researcher described a repeated impression that large dislocations between major crypto assets, especially BTC and ETH, are followed by partial reversion. The idea was reported as a pattern seen over recent market moves, not as a quantified result or a preserved dataset.
 
@@ -161,4 +169,4 @@ Review this artifact after the open clarifications are answered and before a Dra
 | ------- | ---- | ------- |
 | 1.0 | 2026-09-28 | Created in error using assistant-invented input falsely attributed to the researcher. |
 | 1.1 | 2026-09-28 | Deprecated and corrected provenance; invalid content retained only for traceability. |
-| 1.0 | 2026-09-28 | First manual use of AC001 on a second free-form crypto idea. |
+| 1.2 | 2026-09-29 | Added an inline pointer from Context to the Provenance Correction; original text unchanged. |

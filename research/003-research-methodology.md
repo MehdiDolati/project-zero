@@ -5,14 +5,14 @@ type: document
 title: Research Methodology
 
 status: active
-version: 1.0
+version: 1.1
 
 owner: Project Zero
 
 confidence: 0.7
 
 created: 2026-07-28
-last-reviewed: 2026-09-04
+last-reviewed: 2026-09-29
 ---
 
 # Research Methodology
@@ -238,4 +238,16 @@ Every part of this process may be revised if evidence demonstrates a better appr
 - related-to: governance/G001-research-governance.md (G001)
 - related-to: governance/rules/RG005-benchmark-before-invention.md (RG005)
 - related-to: decisions/DEC001-no-software-before-method.md (DEC001)
+- related-to: questions/Q001-conditional-mean-reversion-aud-crosses.md (Q001)
+- related-to: questions/Q002-crypto-relative-mean-reversion.md (Q002)
+- related-to: questions/Q003-long-only-gold-trend-following.md (Q003)
 - created-in: research/sessions/S000-project-zero.md (S000)
+
+---
+
+# Revision History
+
+| Version | Date | Summary |
+| ------- | ---- | ------- |
+| 1.0 | 2026-07-28 | Initial version. |
+| 1.1 | 2026-09-29 | Added backward `related-to` links to Q001, Q002, and Q003, which declare `derives-from` this methodology. |
