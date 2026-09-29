@@ -3,12 +3,12 @@ id: SRC006
 type: source
 title: Dukascopy Bank Historical Data Export
 status: active
-version: 1.6
+version: 2.1
 
 owner: Project Zero
 
 created: 2026-09-28
-last-reviewed: 2026-09-28
+last-reviewed: 2026-09-29
 
 created-by-type: human + agent
 created-by: |
@@ -20,8 +20,8 @@ production-tools: VS Code, AI assistant (Copilot SDK), browser; versions not ava
 
 # Purpose
 
-Register Dukascopy Bank's official Historical Data Export page as the intended
-candidate source for daily XAU/USD bid/ask data for Q003.
+Register Dukascopy Bank's official Historical Data Export page and the
+researcher-reported Tick-selected Bid/Ask OHLCV exports for Q003.
 
 ---
 
@@ -55,54 +55,71 @@ In the export dialog observed that day, selectable offer sides were `Bid` and
 daily bars or both quote sides in one file.
 
 The page FAQ points users to JForex's Historical Data Manager for more custom
-timeframes, but does not enumerate whether daily XAU/USD Bid and Ask bars are
-available there.
+timeframes. The project has not independently verified the JForex route; the
+researcher's shared examples for Q003 are from separate public-page exports.
 
-On 2026-09-28, the researcher reported checking JForex Historical Data
-Manager and finding daily XAU/USD history available from 2003, with Bid and
-Ask available together in one output. On 2026-09-29, the researcher reported
-viewing the file and seeing both Bid and Ask data beginning at the displayed
-date `5/5/2003`. The file has not been provided to or independently inspected
-in Project Zero; retain the date exactly as displayed until its format and
-other file conventions are confirmed.
-The researcher also reported that the latest date displayed in the file is
-`28/9/2026` (2026-09-28).
-On 2026-09-29, the researcher confirmed the inclusive six-year evaluation
-window `2020-09-28` through `2026-09-28`, based on that reported latest date.
+The researcher provided small Bid and Ask excerpts downloaded separately
+from the public page after selecting `Tick` and one quote side at a time. The
+observed columns are `Europe/Amsterdam`, `Open`, `High`, `Low`, `Close`, and
+`Volume`. A Bid excerpt shared in text showed a timestamp such as
+`2026-09-28T12:00:00+02:00`; an Ask screenshot showed distinct OHLC prices
+within a row. The researcher reports the Bid and Ask timestamp sequences
+match and that the displayed coverage is `5/5/2003` through `28/9/2026`.
+
+The researcher confirms that each `Tick`-selected row represents one tick
+and its timestamp marks when that tick was recorded. The researcher corrected
+the previously shared Ask excerpt: in the corrected sample, Open, High, Low,
+and Close are equal in each row, consistent with one price per tick. Multiple
+ticks share the same second-level timestamp. This user-provided example is
+consistent with, but does not independently verify, the row and timestamp
+semantics. The full files have not been provided or parsed in Project Zero;
+the meaning of `Volume` and complete Bid/Ask alignment remain unverified.
+
+The researcher confirmed the inclusive six-year evaluation window
+`2020-09-28` through `2026-09-28` and approved fixed UTC+02 daily intervals
+`[00:00, 00:00 next day)`. For each side, aggregate first row Open, maximum
+High, minimum Low, and last row Close; the corrected sample has equal OHLC
+values per tick. Interpret timestamps using the export's `Europe/Amsterdam`
+context and explicit offsets where present, then convert instants to fixed
+UTC+02 for bucketing. Preserve source row order for ticks sharing a timestamp.
+Omit empty days and do not forward-fill. This is a project-defined method, not
+a verified Dukascopy daily-bar convention; full-file timestamp conventions
+and Bid/Ask alignment remain unverified.
 
 ---
 
 # How the Project Uses It
 
-- Q003 identifies Dukascopy Bank as the intended provider for daily XAU/USD
-  bid/ask history. The researcher reports viewing both Bid and Ask data from
-  `5/5/2003` and latest date `28/9/2026`; the file itself and its feed
-  conventions have not been independently verified in Project Zero.
+- Q003 identifies the Dukascopy public historical export as the intended
+  source for separate Bid and Ask OHLCV records selected with `Tick`; the
+  researcher reports one tick per row and the corrected sample has equal
+  OHLC values per tick. Full-file validation is still required before daily
+  bars are generated.
 
 ---
 
 # Known Limitations
 
-- The official page and selector establish that an XAU/USD instrument is
-  listed and that the public tool offers historical data exports. The
-  researcher reports viewing a JForex file with daily Bid and Ask data
-  beginning at `5/5/2003` and latest date `28/9/2026`; Project Zero has not
-  inspected the file.
+- The official page and selector establish that XAU/USD is listed and that
+  the public tool offers historical exports. The researcher supplied small
+  excerpts from separate Bid and Ask downloads; the full files are not in
+  Project Zero.
 - The page FAQ says timeframes range from tick-by-tick to monthly, but the
-  observed export dialog listed only Tick, Second, Minute, and Hour. The
-  researcher reports daily bars through JForex; the exported file is still
-  needed to verify that route's data and conventions.
-- The public widget offers Bid and Ask as separate UI selections. The
-  researcher reports that the JForex file contains both; its columns and
-  format have not been independently inspected.
-- Daily bar construction, timezone, treatment of missing periods, and whether
-  the downloadable series matches the researcher's intended trading account
-  remain unverified.
-- The researcher reports viewing an exported file, but it has not been
-  supplied to or independently inspected in Project Zero. The reported latest
-  covered date is `28/9/2026`; exact JForex bar construction, timezone, and
-  account-feed match remain unverified. Do not treat this source as validated
-  experiment data.
+  observed export dialog listed only Tick, Second, Minute, and Hour. Q003
+  will construct daily bars from the Tick-selected export using its specified
+  aggregation rule; no direct daily export is assumed.
+- The public widget offers Bid and Ask as separate selections. The researcher
+  reports matching timestamps across the two downloads; this has not been
+  verified from the full files.
+- The sample identifies `Europe/Amsterdam` and includes an ISO timestamp
+  ending `+02:00`. The researcher reports each row is one tick and the
+  timestamp is the tick's record time; the corrected sample has equal OHLC
+  values per row and repeated second-level timestamps. These observations
+  have not been verified against the full files. Historical offset behavior,
+  volume meaning, row ordering, coverage, missing records, and account-feed
+  match remain unverified.
+- Do not treat this source as validated experiment data until the full exports
+  and their structure are checked.
 
 ---
 
@@ -111,14 +128,18 @@ window `2020-09-28` through `2026-09-28`, based on that reported latest date.
 The official Dukascopy Bank page and its embedded historical-data selector
 were opened on 2026-09-28. The live selector displayed XAU/USD; the public
 export dialog showed separate Bid/Ask selections and Tick/Second/Minute/Hour
-periods. On the same date, the researcher reported that JForex Historical
-Data Manager offers daily XAU/USD history from 2003 and a combined Bid/Ask
-output. On 2026-09-29, the researcher reported viewing the file and seeing Bid
-and Ask data beginning at `5/5/2003`, with latest date `28/9/2026`. The file
-was not supplied to Project Zero, so its contents and conventions have not
-been independently verified. The researcher confirmed the inclusive six-year window
-`2020-09-28`–`2026-09-28` for Q003. The JForex file itself and its bar
-conventions have not been independently verified in Project Zero.
+periods. An earlier user report about JForex daily Bid/Ask availability was
+not independently verified and is not the source route currently specified
+for Q003. On 2026-09-29, the researcher shared small OHLCV excerpts from
+separate Tick-selected Bid and Ask downloads, reported matching timestamps
+and displayed coverage `5/5/2003`–`28/9/2026`, and showed a `Europe/Amsterdam`
+time label with a sample timestamp ending `+02:00`. The researcher confirms
+one tick per row and timestamp-at-tick-time semantics, then corrected the
+Ask sample to show equal OHLC values per row and repeated second-level
+timestamps. The researcher confirmed Q003's inclusive evaluation window
+`2020-09-28`–`2026-09-28` and approved fixed-UTC+02 daily boundaries and
+aggregation. The full files, timestamp conventions, and Bid/Ask alignment
+have not been independently verified in Project Zero.
 
 ---
 
@@ -136,7 +157,12 @@ conventions have not been independently verified in Project Zero.
 | 1.0 | 2026-09-28 | Registered the official page and verified the XAU/USD listing. |
 | 1.1 | 2026-09-28 | Recorded live widget offer-side and period controls; daily export and simultaneous bid/ask availability remain unverified. |
 | 1.2 | 2026-09-28 | Recorded the publisher FAQ's JForex Historical Data Manager reference; daily XAU/USD support there remains unverified. |
-| 1.3 | 2026-09-28 | Recorded the researcher's JForex report of daily XAU/USD from 2003 and combined Bid/Ask output; sample-file details remain unverified. |
+| 1.3 | 2026-09-28 | Recorded the researcher's initial, unverified report of JForex daily XAU/USD and combined Bid/Ask; later samples are from the public export page. |
 | 1.4 | 2026-09-29 | Recorded the researcher's report of viewing Bid/Ask file data beginning `5/5/2003`; file details and latest date remain unverified in Project Zero. |
 | 1.5 | 2026-09-29 | Recorded the researcher-reported latest file date `28/9/2026` and a proposed latest six-year window pending confirmation. |
 | 1.6 | 2026-09-29 | Recorded the researcher's confirmation of the inclusive evaluation window `2020-09-28`–`2026-09-28`; file conventions remain unverified. |
+| 1.7 | 2026-09-29 | Recorded the researcher's preliminary daily-bar timezone/boundary report; superseded by the tick-file clarification in 1.8. |
+| 1.8 | 2026-09-29 | Recorded an intermediate tick-data characterization; superseded by the OHLCV export samples and row-unit uncertainty in 1.9. |
+| 1.9 | 2026-09-29 | Recorded separate Tick-selected Bid/Ask OHLCV excerpts, matching-timestamp report, Europe/Amsterdam header, unresolved row unit, and fixed-UTC+02 daily resampling. |
+| 2.0 | 2026-09-29 | Recorded the researcher's one-tick-per-row and timestamp-time report, flagged its conflict with the Ask OHLC sample, and put daily aggregation on hold pending quote-field semantics. |
+| 2.1 | 2026-09-29 | Recorded the corrected Ask sample with equal OHLC values per tick and repeated second-level timestamps; reinstated the approved daily aggregation pending full-file validation. |

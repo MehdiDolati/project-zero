@@ -1,5 +1,5 @@
 {
-  "registry-version": "1.11.0",
+  "registry-version": "1.18.0",
   "updated": "2026-09-29",
   "description": "Machine-addressable index of Project Zero artifacts by stable identity. Resolve an artifact identity here before assuming a file is missing or renamed.",
   "coverage-note": "Coverage includes governance artifacts, rules, templates, agent contracts, questions, experiments, and sources. Documents, principles, hypotheses, decisions, and sessions are registered in README.md only. Closing that gap is an open governance issue, not an intentional scope limit.",
@@ -169,7 +169,7 @@
       "type": "question",
       "title": "Long-Only Trend Following in Gold",
       "path": "questions/Q003-long-only-gold-trend-following.md",
-      "version": "2.8",
+      "version": "3.5",
       "status": "draft"
     },
     {
@@ -217,7 +217,7 @@
       "type": "source",
       "title": "Dukascopy Bank Historical Data Export",
       "path": "sources/SRC006-dukascopy-historical-data-export.md",
-      "version": "1.6",
+      "version": "2.1",
       "status": "active"
     },
     {

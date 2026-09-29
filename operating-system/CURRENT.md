@@ -8,13 +8,15 @@ hypothesis or experiment.
 
 ## Current Objective
 
-Verify JForex daily-bar conventions and freeze the strategy rules before
-examining results from the confirmed six-year evaluation window.
+Validate the reported one-tick-per-row structure, equal per-row OHLC values,
+second-level timestamp duplicates, Bid/Ask alignment, and historical costs
+without examining strategy returns.
 
 ## NEXT ACTION
 
-Verify the timezone and daily bar conventions in the researcher-viewed JForex
-file; freeze strategy rules before examining the confirmed evaluation window.
+Obtain/inspect the full separate Bid and Ask exports; verify one tick per row,
+OHLC equality per tick, timestamp precision/order/timezone, coverage, and
+alignment, then inventory historical commissions and financing/swap charges.
 
 ## Why This Matters
 
@@ -24,16 +26,26 @@ historical backtest. It only qualifies as out of sample if the strategy rules
 are frozen before examining its results. Positive net returns after costs are
 the primary success criterion, with comparison to buy-and-hold reported
 separately. Each position must be closed no later than one year after entry.
-The researcher reports viewing a JForex file with daily XAU/USD Bid and Ask
-data from `5/5/2003` through `28/9/2026`. The researcher confirmed the
-inclusive six-year window `2020-09-28`–`2026-09-28`. The file was not provided
-to Project Zero; timezone, daily bar conventions, and account-feed match
-remain unverified. The period is out of sample only if the strategy rules are
-frozen before results are examined.
+The researcher reports separate Dukascopy public-site exports with `Tick`
+selected for Bid and Ask, matching timestamps, and displayed coverage
+`5/5/2003`–`28/9/2026`. Shared rows contain OHLCV fields and a
+`Europe/Amsterdam` time-zone label. The researcher confirms each row is one
+tick and its timestamp is the tick's recorded time, and corrected the Ask
+sample to show equal OHLC values per row with multiple ticks sharing
+second-level timestamps. Fixed UTC+02 daily boundaries and OHLC aggregation
+are approved, preserving file order for duplicate timestamps and omitting
+empty days without forward-filling. Full-file conventions remain
+unvalidated. The
+inclusive six-year window `2020-09-28`–`2026-09-28` is fixed. A baseline
+SMA200 long-only strategy, its execution, sizing, time stop, cost treatment,
+and buy-and-hold benchmark are frozen before results are examined. The
+researcher reports no SMA200 returns from the holdout were reviewed before
+the freeze. The full files and historical costs remain unvalidated.
 
 ## Blockers
 
-- None
+- Full exports must verify tick/OHLC semantics, timestamps, coverage, and
+  Bid/Ask alignment before daily bars or the backtest can be produced.
 
 ## Last Session
 
@@ -49,6 +61,7 @@ frozen before results are examined.
 - [x] What changed? Added Q003 and S005, clarified AC001 v1.1, deprecated Q002,
   corrected S004 provenance, registered Q003, and updated the indexes and
   registry.
-- [ ] What is the exact next action? Verify the JForex timezone and daily bar
-  conventions, then freeze strategy rules before examining results from the
-  confirmed evaluation window.
+- [ ] What is the exact next action? Obtain/inspect the full exports to
+  verify one tick per row, equal per-row OHLC, timestamp precision and
+  ordering, time-zone interpretation, Bid/Ask timestamp alignment, and
+  historical cost inputs without examining strategy returns.

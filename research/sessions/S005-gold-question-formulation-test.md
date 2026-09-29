@@ -3,12 +3,12 @@ id: S005
 type: session
 title: Gold Question Formulation Test
 status: completed
-version: 1.4
+version: 2.1
 
 owner: Project Zero
 
 created: 2026-09-28
-last-reviewed: 2026-09-28
+last-reviewed: 2026-09-29
 
 created-by-type: human + agent
 created-by: |
@@ -55,8 +55,8 @@ user-provided input.
 - Confirmed the inclusive six-year evaluation dates
   `2020-09-28` through `2026-09-28` before inspecting any backtest results.
 - Selected daily observations for the six-year historical backtest.
-- Selected historical daily bid/ask data from the broker/platform intended
-  for actual trading and named Dukascopy Bank as the intended provider.
+- Selected Dukascopy's public historical export as the intended source;
+  Bid and Ask are chosen separately in the observed widget.
 - Verified that Dukascopy Bank's official Historical Data Export page
   describes historical exports for Forex, commodities, and indices, with CSV
   and timeframes from tick to monthly; its live selector lists XAU/USD.
@@ -64,22 +64,42 @@ user-provided input.
   Minute, and Hour; Bid and Ask were separate selections. No file was
   downloaded.
 - The official FAQ refers to JForex Historical Data Manager for more custom
-  timeframes, but does not specify daily XAU/USD Bid/Ask availability there.
-- The researcher checked JForex Historical Data Manager and reported daily
-  XAU/USD history from 2003, with Bid and Ask together in one output. This is
-  recorded as a researcher-reported UI observation, not an independently
-  verified file inspection.
-- On 2026-09-29, the researcher reported viewing the file and seeing Bid and
-  Ask data beginning at the displayed date `5/5/2003`. The file was not
-  provided to Project Zero; the latest date, date format, timezone, and bar
-  conventions remain unverified.
+  timeframes. Earlier descriptions in this log of a supplied daily file or
+  individual raw tick records are superseded by the export-sample clarification
+  below.
 - The researcher reported that the latest date displayed in the file is
   `28/9/2026`. On 2026-09-29, the researcher confirmed the inclusive
   six-year evaluation window `2020-09-28` through `2026-09-28`. The file's
-  timezone and daily bar conventions remain unverified.
-- Registered the official page as SRC006. The sample file, exact fields,
-  exported date coverage, bar conventions, and account-feed match remain
-  unverified.
+  timezone and daily bar conventions have not been independently verified.
+- On 2026-09-29, the researcher shared small Bid and Ask excerpts downloaded
+  separately from the public site with `Tick` selected. Both excerpts show
+  `Open`, `High`, `Low`, `Close`, and `Volume`; the time-zone label is
+  `Europe/Amsterdam`, and a supplied Bid timestamp ends in `+02:00`.
+- The researcher reports matching timestamps between the separate Bid/Ask
+  downloads and confirms that each row represents one tick whose timestamp
+  marks when it was recorded. The researcher corrected the earlier Ask
+  excerpt: the corrected sample has equal Open, High, Low, and Close values
+  per row, consistent with one price per tick. Multiple rows share a
+  second-level timestamp. These reports have not been independently verified
+  against the full files.
+- The researcher selected fixed UTC+02 daily boundaries and the approved
+  aggregation: first Open, maximum High, minimum Low, and last Close per day
+  for each side, preserving source order for records with duplicate
+  timestamps. Use the timestamp's `Europe/Amsterdam` context and explicit
+  offsets to convert instants to fixed UTC+02. Omit empty days and do not
+  forward-fill.
+- On 2026-09-29, the researcher approved and froze a single SMA200
+  long-only baseline before examining evaluation-period returns, including
+  signal prices, next-bar Bid/Ask execution, the one-year time stop,
+  post-stop re-entry rule, 1x compounded exposure, cost treatment, and
+  symmetric buy-and-hold benchmark.
+- The researcher reports that no SMA200 returns from `2020-09-28` through
+  `2026-09-28` were reviewed or used before the rules were frozen. The period
+  is designated as a holdout subject to this report and later data validation.
+- Registered the official page and the researcher-reported Tick-selected
+  Bid/Ask OHLCV exports as SRC006. The full files, row semantics, timestamp
+  interpretation, volume meaning, complete alignment, coverage, and
+  missing-record pattern remain unverified.
 - Separated the historical-trend premise, strategy performance, and risk
   criteria into a primary question and related independent questions.
 - Deprecated Q002 and added provenance corrections to Q002 and S004 because
@@ -135,24 +155,39 @@ the actual second manual test is Q003/S005.
   report comparison with buy-and-hold separately.
 - Set the historical evaluation horizon to six years.
 - Use a historical six-year backtest for that evaluation.
-- Treat it as out-of-sample only if the strategy rules are frozen before
-  inspecting its results.
+- Designate the fixed evaluation period as the out-of-sample holdout, based on
+  the researcher's report that no SMA200 returns were reviewed before the
+  rules were frozen.
 - Freeze the six-year inclusive evaluation dates at `2020-09-28` through
   `2026-09-28`, as confirmed by the researcher and before examining results.
+- Record the researcher's report that each `Tick`-selected row is one tick
+  and its timestamp marks the tick record time; the corrected Ask sample has
+  equal OHLC values per row and repeated second-level timestamps. Validate
+  these conventions against the full exports before computing results.
+- Construct daily bars using fixed-UTC+02 boundaries and the approved OHLC
+  aggregation, preserving source row order for duplicate timestamps; omit
+  empty days and do not forward-fill.
+- Freeze the SMA200 baseline rules before examining evaluation returns; do not
+  tune them against this period.
+- Use Ask for entries and Bid for exits; include historical commissions and
+  financing/swap charges where reliable records exist, and disclose gaps
+  rather than claiming full net returns when material costs are unavailable.
+- Compare against a 1x buy-and-hold benchmark using the same evaluation
+  boundaries and available cost treatment.
+- Disclose material cost inputs that cannot be verified; do not describe
+  incomplete-cost results as fully net.
 - Use daily observations for the backtest.
-- Prefer historical daily bid/ask data from the intended trading
-  broker/platform. The researcher reports viewing a JForex file containing
-  daily XAU/USD Bid and Ask from `5/5/2003` through `28/9/2026`; the
-  researcher fixed the inclusive six-year evaluation dates at
-  `2020-09-28`–`2026-09-28`.
-- Cite SRC006 for provider-page claims and distinguish researcher-reported
-  JForex UI observations from independently verified facts. Do not treat the
-  candidate source as validated data until a sample export is checked.
-- Resolve the discrepancy between the FAQ's tick-to-monthly description and
-  the visible widget's Tick/Second/Minute/Hour choices before proceeding.
-- Verify timezone and daily bar conventions before analysis; the fixed
-  evaluation dates do not make the period out of sample unless the strategy
-  rules are frozen before inspecting results. Do not share account credentials.
+- Use separate Tick-selected Bid and Ask OHLCV exports from the Dukascopy
+  public historical page. The researcher reports matching timestamps and
+  displayed coverage `5/5/2003`–`28/9/2026`; validate one tick per row,
+  equal OHLC values within each tick, timestamp precision/order, and full
+  Bid/Ask alignment before generating daily bars.
+- Cite SRC006 for provider-page claims and distinguish shared sample
+  observations and researcher reports from independently verified facts. Do
+  not treat the exports as validated until timestamp semantics, coverage,
+  and alignment are checked.
+- Obtain or inspect the full Bid/Ask exports to validate timestamp semantics,
+  coverage, and missing records; do not share account credentials.
 
 ---
 
@@ -170,14 +205,14 @@ the actual second manual test is Q003/S005.
 - questions/Q002-crypto-relative-mean-reversion.md (Q002) — deprecated with
   provenance correction.
 - questions/Q003-long-only-gold-trend-following.md (Q003) — updated with
-  researcher clarifications through version 2.8.
+  researcher clarifications through version 3.5.
 - sources/SRC006-dukascopy-historical-data-export.md (SRC006) — registered the
-  official Dukascopy Bank export page and updated it with researcher-reported
-  JForex file observations while retaining verification limitations.
+  official Dukascopy Bank export page and recorded the shared public-export
+  samples while retaining verification limitations; updated to version 2.1.
 - research/sessions/S004-question-formulation-second-test.md (S004) — appended
   provenance correction.
 - governance/artifact-registry.json — registered Q003 and updated artifact
-  versions and status, including SRC006 v1.6 and Q003 v2.8.
+  versions and status, including SRC006 v2.1 and Q003 v3.5.
 - sources/README.md and README.md — registered SRC006 in the source indexes.
 - questions/README.md and README.md — updated question and session indexes.
 - operating-system/CURRENT.md — recorded the confirmed evaluation window and
@@ -197,13 +232,25 @@ In follow-up, the researcher selected spot gold quoted in US dollars
 (XAU/USD), positive net returns after costs as the primary success criterion,
 a separate buy-and-hold comparison, a six-year historical evaluation period,
 daily observations, and a hard one-year maximum holding period for each
-position. The researcher reports viewing a JForex file containing Bid and Ask
-data from `5/5/2003` through `28/9/2026`. The file was not supplied to Project
-Zero. The researcher confirmed the inclusive evaluation window
-`2020-09-28` through `2026-09-28`; timezone and bar conventions remain
-unverified. The dates are fixed before examining results, but the period is
-not out of sample unless the strategy rules are frozen before results are
-inspected. Q003 was updated to version 2.8.
+position. The researcher shared small Bid and Ask OHLCV excerpts from
+separate public-site downloads with `Tick` selected, reporting matching
+timestamps and displayed coverage `5/5/2003` through `28/9/2026`. The excerpt
+labels time `Europe/Amsterdam` and includes a sample timestamp at `+02:00`.
+The researcher confirms each row is one tick and the timestamp marks when it
+was recorded, then corrects the Ask sample: OHLC values are equal within each
+row, with multiple ticks sharing second-level timestamps. The researcher
+approved fixed-UTC+02 daily boundaries and OHLC aggregation, preserving row
+order for repeated timestamps; empty days are to be omitted and not
+forward-filled. The full files and these conventions still require validation.
+The researcher
+confirmed the inclusive
+evaluation window `2020-09-28` through `2026-09-28` and approved a single
+SMA200 long-only baseline, its next-bar Ask/Bid execution, position sizing,
+time stop, cost treatment, and buy-and-hold benchmark before examining
+returns. The researcher reports that no SMA200 returns from the evaluation
+period were reviewed before rule freeze; the period is designated as a
+holdout subject to that report and subsequent data validation. Full files
+have not been inspected in Project Zero. Q003 was updated to version 3.5.
 
 ---
 
