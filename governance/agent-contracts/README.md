@@ -16,4 +16,4 @@ automation decision under [RG001](../rules/RG001-automation-follows-stability.md
 
 | ID | Title | Status |
 |----|-------|--------|
-| AC001 | Question Formulation Agent Contract | draft |
+| AC001 | Question Formulation Agent Contract | draft (v1.1) |

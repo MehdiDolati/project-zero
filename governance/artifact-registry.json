@@ -1,6 +1,6 @@
 {
-  "registry-version": "1.4.0",
-  "updated": "2026-09-27",
+  "registry-version": "1.11.0",
+  "updated": "2026-09-29",
   "description": "Machine-addressable index of Project Zero artifacts by stable identity. Resolve an artifact identity here before assuming a file is missing or renamed.",
   "coverage-note": "Coverage includes governance artifacts, rules, templates, agent contracts, questions, experiments, and sources. Documents, principles, hypotheses, decisions, and sessions are registered in README.md only. Closing that gap is an open governance issue, not an intentional scope limit.",
   "artifacts": [
@@ -145,7 +145,7 @@
       "type": "agent-contract",
       "title": "Question Formulation Agent Contract",
       "path": "governance/agent-contracts/AC001-question-formulation.md",
-      "version": "1.0",
+      "version": "1.1",
       "status": "draft"
     },
     {
@@ -159,9 +159,17 @@
     {
       "id": "Q002",
       "type": "question",
-      "title": "Crypto Relative Mean Reversion after Large Dislocations",
+      "title": "Invalid Assistant-Generated Crypto Idea (Deprecated)",
       "path": "questions/Q002-crypto-relative-mean-reversion.md",
-      "version": "1.0",
+      "version": "1.1",
+      "status": "deprecated"
+    },
+    {
+      "id": "Q003",
+      "type": "question",
+      "title": "Long-Only Trend Following in Gold",
+      "path": "questions/Q003-long-only-gold-trend-following.md",
+      "version": "2.8",
       "status": "draft"
     },
     {
@@ -202,6 +210,14 @@
       "title": "FRED TB3MS — 3-Month Treasury Bill Secondary Market Rate, Monthly",
       "path": "sources/SRC005-fred-tb3ms-monthly.md",
       "version": "1.0",
+      "status": "active"
+    },
+    {
+      "id": "SRC006",
+      "type": "source",
+      "title": "Dukascopy Bank Historical Data Export",
+      "path": "sources/SRC006-dukascopy-historical-data-export.md",
+      "version": "1.6",
       "status": "active"
     },
     {

@@ -2,26 +2,34 @@
 
 ## Current Direction
 
-Validate the Question / Observation workflow under a second free-form input and
-keep the repository aligned with the result.
+Continue the manual Question / Observation workflow with clear input
+provenance, then resolve the open scope decisions in Q003 before proposing any
+hypothesis or experiment.
 
 ## Current Objective
 
-Confirm that the draft Question Formulation Agent Contract still preserves the
-required distinctions and boundaries on a materially different idea before
-considering any automation.
+Verify JForex daily-bar conventions and freeze the strategy rules before
+examining results from the confirmed six-year evaluation window.
 
 ## NEXT ACTION
 
-Record the second AC001 result in the project session log, update the artifact
-registry, and decide whether the minor mixed-language-input refinement deserves
-a contract revision.
+Verify the timezone and daily bar conventions in the researcher-viewed JForex
+file; freeze strategy rules before examining the confirmed evaluation window.
 
 ## Why This Matters
 
-The first manual test established the broad structure. The second run checks
-whether the contract holds on a different kind of input without introducing a
-new form or turning the idea into a hypothesis too early.
+The actual second manual AC001 test is now recorded in Q003 and S005. The
+selected instrument is spot XAU/USD, and the evaluation is a six-year
+historical backtest. It only qualifies as out of sample if the strategy rules
+are frozen before examining its results. Positive net returns after costs are
+the primary success criterion, with comparison to buy-and-hold reported
+separately. Each position must be closed no later than one year after entry.
+The researcher reports viewing a JForex file with daily XAU/USD Bid and Ask
+data from `5/5/2003` through `28/9/2026`. The researcher confirmed the
+inclusive six-year window `2020-09-28`–`2026-09-28`. The file was not provided
+to Project Zero; timezone, daily bar conventions, and account-feed match
+remain unverified. The period is out of sample only if the strategy rules are
+frozen before results are examined.
 
 ## Blockers
 
@@ -29,16 +37,18 @@ new form or turning the idea into a hypothesis too early.
 
 ## Last Session
 
-[S004 — Second Question Formulation Test](../research/sessions/S004-question-formulation-second-test.md)
+[S005 — Gold Question Formulation Test](../research/sessions/S005-gold-question-formulation-test.md)
 
 ## EXIT CHECK
 
-- [x] What did I actually do? Applied AC001 to a second free-form crypto idea
-  and created Q002 as a draft Question / Observation artifact.
-- [x] What did I learn? The contract preserved the empirical/mechanism/exploitability
-  separation, but the mixed-language and informal nature of the input should be
-  acknowledged more explicitly.
-- [x] What changed? Added Q002 and S004, updated questions/README.md and the
-  root README, and refreshed the current state to reflect the second validation.
-- [x] What is the exact next action? Decide whether the minor language-preservation
-  refinement is worth a small AC001 wording change before the next manual review.
+- [x] What did I actually do? Applied AC001 to the researcher's gold
+  trend-following idea and created Q003; corrected Q002/S004, whose input had
+  been invented by the assistant.
+- [x] What did I learn? Daily observations are selected for the six-year
+  historical backtest; each position has a one-year maximum.
+- [x] What changed? Added Q003 and S005, clarified AC001 v1.1, deprecated Q002,
+  corrected S004 provenance, registered Q003, and updated the indexes and
+  registry.
+- [ ] What is the exact next action? Verify the JForex timezone and daily bar
+  conventions, then freeze strategy rules before examining results from the
+  confirmed evaluation window.

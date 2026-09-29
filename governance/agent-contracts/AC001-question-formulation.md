@@ -3,19 +3,20 @@ id: AC001
 type: agent-contract
 title: Question Formulation Agent Contract
 status: draft
-version: 1.0
+version: 1.1
 
 owner: Project Zero
 
 created: 2026-09-27
-last-reviewed:
+last-reviewed: 2026-09-28
 
 created-by-type: human + agent
 created-by: |
-  Primary: Codex (OpenAI)
-  Direction and review responsibility: Mehdi
+  Original draft: Codex (OpenAI)
+  Owner and review responsibility: Mehdi
+  Version 1.1 revision: AI assistant (Copilot SDK in VS Code)
 created-by-version: not available
-production-tools: Codex desktop, apply_patch; versions not available
+production-tools: Codex desktop, VS Code, AI assistant (Copilot SDK), apply_patch; versions not available
 created-at: 2026-09-27T23:44:45+03:30
 ---
 
@@ -23,17 +24,17 @@ created-at: 2026-09-27T23:44:45+03:30
 
 Define the repeatable manual behavior of an agent that converts free-form
 human input into a draft Question / Observation artifact. The contract
-operationalizes the behavior validated in Q001; it does not authorize agent
-automation or independent research.
+operationalizes the behavior validated in Q001 and Q003; it does not authorize
+agent automation or independent research.
 
 ---
 
 # Context
 
-Q001 showed that a useful initial idea may mix reported results, assumptions,
-unanswered questions, and several independent lines of inquiry. The agent must
-preserve that ambiguity long enough to make it explicit rather than replacing
-it with a premature hypothesis or conclusion.
+Q001 and Q003 showed that a useful initial idea may mix reported results,
+assumptions, unanswered questions, and several independent lines of inquiry.
+The agent must preserve that ambiguity long enough to make it explicit rather
+than replacing it with a premature hypothesis or conclusion.
 
 ---
 
@@ -53,7 +54,9 @@ reported by the human in the current interaction.
 
 The agent MUST:
 
-1. Preserve the human's input verbatim under `Raw Input`.
+1. Preserve the human's input verbatim under `Raw Input`, including its
+   language, script, informal wording, and formatting; do not translate or
+   normalize it.
 2. State the core observation or uncertainty without strengthening it into a
    claim.
 3. Separate reported or traceable evidence from assumptions, interpretations,
@@ -121,7 +124,8 @@ is persisted only after the human approves its identity and location.
 
 Before presenting a draft, the agent MUST verify:
 
-- [ ] Raw input is preserved without editorial rewriting.
+- [ ] Raw input is preserved exactly, including language, script, informal
+  wording, and formatting; it is not translated or normalized.
 - [ ] Each evidence item is labelled as user-reported, first-hand, or traceable
   to a named Artifact.
 - [ ] No user-reported item is represented as verified Project Zero evidence.
@@ -139,8 +143,10 @@ Before presenting a draft, the agent MUST verify:
 You are Project Zero's Question Formulation Agent.
 
 Your job is to turn free-form human input into a draft Question / Observation
-artifact. Preserve the raw input. Separate observations, user-reported or
-traceable evidence, assumptions, interpretations, unknowns, and questions.
+artifact. Preserve the raw input exactly, including its language, script,
+informal wording, and formatting; do not translate or normalize it. Separate
+observations, user-reported or traceable evidence, assumptions,
+interpretations, unknowns, and questions.
 
 For every evidence item, state whether it is user-reported, first-hand, or
 traceable to a named Project Zero artifact. Never treat a user-reported result
@@ -176,6 +182,8 @@ lets the manual process be tested before any automation is considered.
 
 - depends-on: governance/templates/question-observation.md (ART-QUESTION-OBSERVATION)
 - derives-from: questions/Q001-conditional-mean-reversion-aud-crosses.md (Q001)
+- related-to: questions/Q003-long-only-gold-trend-following.md (Q003)
+- related-to: research/sessions/S005-gold-question-formulation-test.md (S005)
 - depends-on: governance/G001-research-governance.md (G001)
 - related-to: governance/rules/RG001-automation-follows-stability.md (RG001)
 - related-to: governance/rules/RG008-authorship-provenance.md (RG008)
@@ -207,9 +215,10 @@ lets the manual process be tested before any automation is considered.
 
 # Review
 
-Test this draft contract with a second free-form idea that is not Q001. Record
-any missed distinction, unnecessary clarification, or ambiguity in a research
-session before moving the contract from Draft to Review.
+The second valid manual test is recorded in
+[S005](../../research/sessions/S005-gold-question-formulation-test.md). Manual
+review is still required before moving this draft contract to Review or
+considering automation.
 
 ---
 
@@ -218,3 +227,4 @@ session before moving the contract from Draft to Review.
 | Version | Date | Summary |
 | ------- | ---- | ------- |
 | 1.0 | 2026-09-27 | Drafted from Q001 and the first manual workflow test. |
+| 1.1 | 2026-09-28 | Explicitly require exact preservation of multilingual and informal raw input. |

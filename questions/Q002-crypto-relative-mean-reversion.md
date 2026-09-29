@@ -1,19 +1,19 @@
 ---
 id: Q002
 type: question
-title: Crypto Relative Mean Reversion after Large Dislocations
-status: draft
-version: 1.0
+title: Invalid Assistant-Generated Crypto Idea (Deprecated)
+status: deprecated
+version: 1.1
 
 owner: Project Zero
 
 created: 2026-09-28
-last-reviewed:
+last-reviewed: 2026-09-28
 
-created-by-type: human + agent
+created-by-type: agent
 created-by: |
-  Primary: Mehdi
-  Agent-assisted by: AI assistant (Copilot SDK in VS Code)
+  AI assistant (Copilot SDK in VS Code), in error; the input was invented and
+  was not provided or approved by Mehdi.
 created-by-version: not available
 production-tools: VS Code, AI assistant (Copilot SDK); versions not available
 created-at: 2026-09-28T14:00:00+03:30
@@ -22,6 +22,16 @@ created-at: 2026-09-28T14:00:00+03:30
 # Purpose
 
 Preserve and structure a free-form observation about possible relative mean reversion in major crypto pairs so that it can be investigated without treating it as established evidence or a trading edge.
+
+---
+
+# Provenance Correction — 2026-09-28
+
+This artifact was created from input invented by the assistant, not from a
+research idea supplied by Mehdi. Its `Raw Input`, reported observations, and
+attribution to Mehdi are invalid and MUST NOT be used as project knowledge or
+as a validation of AC001. It is retained as a deprecated record of that
+process error. The actual second user-provided idea is recorded in Q003.
 
 ---
 
@@ -149,4 +159,6 @@ Review this artifact after the open clarifications are answered and before a Dra
 
 | Version | Date | Summary |
 | ------- | ---- | ------- |
+| 1.0 | 2026-09-28 | Created in error using assistant-invented input falsely attributed to the researcher. |
+| 1.1 | 2026-09-28 | Deprecated and corrected provenance; invalid content retained only for traceability. |
 | 1.0 | 2026-09-28 | First manual use of AC001 on a second free-form crypto idea. |

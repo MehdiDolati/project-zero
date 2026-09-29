@@ -52,6 +52,7 @@ not mirror the source's content.
 | SRC003 | A Century of Evidence on Trend-Following Investing (Hurst, Ooi & Pedersen, 2017) | paper | active | [SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md](SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md) |
 | SRC004 | Shiller US Stock Market Data (ie_data.xls), 1871–present | dataset | active | [SRC004-shiller-ie-data-monthly-stock.md](SRC004-shiller-ie-data-monthly-stock.md) |
 | SRC005 | FRED TB3MS — 3-Month Treasury Bill Secondary Market Rate, Monthly, 1934–present | dataset | active | [SRC005-fred-tb3ms-monthly.md](SRC005-fred-tb3ms-monthly.md) |
+| SRC006 | Dukascopy Bank Historical Data Export | website / historical-data export tool | active | [SRC006-dukascopy-historical-data-export.md](SRC006-dukascopy-historical-data-export.md) |
 
 Original project ideas are not sources and do not belong in this directory;
 they live under `research/` and `hypotheses/` with no citation required
@@ -64,4 +65,6 @@ they live under `research/` and `hypotheses/` with no citation required
 Created 2026-09-09 with three literature sources (SRC001-SRC003); expanded the
 same day with the two datasets cited by
 [EXP001](../experiments/EXP001/EXP001-momentum-replication.md) at execution
-(SRC004, SRC005).
+(SRC004, SRC005). Expanded on 2026-09-28 with the official data-export source
+candidate for Q003 (SRC006); its data fields and coverage are not yet
+validated.

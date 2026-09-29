@@ -20,19 +20,19 @@ typed units of knowledge connected by explicit relationships
 
 # Status
 
-Snapshot as of 2026-09-27:
+Snapshot as of 2026-09-28:
 
 | Area | State |
 |------|-------|
 | Research foundation | Complete: problem, edge concept, methodology defined |
-| Questions | Q001 drafted from the first manual Question / Observation workflow run; Q002 drafted from the second AC001 test; no claim or evidence accepted |
-| Agent contracts | AC001 drafted to encode the validated manual Question / Observation behavior; no automation approved |
+| Questions | Q001 and Q003 are drafts; Q002 is deprecated because its input was assistant-invented; no claim or evidence accepted |
+| Agent contracts | AC001 v1.1 reflects two valid manual Question / Observation tests; no automation approved |
 | Governance framework | Complete and self-consistent (G000-G006, RG001-RG009) |
 | Hypotheses | H000 (project should not exist) and H001 (edge is emergent) are active, untested |
 | Experiments | EXP001 design active; execution step 1 complete — sources verified pre-download, raw data retrieved, hashed, and provenance-recorded (TB3MS verified; workbook verifies at step 2). The manual computation phase (steps 2–7) is fully pre-registered — spreadsheet recipes, metric definitions, robustness variants, and the stage-gated [RESULTS.md](experiments/EXP001/RESULTS.md) scaffold, all committed and pushed before any data examination; the manual build has not started |
 | Discoveries | None. Correct: no evidence has been produced |
 | Software | None. Deliberate: [DEC001](decisions/DEC001-no-software-before-method.md) prohibits custom software until the manual method proves itself |
-| Sessions | S000 (founding), S001 (framework hardening), S002 (first experiment design), S003 (Question / Observation workflow test) |
+| Sessions | S000-S003; S004 retained with a provenance correction; S005 records the second valid AC001 test |
 
 The framework is deliberately "method before automation"
 ([RG001](governance/rules/RG001-automation-follows-stability.md)). The next
@@ -77,7 +77,7 @@ concepts to trusted knowledge as confidence increases.
 |-----------|------|------------------|
 | [principles/](principles/) | Timeless beliefs | PR001 repository-as-source-of-truth |
 | [research/](research/README.md) | Foundational concepts and research documents | research-000 to 003; sessions/ |
-| [questions/](questions/README.md) | Structured uncertainties and observations | Q001, Q002, draft |
+| [questions/](questions/README.md) | Structured uncertainties and observations | Q001, Q003 draft; Q002 deprecated |
 | [hypotheses/](hypotheses/) | Testable claims | H000, H001 |
 | [experiments/](experiments/README.md) | Investigations and their evidence | EXP001 (design accepted; computation phase pre-registered; not executed) |
 | [discoveries/](discoveries/README.md) | Evidence-backed findings | Empty — no evidence produced yet |
@@ -111,7 +111,8 @@ index; new artifacts MUST be registered here.
 | ID | Title | Status | Location |
 |----|-------|--------|----------|
 | Q001 | Conditional Mean Reversion in AUDCAD, AUDNZD, and NZDCAD | draft | [questions/Q001-conditional-mean-reversion-aud-crosses.md](questions/Q001-conditional-mean-reversion-aud-crosses.md) |
-| Q002 | Crypto Relative Mean Reversion after Large Dislocations | draft | [questions/Q002-crypto-relative-mean-reversion.md](questions/Q002-crypto-relative-mean-reversion.md) |
+| Q002 | Invalid Assistant-Generated Crypto Idea | deprecated | [questions/Q002-crypto-relative-mean-reversion.md](questions/Q002-crypto-relative-mean-reversion.md) |
+| Q003 | Long-Only Trend Following in Gold | draft | [questions/Q003-long-only-gold-trend-following.md](questions/Q003-long-only-gold-trend-following.md) |
 
 ## Principles
 
@@ -151,6 +152,7 @@ Registered external sources that project artifacts cite
 | SRC003 | A Century of Evidence on Trend-Following Investing (Hurst, Ooi & Pedersen, 2017) | active | [sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md](sources/SRC003-hurst-ooi-pedersen-2017-century-of-evidence.md) |
 | SRC004 | Shiller US Stock Market Data (ie_data.xls) | active | [sources/SRC004-shiller-ie-data-monthly-stock.md](sources/SRC004-shiller-ie-data-monthly-stock.md) |
 | SRC005 | FRED TB3MS — 3-Month Treasury Bill Secondary Market Rate, Monthly | active | [sources/SRC005-fred-tb3ms-monthly.md](sources/SRC005-fred-tb3ms-monthly.md) |
+| SRC006 | Dukascopy Bank Historical Data Export | active | [sources/SRC006-dukascopy-historical-data-export.md](sources/SRC006-dukascopy-historical-data-export.md) |
 
 ## Sessions
 
@@ -160,6 +162,8 @@ Registered external sources that project artifacts cite
 | S001 | Framework Hardening | completed | [research/sessions/S001-framework-hardening.md](research/sessions/S001-framework-hardening.md) |
 | S002 | First Experiment Design | completed | [research/sessions/S002-first-experiment-design.md](research/sessions/S002-first-experiment-design.md) |
 | S003 | Question / Observation Workflow Test | completed | [research/sessions/S003-question-observation-workflow.md](research/sessions/S003-question-observation-workflow.md) |
+| S004 | Second Question Formulation Test (provenance corrected) | completed | [research/sessions/S004-question-formulation-second-test.md](research/sessions/S004-question-formulation-second-test.md) |
+| S005 | Gold Question Formulation Test | completed | [research/sessions/S005-gold-question-formulation-test.md](research/sessions/S005-gold-question-formulation-test.md) |
 
 ## Templates
 
@@ -171,7 +175,7 @@ Registered external sources that project artifacts cite
 
 | ID | Title | Status | Location |
 |----|-------|--------|----------|
-| AC001 | Question Formulation Agent Contract | draft | [governance/agent-contracts/AC001-question-formulation.md](governance/agent-contracts/AC001-question-formulation.md) |
+| AC001 | Question Formulation Agent Contract (v1.1) | draft | [governance/agent-contracts/AC001-question-formulation.md](governance/agent-contracts/AC001-question-formulation.md) |
 
 ## Governance
 
