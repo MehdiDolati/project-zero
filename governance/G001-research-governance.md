@@ -5,12 +5,12 @@ type: governance
 title: Research Governance
 
 status: active
-version: 1.0
+version: 1.1
 
 owner: Project Zero
 
 created: 2026-07-28
-last-reviewed: 2026-09-04
+last-reviewed: 2026-09-30
 ---
 
 # Purpose
@@ -202,14 +202,20 @@ They are not knowledge.
 
 # Project Principles
 
-The following principles are foundational to Project Zero and must be followed alongside Research Governance:
+The foundational principles of Project Zero are defined as first-class artifacts
+under `principles/`. They MUST be followed alongside Research Governance. They
+are referenced here, not restated, so that each principle has a single
+authoritative definition and stable identity.
 
-- No research result without data provenance and fitness evidence.
-- Raw data is immutable; derived data is traceable.
-- Architect for the necessary future, implement for the present need.
-  - This means: Architecture ≠ Implementation Plan.
-- AI is not an optional automation layer. AI is part of the operating model of Project Zero.
-- Project Zero assumes that a human owner can delegate specialized cognitive and engineering work to AI agents while retaining responsibility for decisions, provenance, and final outcomes.
+- [PR001 — Repository as Source of Truth](../principles/repository-as-source-of-truth.md)
+- [PR002 — Data Provenance and Fitness Evidence](../principles/PR002-data-provenance-and-fitness.md)
+- [PR003 — Raw Data Immutable, Derived Data Traceable](../principles/PR003-raw-data-immutable-derived-traceable.md)
+- [PR004 — Architecture Is Not Implementation Plan](../principles/PR004-architecture-not-implementation-plan.md)
+- [PR005 — AI Is Part of the Operating Model](../principles/PR005-ai-in-operating-model.md)
+
+This reference list was extracted from an earlier inline statement of these
+principles so that they conform to the governance model (principles are a
+first-class artifact layer, not inline text in a governance document).
 
 ---
 

@@ -75,7 +75,7 @@ concepts to trusted knowledge as confidence increases.
 
 | Directory | Role | Current contents |
 |-----------|------|------------------|
-| [principles/](principles/) | Timeless beliefs | PR001 repository-as-source-of-truth |
+| [principles/](principles/) | Timeless beliefs | PR001-PR005 |
 | [research/](research/README.md) | Foundational concepts and research documents | research-000 to 003; sessions/ |
 | [questions/](questions/README.md) | Structured uncertainties and observations | Q001, Q003 draft; Q002 deprecated |
 | [hypotheses/](hypotheses/) | Testable claims | H000, H001 |
@@ -119,6 +119,10 @@ index; new artifacts MUST be registered here.
 | ID | Title | Status | Location |
 |----|-------|--------|----------|
 | PR001 | Repository as Source of Truth | active | [principles/repository-as-source-of-truth.md](principles/repository-as-source-of-truth.md) |
+| PR002 | Data Provenance and Fitness Evidence | active | [principles/PR002-data-provenance-and-fitness.md](principles/PR002-data-provenance-and-fitness.md) |
+| PR003 | Raw Data Immutable, Derived Data Traceable | active | [principles/PR003-raw-data-immutable-derived-traceable.md](principles/PR003-raw-data-immutable-derived-traceable.md) |
+| PR004 | Architecture Is Not Implementation Plan | active | [principles/PR004-architecture-not-implementation-plan.md](principles/PR004-architecture-not-implementation-plan.md) |
+| PR005 | AI Is Part of the Operating Model | active | [principles/PR005-ai-in-operating-model.md](principles/PR005-ai-in-operating-model.md) |
 
 ## Hypotheses
 
@@ -164,6 +168,7 @@ Registered external sources that project artifacts cite
 | S003 | Question / Observation Workflow Test | completed | [research/sessions/S003-question-observation-workflow.md](research/sessions/S003-question-observation-workflow.md) |
 | S004 | Second Question Formulation Test (provenance corrected) | completed | [research/sessions/S004-question-formulation-second-test.md](research/sessions/S004-question-formulation-second-test.md) |
 | S005 | Gold Question Formulation Test | completed | [research/sessions/S005-gold-question-formulation-test.md](research/sessions/S005-gold-question-formulation-test.md) |
+| S006 | Project Principles Elevated to First-Class Artifacts | completed | [research/sessions/S006-project-principles-as-artifacts.md](research/sessions/S006-project-principles-as-artifacts.md) |
 
 ## Templates
 

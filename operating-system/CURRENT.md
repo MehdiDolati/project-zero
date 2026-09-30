@@ -49,9 +49,16 @@ the freeze. The full files and historical costs remain unvalidated.
 
 ## Last Session
 
-[S005 — Gold Question Formulation Test](../research/sessions/S005-gold-question-formulation-test.md)
+[S006 — Project Principles Elevated to First-Class Artifacts](../research/sessions/S006-project-principles-as-artifacts.md)
 
-The 2026-09-29 governance compliance review of Q001–Q003 changed no governance
+The four project requirements (provenance and fitness; raw data immutable and
+derived data traceable; architecture is not an implementation plan; AI is part
+of the operating model) were added as first-class principle artifacts PR002–PR005
+under `principles/`. G001 now references them instead of restating them and was
+bumped to version 1.1. All registries (README, artifact-registry.json,
+manifest.json) were synchronized.
+
+The earlier 2026-09-29 governance compliance review of Q001–Q003 changed no governance
 rule, methodology, or major assumption, so it required no session artifact
 (G001). Its outcome is recorded in the EXIT CHECK below and in commit
 `1cd7d17`.
