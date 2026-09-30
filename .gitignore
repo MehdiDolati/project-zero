@@ -1,0 +1,10 @@
+# Project Zero — Git ignore rules
+
+# EXP002 raw master data (spot XAU/USD tick export) is preserved locally as the
+# immutable master but is NOT committed: full 2003–2026 tick data exceeds
+# practical Git limits. See
+# experiments/EXP002-gold-trend-following/evidence/raw/README.md (Option 1).
+# Only the non-data record files in that raw area are tracked.
+experiments/EXP002-gold-trend-following/evidence/raw/*
+!experiments/EXP002-gold-trend-following/evidence/raw/README.md
+!experiments/EXP002-gold-trend-following/evidence/raw/provenance.md

@@ -8,15 +8,21 @@ hypothesis or experiment.
 
 ## Current Objective
 
-Validate the reported one-tick-per-row structure, equal per-row OHLC values,
-second-level timestamp duplicates, Bid/Ask alignment, and historical costs
-without examining strategy returns.
+Reconcile the delivered EXP002 raw file against its pre-registration, then
+obtain the full `2003`–`2026` export. The file that arrived was verified for
+identity and row structure but covers only 2003-05-05 to 2005-12-30, so it
+cannot support the frozen holdout window.
 
 ## NEXT ACTION
 
-Obtain/inspect the full separate Bid and Ask exports; verify one tick per row,
-OHLC equality per tick, timestamp precision/order/timezone, coverage, and
-alignment, then inventory historical commissions and financing/swap charges.
+Escalate the EXP002 coverage deviation to the researcher: the delivered file
+(`XAUUSD-TICK.csv`) is a partial slice (2003-05-05 to 2005-12-30) that does not
+reach the frozen `2020-09-28`–`2026-09-28` holdout, and its format (single
+combined Bid/Ask CSV, no OHLC) and route (SQX download) differ from the
+pre-registered Dukascopy Bid/Ask tick exports. Obtain the full export (or a
+decision on an amended registration), then re-verify one tick per row, OHLC
+equality per tick, timestamp precision/order/timezone, coverage, and alignment,
+then inventory historical commissions and financing/swap charges.
 
 ## Why This Matters
 
@@ -44,6 +50,10 @@ the freeze. The full files and historical costs remain unvalidated.
 
 ## Blockers
 
+- The delivered EXP002 raw file is a partial slice (2003-05-05 to 2005-12-30)
+  and does not reach the fixed `2020-09-28`–`2026-09-28` holdout window; the
+  full export must be obtained before daily bars or the backtest can be
+  produced.
 - Full exports must verify tick/OHLC semantics, timestamps, coverage, and
   Bid/Ask alignment before daily bars or the backtest can be produced.
 
@@ -78,7 +88,8 @@ rule, methodology, or major assumption, so it required no session artifact
   Q002's revision history and added an inline invalidation pointer (Q002
   v1.2, registry synced); gave research-003 v1.1 backward `related-to` links
   to Q001–Q003 and a revision history.
-- [ ] What is the exact next action? Obtain/inspect the full exports to
-  verify one tick per row, equal per-row OHLC, timestamp precision and
+- [ ] What is the exact next action? Escalate the EXP002 coverage/format/route
+  deviations to the researcher and obtain the full `2003`–`2026` export; then
+  re-verify one tick per row, equal per-row OHLC, timestamp precision and
   ordering, time-zone interpretation, Bid/Ask timestamp alignment, and
   historical cost inputs without examining strategy returns.
