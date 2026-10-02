@@ -1,0 +1,51 @@
+File: D:\project-zero\experiments\EXP002-gold-trend-following\evidence\raw\XAUUSD-TICK-full.csv
+Size: 29.92 GiB
+Pass 1/2: SHA-256 ...
+  [hash] 1.87 GiB  (784 MB/s)
+  [hash] 3.73 GiB  (644 MB/s)
+  [hash] 5.59 GiB  (624 MB/s)
+  [hash] 7.45 GiB  (630 MB/s)
+  [hash] 9.32 GiB  (632 MB/s)
+  [hash] 11.18 GiB  (649 MB/s)
+  [hash] 13.04 GiB  (637 MB/s)
+  [hash] 14.91 GiB  (623 MB/s)
+  [hash] 16.77 GiB  (637 MB/s)
+  [hash] 18.63 GiB  (641 MB/s)
+  [hash] 20.49 GiB  (645 MB/s)
+  [hash] 22.36 GiB  (627 MB/s)
+  [hash] 24.22 GiB  (620 MB/s)
+  [hash] 26.08 GiB  (625 MB/s)
+  [hash] 27.95 GiB  (607 MB/s)
+  [hash] 29.80 GiB  (609 MB/s)
+  SHA-256: 4921484ac6a70654c187e0b097c66dedca26c21f2eb398bce5e4bcfbcead17d4
+  bytes:   32,121,180,517
+Pass 2/2: structural verification ...
+  [scan] 50,000,000 rows  last=20100511 10:30:28.458  (0.1M rows/s)
+  [scan] 100,000,000 rows  last=20121218 20:18:53.980  (0.2M rows/s)
+  [scan] 150,000,000 rows  last=20150311 00:50:52.427  (0.3M rows/s)
+  [scan] 200,000,000 rows  last=20160812 15:13:05.274  (0.3M rows/s)
+  [scan] 250,000,000 rows  last=20170927 15:40:12.872  (0.3M rows/s)
+  [scan] 300,000,000 rows  last=20190115 09:52:47.125  (0.3M rows/s)
+  [scan] 350,000,000 rows  last=20200320 10:03:13.566  (0.3M rows/s)
+  [scan] 400,000,000 rows  last=20210219 21:49:17.765  (0.4M rows/s)
+  [scan] 450,000,000 rows  last=20220209 12:28:29.589  (0.4M rows/s)
+  [scan] 500,000,000 rows  last=20230112 19:42:11.197  (0.4M rows/s)
+  [scan] 550,000,000 rows  last=20240514 17:05:47.482  (0.4M rows/s)
+  [scan] 600,000,000 rows  last=20250214 16:40:19.050  (0.4M rows/s)
+  [scan] 650,000,000 rows  last=20251111 17:05:35.191  (0.4M rows/s)
+  [scan] 700,000,000 rows  last=20260514 21:17:24.086  (0.4M rows/s)
+--- SUMMARY ---
+header_ok            : True  ('DateTime,Bid,Ask,Volume')
+data_rows            : 732,112,910
+malformed_rows       : 0
+bad_datetime         : 0
+bad_numeric          : 0
+crossed_quotes       : 0
+nonpositive_price    : 0
+non_monotonic_ts     : 0
+duplicate_second_ts  : 487,749,622
+first_ts             : 20030505 03:01:03.421
+last_ts              : 20261002 02:59:57.675
+distinct_days        : 6,089
+elapsed              : 1880.7s
+JSON report written: experiments\EXP002-gold-trend-following\evidence\derived\verification-report.json

@@ -3,7 +3,7 @@ id: SRC006
 type: source
 title: Dukascopy Bank Historical Data Export
 status: active
-version: 2.1
+version: 2.2
 
 owner: Project Zero
 
@@ -95,6 +95,22 @@ and Bid/Ask alignment remain unverified.
   researcher reports one tick per row and the corrected sample has equal
   OHLC values per tick. Full-file validation is still required before daily
   bars are generated.
+- On 2026-10-02 the researcher delivered the full-range dataset for EXP002 as
+  `XAUUSD-TICK-full.csv` in `experiments/EXP002-gold-trend-following/evidence/raw/`.
+  Its observed structure is a **single combined CSV** with header
+  `DateTime,Bid,Ask,Volume` — both quote sides on one row, a single `Volume`
+  column, and **no OHLC columns** — with naive timestamps and no time-zone
+  field. It was obtained by a **manual SQX download**, not the public-site
+  widget described above. A full streaming pass over 732,112,910 rows found no
+  malformed rows, bad timestamps, bad numerics, crossed quotes, or ordering
+  violations; observed coverage `2003-05-05`–`2026-10-02` spans the frozen
+  `2020-09-28`–`2026-09-28` window. See
+  `experiments/EXP002-gold-trend-following/evidence/raw/provenance.md`. The
+  format and route this source now delivers therefore differ from the
+  Bid/Ask OHLCV public-site exports registered here; per RG009 these
+  deviations are recorded explicitly and the source's contribution to EXP002
+  is not treated as identical to the pre-registered description until Q003's
+  registration is reconciled.
 
 ---
 
@@ -166,3 +182,4 @@ have not been independently verified in Project Zero.
 | 1.9 | 2026-09-29 | Recorded separate Tick-selected Bid/Ask OHLCV excerpts, matching-timestamp report, Europe/Amsterdam header, unresolved row unit, and fixed-UTC+02 daily resampling. |
 | 2.0 | 2026-09-29 | Recorded the researcher's one-tick-per-row and timestamp-time report, flagged its conflict with the Ask OHLC sample, and put daily aggregation on hold pending quote-field semantics. |
 | 2.1 | 2026-09-29 | Recorded the corrected Ask sample with equal OHLC values per tick and repeated second-level timestamps; reinstated the approved daily aggregation pending full-file validation. |
+| 2.2 | 2026-10-02 | Recorded the delivered full-range EXP002 dataset `XAUUSD-TICK-full.csv`: a single combined `DateTime,Bid,Ask,Volume` CSV (no OHLC, naive timestamps) obtained via manual SQX download, coverage `2003-05-05`–`2026-10-02` verified by a full streaming pass. Format and route differ from the pre-registered public-site Bid/Ask tick OHLCV exports; deviations recorded per RG009 pending Q003 reconciliation. |

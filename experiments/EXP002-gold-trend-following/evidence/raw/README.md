@@ -25,15 +25,28 @@ Provenance of this record
 
 ## Status
 
-**File received 2026-09-30.** One combined CSV, `XAUUSD-TICK.csv`, was placed
-here by the researcher: 864,476,202 bytes, SHA-256
+**File 2 received 2026-10-02 — full-range master.** A second combined CSV,
+`XAUUSD-TICK-full.csv`, was placed here by the researcher: 32,121,180,517 bytes
+(29.92 GiB), SHA-256
+`4921484ac6a70654c187e0b097c66dedca26c21f2eb398bce5e4bcfbcead17d4`. A full
+streaming pass over all 732,112,910 rows found **0** malformed rows, **0** bad
+timestamps, **0** bad numerics, **0** crossed quotes, and **0** ordering
+violations. Its coverage — **2003-05-05 to 2026-10-02** — now **spans the frozen
+`2020-09-28`–`2026-09-28` holdout window**, resolving the coverage deviation
+that blocked File 1. It is now the **coverage-complete** raw master for EXP002.
+The **format** (single combined CSV, one `Volume`, no OHLC) and **route**
+(manual SQX download) deviations remain open and must still be reconciled in
+`Q003`/`SRC006` and the Artifact Registry. See `provenance.md` for the full
+record.
+
+**File 1 received 2026-09-30 — partial slice (superseded).** One combined CSV,
+`XAUUSD-TICK.csv`, 864,476,202 bytes, SHA-256
 `a3bf035c857dde9193b12973ab65e99bdaa5e11c757809ffad19d3d415f84fb1`. Its
 identity and mechanical structure were verified, but its **coverage is a
 partial slice — 2003-05-05 to 2005-12-30 only** — which does not reach the
-frozen `2020-09-28`–`2026-09-28` holdout window. The file is therefore stored
-as an immutable raw master but is **NOT** the pre-registered dataset. See
-`provenance.md` for the full verification record and the deviations that must
-be reconciled before it is treated as the EXP002 dataset.
+frozen `2020-09-28`–`2026-09-28` holdout window. The file is retained as an
+immutable raw master but is **NOT** the pre-registered dataset. See
+`provenance.md` for the full verification record.
 
 ## Storage decision (raw master kept local, not committed)
 
@@ -70,10 +83,10 @@ the anchor that detects any substitution or corruption.
 | Format | CSV, comma-separated |
 | Header | `DateTime, Bid, Ask, Volume` |
 | Reported coverage | `5/5/2003`–`28/9/2026` (researcher-reported) |
-| Observed coverage | **2003-05-05 to 2005-12-30 only** (partial; see `provenance.md`) |
-| Storage | Local master retained, not committed (see Storage decision) |
+| Observed coverage | **2003-05-05 to 2026-10-02** (full range; see File 2 in `provenance.md`) |
+| Storage | Local master(s) retained, not committed (see Storage decision) |
 | Location | `experiments/EXP002-gold-trend-following/evidence/raw/` |
-| Status | **Received 2026-09-30** (partial coverage; not the pre-registered dataset) |
+| Status | **File 2 received 2026-10-02** (full coverage; coverage-complete master). File 1 (2026-09-30) retained as partial slice. |
 
 ## Discrepancy to reconcile
 
@@ -91,7 +104,26 @@ of route or specification are recorded explicitly, not silently accepted. This
 difference must be reconciled in `Q003`/`S005`/`SRC006` — and reflected in the
 Artifact Registry — before the file is treated as the pre-registered dataset.
 
-## Verification status (2026-09-30)
+## Verification status (2026-10-02) — File 2, full-range
+
+The full-range file arrived and was checked **without examining strategy
+returns**. Full record in `provenance.md`; machine-readable report in
+`evidence/derived/verification-report.json`. Summary:
+
+- **Verified** — identity (byte size, SHA-256); header
+  `DateTime,Bid,Ask,Volume`; **732,112,910 data rows**; 0 malformed rows;
+  0 bad timestamps; 0 bad numerics; 0 non-positive prices; 0 crossed quotes
+  (`Ask < Bid`); timestamps monotonically non-decreasing in file order.
+- **Observed coverage** — 2003-05-05 to 2026-10-02 (6,089 distinct days), which
+  **spans the frozen `2020-09-28`–`2026-09-28` window**. Coverage deviation from
+  File 1 is **resolved**.
+- **Still unverified** — time zone of the naive `DateTime`; internal gap/empty
+  structure; whether `Volume` is meaningful here.
+- **Deviations still to reconcile before use** — format (single combined CSV,
+  one `Volume`, no OHLC, vs two OHLC tick exports) and route (manual SQX
+  download vs the public-site widget named in Q003/SRC006).
+
+## Verification status (2026-09-30) — File 1, partial slice
 
 The file has arrived and was checked **without examining strategy returns**.
 Full record in `provenance.md`; summary:

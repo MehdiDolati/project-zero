@@ -3,7 +3,7 @@ id: Q003
 type: question
 title: Long-Only Trend Following in Gold
 status: draft
-version: 3.5
+version: 3.6
 
 owner: Project Zero
 
@@ -82,6 +82,25 @@ This is the second valid manual application of AC001 to a user-provided idea.
 Q002 and S004 were previously created with assistant-invented input and have
 been explicitly corrected; they are not evidence of a prior user idea or a
 valid AC001 test.
+
+On 2026-09-30 and 2026-10-02, the researcher placed raw datasets in
+`experiments/EXP002-gold-trend-following/evidence/raw/`. The delivered master
+(`XAUUSD-TICK-full.csv`, received 2026-10-02) is a **single combined CSV** with
+columns `DateTime,Bid,Ask,Volume` — both quote sides on one row, a single
+`Volume` column, and **no OHLC columns** — obtained by a **manual SQX download**
+rather than the Dukascopy public-site widget named below. Its observed coverage
+is `2003-05-05`–`2026-10-02`, which spans the frozen `2020-09-28`–`2026-09-28`
+holdout, and its structure was verified by a full streaming pass with no
+strategy returns computed. The earlier delivered file (`XAUUSD-TICK.csv`,
+received 2026-09-30) covered only `2003-05-05`–`2005-12-30` and is retained as
+an immutable partial slice. The **coverage** deviation is therefore resolved,
+but the **format** (combined Bid/Ask, single `Volume`, no OHLC, vs two
+Tick-selected OHLCV exports) and **route** (manual SQX download vs the
+public-site widget) deviations from the pre-registration remain open. Per
+RG009, they are recorded explicitly and are not treated as silently accepted;
+the frozen daily-bar construction below cannot be applied as written to a
+combined Bid/Ask file without an amended registration. See
+`evidence/raw/provenance.md` and `evidence/raw/README.md` for the full record.
 
 ---
 
@@ -353,3 +372,4 @@ preserved as Evidence from a reproducible experiment.
 | 3.3 | 2026-09-29 | Recorded separate Tick-selected Bid/Ask OHLCV excerpts, matching-timestamp report, Europe/Amsterdam label, unresolved row unit, and approved fixed-UTC+02 daily resampling. |
 | 3.4 | 2026-09-29 | Recorded the researcher's confirmation that each row is one tick and its timestamp marks tick time; flagged conflicting intrarow Ask OHLC values and blocked daily-bar construction pending price-field semantics. |
 | 3.5 | 2026-09-29 | Recorded the correction that each Ask tick has equal OHLC values and repeated second-level timestamps; reinstated the approved fixed-UTC+02 daily aggregation pending full-file validation. |
+| 3.6 | 2026-10-02 | Recorded the delivered raw master `XAUUSD-TICK-full.csv`: a single combined `DateTime,Bid,Ask,Volume` CSV (no OHLC) obtained via manual SQX download, observed coverage `2003-05-05`–`2026-10-02`, structure verified by a full streaming pass with no returns computed. Coverage deviation resolved; format and route deviations from the pre-registered two-file Tick OHLCV public-site exports remain open and require reconciliation before use. |
