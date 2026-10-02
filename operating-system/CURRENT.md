@@ -8,21 +8,27 @@ hypothesis or experiment.
 
 ## Current Objective
 
-Reconcile the delivered EXP002 raw file against its pre-registration, then
-obtain the full `2003`–`2026` export. The file that arrived was verified for
-identity and row structure but covers only 2003-05-05 to 2005-12-30, so it
-cannot support the frozen holdout window.
+Reconcile the delivered EXP002 raw file against its pre-registration. The full
+`2003`–`2026` export has now arrived and passed full-range independent
+verification, so the coverage blocker is resolved; the remaining objective is a
+researcher decision on the open format/route deviations before daily bars are
+built.
 
 ## NEXT ACTION
 
-Escalate the EXP002 coverage deviation to the researcher: the delivered file
-(`XAUUSD-TICK.csv`) is a partial slice (2003-05-05 to 2005-12-30) that does not
-reach the frozen `2020-09-28`–`2026-09-28` holdout, and its format (single
-combined Bid/Ask CSV, no OHLC) and route (SQX download) differ from the
-pre-registered Dukascopy Bid/Ask tick exports. Obtain the full export (or a
-decision on an amended registration), then re-verify one tick per row, OHLC
-equality per tick, timestamp precision/order/timezone, coverage, and alignment,
-then inventory historical commissions and financing/swap charges.
+Obtain the researcher's decision on the open EXP002 format/route deviations: the
+delivered file (`XAUUSD-TICK-full.csv`) is a single combined
+`DateTime,Bid,Ask,Volume` CSV with one `Volume` and no OHLC, delivered by a
+manual SQX download, whereas the pre-registration specifies two separate
+Dukascopy public-site exports with `Tick` selected for Bid and Ask, OHLCV fields,
+a `Europe/Amsterdam` time-zone label, and displayed coverage
+`5/5/2003`–`28/9/2026`. Decide whether to accept an amended registration for the
+delivered format/route or obtain conforming exports. After that decision, build
+fixed UTC+02 daily bars (OHLC aggregation, preserving file order for duplicate
+timestamps, omitting empty days without forward-filling), run the frozen
+baseline SMA200 long-only backtest over `2020-09-28`–`2026-09-28` without
+examining strategy returns before the freeze, then inventory historical
+commissions and financing/swap charges.
 
 ## Why This Matters
 
@@ -50,12 +56,17 @@ the freeze. The full files and historical costs remain unvalidated.
 
 ## Blockers
 
-- The delivered EXP002 raw file is a partial slice (2003-05-05 to 2005-12-30)
-  and does not reach the fixed `2020-09-28`–`2026-09-28` holdout window; the
-  full export must be obtained before daily bars or the backtest can be
-  produced.
-- Full exports must verify tick/OHLC semantics, timestamps, coverage, and
-  Bid/Ask alignment before daily bars or the backtest can be produced.
+- RESOLVED: The delivered EXP002 raw file was a partial slice; the full master
+  (`XAUUSD-TICK-full.csv`, 32,121,180,517 bytes, SHA-256 `4921484a…ad17d4`,
+  732,112,910 rows, coverage 2003-05-05–2026-10-02) has now arrived and passed a
+  full streaming verification — 0 malformed rows, 0 bad timestamps, 0 bad
+  numerics, 0 crossed quotes, 0 ordering violations — and spans the fixed
+  `2020-09-28`–`2026-09-28` holdout window.
+- OPEN: The delivered format (single combined Bid/Ask/Volume CSV, no OHLC) and
+  route (manual SQX download) differ from the pre-registered Dukascopy
+  public-site two-file OHLCV tick exports. This requires a researcher decision
+  (accept an amended registration or obtain conforming exports) before daily
+  bars or the backtest can be produced.
 
 ## Last Session
 
@@ -73,23 +84,38 @@ rule, methodology, or major assumption, so it required no session artifact
 (G001). Its outcome is recorded in the EXIT CHECK below and in commit
 `1cd7d17`.
 
+Latest work (2026-10-03): received and fully verified the complete
+`XAUUSD-TICK-full.csv` master (32,121,180,517 bytes, SHA-256 `4921484a…ad17d4`,
+732,112,910 rows, coverage 2003-05-05–2026-10-02) with an independent streaming
+pass, recording the result in EXP002 raw `README.md`/`provenance.md` along with
+the verification tooling and derived evidence. Synchronized the stale registry
+versions (`Q003` → v3.6, `SRC006` → v2.2; `artifact-registry.json` → 1.19.1,
+2026-10-03) to match artifact front matter (commit `5892610`). No session
+artifact was required: no rule, methodology, or belief changed. The open
+format/route deviations remain recorded and undecided.
+
 ## EXIT CHECK
 
-- [x] What did I actually do? Verified Q001–Q003 against the governance stack
-  (G001–G006, RG002–RG009, the Question/Observation template, AC001, and all
-  three registries), fixed the findings, and committed them (1cd7d17).
-- [x] What did I learn? The three questions are compliant apart from
-  mechanical gaps. Origin-side back-links must use `related-to`, because G006
-  requires `derives-from` to be expressed from the derived artifact toward
-  its origin. G006 registers no inverse or auxiliary types, so existing
-  `cited-by` (SRC001–SRC006) and `created-in` lines are unregistered
-  vocabulary — a candidate governance evolution, not a blocker.
-- [x] What changed? Filled Q001's empty last-reviewed date; deduplicated
-  Q002's revision history and added an inline invalidation pointer (Q002
-  v1.2, registry synced); gave research-003 v1.1 backward `related-to` links
-  to Q001–Q003 and a revision history.
-- [ ] What is the exact next action? Escalate the EXP002 coverage/format/route
-  deviations to the researcher and obtain the full `2003`–`2026` export; then
-  re-verify one tick per row, equal per-row OHLC, timestamp precision and
-  ordering, time-zone interpretation, Bid/Ask timestamp alignment, and
-  historical cost inputs without examining strategy returns.
+- [x] What did I actually do? Fully verified the received complete
+  `XAUUSD-TICK-full.csv` master (32,121,180,517 bytes, SHA-256 `4921484a…ad17d4`,
+  732,112,910 rows, coverage 2003-05-05–2026-10-02) with an independent
+  streaming pass, recorded it in EXP002 raw `README.md`/`provenance.md` with
+  verification tooling and derived evidence, and synchronized the stale
+  registry versions (commit `5892610`).
+- [x] What did I learn? The full master is structurally sound: 0 malformed rows,
+  0 bad timestamps, 0 bad numerics, 0 crossed quotes, and 0 ordering violations
+  across 732M rows, and its coverage spans the frozen holdout. The delivered
+  format/route still differ from the pre-registration and remain an explicit,
+  recorded deviation rather than a silent acceptance.
+- [x] What changed? EXP002 raw evidence (`README.md`, `provenance.md`), new
+  independent tooling (`tools/verify_full.py`, `tools/check_status.py`) and
+  derived evidence (status/report/log); registry versions `Q003` → v3.6,
+  `SRC006` → v2.2, `artifact-registry.json` → 1.19.1. No belief, decision,
+  methodology, or governance rule changed.
+- [ ] What is the exact next action? Obtain the researcher's decision on the
+  EXP002 format/route deviations (amend the registration for the delivered
+  single `DateTime,Bid,Ask,Volume` CSV via SQX, or obtain conforming Dukascopy
+  public-site two-file OHLCV tick exports); then build fixed UTC+02 daily bars
+  and run the frozen baseline SMA200 long-only backtest over
+  `2020-09-28`–`2026-09-28` without examining strategy returns before the
+  freeze, and inventory historical commissions and financing/swap charges.
