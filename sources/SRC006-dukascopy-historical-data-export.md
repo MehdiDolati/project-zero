@@ -3,12 +3,12 @@ id: SRC006
 type: source
 title: Dukascopy Bank Historical Data Export
 status: active
-version: 2.2
+version: 2.3
 
 owner: Project Zero
 
 created: 2026-09-28
-last-reviewed: 2026-09-29
+last-reviewed: 2026-10-06
 
 created-by-type: human + agent
 created-by: |
@@ -108,9 +108,12 @@ and Bid/Ask alignment remain unverified.
   `experiments/EXP002-gold-trend-following/evidence/raw/provenance.md`. The
   format and route this source now delivers therefore differ from the
   Bid/Ask OHLCV public-site exports registered here; per RG009 these
-  deviations are recorded explicitly and the source's contribution to EXP002
-  is not treated as identical to the pre-registered description until Q003's
-  registration is reconciled.
+  deviations were recorded explicitly. On 2026-10-06 decision DEC002 accepted
+  the amended EXP002 registration, reconciling Q003 with this delivered
+  format/route: EXP002 consumes the single combined `DateTime,Bid,Ask,Volume`
+  tick CSV from the manual SQX download, not the public-site Bid/Ask OHLCV
+  exports described in the earlier sections above. The public-site export
+  description is retained here as the source's originally registered form.
 
 ---
 
@@ -183,3 +186,4 @@ have not been independently verified in Project Zero.
 | 2.0 | 2026-09-29 | Recorded the researcher's one-tick-per-row and timestamp-time report, flagged its conflict with the Ask OHLC sample, and put daily aggregation on hold pending quote-field semantics. |
 | 2.1 | 2026-09-29 | Recorded the corrected Ask sample with equal OHLC values per tick and repeated second-level timestamps; reinstated the approved daily aggregation pending full-file validation. |
 | 2.2 | 2026-10-02 | Recorded the delivered full-range EXP002 dataset `XAUUSD-TICK-full.csv`: a single combined `DateTime,Bid,Ask,Volume` CSV (no OHLC, naive timestamps) obtained via manual SQX download, coverage `2003-05-05`–`2026-10-02` verified by a full streaming pass. Format and route differ from the pre-registered public-site Bid/Ask tick OHLCV exports; deviations recorded per RG009 pending Q003 reconciliation. |
+| 2.3 | 2026-10-06 | Reconciled per DEC002: Q003 amended to align with the delivered combined `DateTime,Bid,Ask,Volume` tick CSV route; deviations closed and the public-site Bid/Ask OHLCV description retained as the originally registered form. |

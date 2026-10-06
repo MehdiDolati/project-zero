@@ -3,12 +3,12 @@ id: Q003
 type: question
 title: Long-Only Trend Following in Gold
 status: draft
-version: 3.6
+version: 3.7
 
 owner: Project Zero
 
 created: 2026-09-28
-last-reviewed: 2026-09-29
+last-reviewed: 2026-10-06
 
 created-by-type: human + agent
 created-by: |
@@ -101,6 +101,19 @@ RG009, they are recorded explicitly and are not treated as silently accepted;
 the frozen daily-bar construction below cannot be applied as written to a
 combined Bid/Ask file without an amended registration. See
 `evidence/raw/provenance.md` and `evidence/raw/README.md` for the full record.
+
+On 2026-10-06, the researcher resolved both deviations by **accepting an
+amended registration**. Decision
+[DEC002](../../decisions/DEC002-accept-amended-exp002-registration.md) records
+the delivered single combined `DateTime,Bid,Ask,Volume` CSV master
+(`XAUUSD-TICK-full.csv`, manual SQX route) as the EXP002 dataset, in place of
+the pre-registered two-file Dukascopy public-site Tick OHLCV exports — the
+original pre-registration is preserved, not erased. The frozen fixed-UTC+02
+daily aggregation is applied per side directly to the tick `Bid`/`Ask` fields
+(first as open, maximum as high, minimum as low, last as close). The locked
+baseline rules are unchanged. The naive `DateTime` time zone, the meaning of the
+single `Volume` column, and the internal gap/empty-day structure remain
+unverified and MUST be disclosed in any derived evidence.
 
 ---
 
@@ -305,6 +318,7 @@ designated as a holdout subject to that report and subsequent data validation.
 - related-to: research/002-edge.md (research-002)
 - related-to: governance/agent-contracts/AC001-question-formulation.md (AC001)
 - cites: sources/SRC006-dukascopy-historical-data-export.md (SRC006)
+- resolved-by: decisions/DEC002-accept-amended-exp002-registration.md (DEC002)
 
 ---
 
@@ -373,3 +387,4 @@ preserved as Evidence from a reproducible experiment.
 | 3.4 | 2026-09-29 | Recorded the researcher's confirmation that each row is one tick and its timestamp marks tick time; flagged conflicting intrarow Ask OHLC values and blocked daily-bar construction pending price-field semantics. |
 | 3.5 | 2026-09-29 | Recorded the correction that each Ask tick has equal OHLC values and repeated second-level timestamps; reinstated the approved fixed-UTC+02 daily aggregation pending full-file validation. |
 | 3.6 | 2026-10-02 | Recorded the delivered raw master `XAUUSD-TICK-full.csv`: a single combined `DateTime,Bid,Ask,Volume` CSV (no OHLC) obtained via manual SQX download, observed coverage `2003-05-05`–`2026-10-02`, structure verified by a full streaming pass with no returns computed. Coverage deviation resolved; format and route deviations from the pre-registered two-file Tick OHLCV public-site exports remain open and require reconciliation before use. |
+| 3.7 | 2026-10-06 | Recorded DEC002: the researcher accepted an amended registration for the delivered single combined `DateTime,Bid,Ask,Volume` CSV master (manual SQX route), superseding the pre-registered two-file Tick OHLCV public-site exports; the fixed-UTC+02 daily aggregation is applied per side to the `Bid`/`Ask` tick fields and the locked baseline is unchanged. Residual unknowns (naive time zone, single `Volume`, gap structure) carried as explicit caveats. Format/route deviations resolved; daily bars and the backtest unblocked. |

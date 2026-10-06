@@ -8,27 +8,24 @@ hypothesis or experiment.
 
 ## Current Objective
 
-Reconcile the delivered EXP002 raw file against its pre-registration. The full
-`2003`–`2026` export has now arrived and passed full-range independent
-verification, so the coverage blocker is resolved; the remaining objective is a
-researcher decision on the open format/route deviations before daily bars are
-built.
+Build the fixed UTC+02 daily bars from the accepted EXP002 dataset and run the
+frozen baseline SMA200 long-only backtest over `2020-09-28`–`2026-09-28`,
+without examining strategy returns before the freeze.
 
 ## NEXT ACTION
 
-Obtain the researcher's decision on the open EXP002 format/route deviations: the
-delivered file (`XAUUSD-TICK-full.csv`) is a single combined
-`DateTime,Bid,Ask,Volume` CSV with one `Volume` and no OHLC, delivered by a
-manual SQX download, whereas the pre-registration specifies two separate
-Dukascopy public-site exports with `Tick` selected for Bid and Ask, OHLCV fields,
-a `Europe/Amsterdam` time-zone label, and displayed coverage
-`5/5/2003`–`28/9/2026`. Decide whether to accept an amended registration for the
-delivered format/route or obtain conforming exports. After that decision, build
-fixed UTC+02 daily bars (OHLC aggregation, preserving file order for duplicate
-timestamps, omitting empty days without forward-filling), run the frozen
-baseline SMA200 long-only backtest over `2020-09-28`–`2026-09-28` without
-examining strategy returns before the freeze, then inventory historical
-commissions and financing/swap charges.
+Record the researcher's accepted decision on the open EXP002 format/route
+deviations as [DEC002](../decisions/DEC002-accept-amended-exp002-registration.md)
+(accept the delivered single combined `DateTime,Bid,Ask,Volume` CSV master
+`XAUUSD-TICK-full.csv`, obtained via a manual SQX download, as the amended
+EXP002 dataset registration) and reconcile the affected artifacts (`Q003`,
+`SRC006`, EXP002 raw `README.md`/`provenance.md`, registries) to it. Then build
+fixed UTC+02 daily bars from the accepted master — per side, first `Bid`/`Ask`
+as the day's open, maximum as high, minimum as low, last as close, preserving
+file order for duplicate timestamps, omitting empty days without
+forward-filling — and run the frozen baseline SMA200 long-only backtest over
+`2020-09-28`–`2026-09-28` without examining strategy returns before the freeze,
+then inventory historical commissions and financing/swap charges.
 
 ## Why This Matters
 
@@ -62,11 +59,15 @@ the freeze. The full files and historical costs remain unvalidated.
   full streaming verification — 0 malformed rows, 0 bad timestamps, 0 bad
   numerics, 0 crossed quotes, 0 ordering violations — and spans the fixed
   `2020-09-28`–`2026-09-28` holdout window.
-- OPEN: The delivered format (single combined Bid/Ask/Volume CSV, no OHLC) and
-  route (manual SQX download) differ from the pre-registered Dukascopy
-  public-site two-file OHLCV tick exports. This requires a researcher decision
-  (accept an amended registration or obtain conforming exports) before daily
-  bars or the backtest can be produced.
+- RESOLVED (2026-10-06): The researcher accepted an amended registration for the
+  delivered format/route. DEC002 records the accepted single combined
+  `DateTime,Bid,Ask,Volume` CSV master (manual SQX download) as the EXP002
+  dataset, with the original two-file pre-registration preserved and the
+  residual unknowns (naive time zone, single `Volume`, gap structure) carried as
+  explicit caveats. Daily bars and the backtest are now unblocked.
+- OPEN (carried caveat, not a blocker): The naive `DateTime` time zone and the
+  meaning of the single `Volume` column remain unverified and must be disclosed
+  in any derived evidence.
 
 ## Last Session
 
@@ -112,10 +113,9 @@ format/route deviations remain recorded and undecided.
   derived evidence (status/report/log); registry versions `Q003` → v3.6,
   `SRC006` → v2.2, `artifact-registry.json` → 1.19.1. No belief, decision,
   methodology, or governance rule changed.
-- [ ] What is the exact next action? Obtain the researcher's decision on the
-  EXP002 format/route deviations (amend the registration for the delivered
-  single `DateTime,Bid,Ask,Volume` CSV via SQX, or obtain conforming Dukascopy
-  public-site two-file OHLCV tick exports); then build fixed UTC+02 daily bars
-  and run the frozen baseline SMA200 long-only backtest over
-  `2020-09-28`–`2026-09-28` without examining strategy returns before the
-  freeze, and inventory historical commissions and financing/swap charges.
+- [ ] What is the exact next action? Reconcile `Q003`, `SRC006`, and the EXP002
+  raw `README.md`/`provenance.md` (and registries) to DEC002; then build fixed
+  UTC+02 daily bars from the accepted master and run the frozen baseline SMA200
+  long-only backtest over `2020-09-28`–`2026-09-28` without examining strategy
+  returns before the freeze, and inventory historical commissions and
+  financing/swap charges.

@@ -35,9 +35,11 @@ violations. Its coverage — **2003-05-05 to 2026-10-02** — now **spans the fr
 `2020-09-28`–`2026-09-28` holdout window**, resolving the coverage deviation
 that blocked File 1. It is now the **coverage-complete** raw master for EXP002.
 The **format** (single combined CSV, one `Volume`, no OHLC) and **route**
-(manual SQX download) deviations remain open and must still be reconciled in
-`Q003`/`SRC006` and the Artifact Registry. See `provenance.md` for the full
-record.
+(manual SQX download) deviations were **accepted** by the researcher on
+2026-10-06 in
+[DEC002](../../../../decisions/DEC002-accept-amended-exp002-registration.md);
+`Q003`/`SRC006` and the Artifact Registry are being reconciled to it. See
+`provenance.md` for the full record.
 
 **File 1 received 2026-09-30 — partial slice (superseded).** One combined CSV,
 `XAUUSD-TICK.csv`, 864,476,202 bytes, SHA-256
@@ -88,21 +90,25 @@ the anchor that detects any substitution or corruption.
 | Location | `experiments/EXP002-gold-trend-following/evidence/raw/` |
 | Status | **File 2 received 2026-10-02** (full coverage; coverage-complete master). File 1 (2026-09-30) retained as partial slice. |
 
-## Discrepancy to reconcile
+## Discrepancy — resolved by DEC002 (2026-10-06)
 
-`Q003`, `S005`, and `SRC006` currently record **two separate** Dukascopy
+`Q003`, `S005`, and `SRC006` originally recorded **two separate** Dukascopy
 public-site exports (Bid and Ask), each `Tick`-selected, each carrying
-`Open, High, Low, Close, Volume` per row and matched by timestamp. The file now
-being supplied is **one combined CSV** carrying both `Bid` and `Ask` on the
-same row, obtained through a **different channel** (a manual SQX download
-rather than the public-site widget).
+`Open, High, Low, Close, Volume` per row and matched by timestamp. The file
+supplied is **one combined CSV** carrying both `Bid` and `Ask` on the same row,
+obtained through a **different channel** (a manual SQX download rather than the
+public-site widget).
 
-Both the format and the acquisition route therefore differ from the
+Both the format and the acquisition route therefore differed from the
 pre-registered record. Per
 [RG009](../../../../governance/rules/RG009-claim-provenance.md), substitutions
-of route or specification are recorded explicitly, not silently accepted. This
-difference must be reconciled in `Q003`/`S005`/`SRC006` — and reflected in the
-Artifact Registry — before the file is treated as the pre-registered dataset.
+of route or specification are recorded explicitly, not silently accepted. On
+2026-10-06 the researcher accepted the amended registration in
+[DEC002](../../../../decisions/DEC002-accept-amended-exp002-registration.md):
+the single combined `DateTime,Bid,Ask,Volume` CSV master (manual SQX download)
+is now the EXP002 dataset. `Q003`/`SRC006` and the Artifact Registry are being
+reconciled to it, and the residual unknowns (naive time zone, single `Volume`,
+gap structure) are carried as explicit caveats.
 
 ## Verification status (2026-10-02) — File 2, full-range
 
@@ -119,9 +125,10 @@ returns**. Full record in `provenance.md`; machine-readable report in
   File 1 is **resolved**.
 - **Still unverified** — time zone of the naive `DateTime`; internal gap/empty
   structure; whether `Volume` is meaningful here.
-- **Deviations still to reconcile before use** — format (single combined CSV,
-  one `Volume`, no OHLC, vs two OHLC tick exports) and route (manual SQX
-  download vs the public-site widget named in Q003/SRC006).
+- **Deviations — accepted by DEC002 (2026-10-06)** — format (single combined
+  CSV, one `Volume`, no OHLC, vs two OHLC tick exports) and route (manual SQX
+  download vs the public-site widget named in Q003/SRC006) were accepted as an
+  amended registration; the original pre-registration is preserved.
 
 ## Verification status (2026-09-30) — File 1, partial slice
 
