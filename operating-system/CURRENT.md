@@ -8,24 +8,22 @@ hypothesis or experiment.
 
 ## Current Objective
 
-Build the fixed UTC+02 daily bars from the accepted EXP002 dataset and run the
-frozen baseline SMA200 long-only backtest over `2020-09-28`–`2026-09-28`,
-without examining strategy returns before the freeze.
+Evaluate the frozen baseline SMA200 long-only result recorded as EXP002 derived
+evidence and decide the next research step (strengthen, refine, or close the
+gold trend-following question), without treating the premise or the result as
+established.
 
 ## NEXT ACTION
 
-Record the researcher's accepted decision on the open EXP002 format/route
-deviations as [DEC002](../decisions/DEC002-accept-amended-exp002-registration.md)
-(accept the delivered single combined `DateTime,Bid,Ask,Volume` CSV master
-`XAUUSD-TICK-full.csv`, obtained via a manual SQX download, as the amended
-EXP002 dataset registration) and reconcile the affected artifacts (`Q003`,
-`SRC006`, EXP002 raw `README.md`/`provenance.md`, registries) to it. Then build
-fixed UTC+02 daily bars from the accepted master — per side, first `Bid`/`Ask`
-as the day's open, maximum as high, minimum as low, last as close, preserving
-file order for duplicate timestamps, omitting empty days without
-forward-filling — and run the frozen baseline SMA200 long-only backtest over
-`2020-09-28`–`2026-09-28` without examining strategy returns before the freeze,
-then inventory historical commissions and financing/swap charges.
+Review the just-recorded EXP002 derived evidence
+([derived/README.md](../experiments/EXP002-gold-trend-following/evidence/derived/README.md)):
+the frozen baseline produced **+9.91%** total return (~+1.59% CAGR) net of
+quoted spread only versus buy-and-hold **+121.02%** — a weak/negative effect. In
+light of this, decide whether to (a) record a session that interprets the result
+and updates the gold question/hypothesis stance, (b) test the related but
+independent questions in Q003 (trend robustness; risk/drawdown; benchmark gap),
+or (c) park the question. Do not tune the frozen rules against the evaluation
+period, and do not describe the result as fully net of costs.
 
 ## Why This Matters
 
@@ -65,35 +63,35 @@ the freeze. The full files and historical costs remain unvalidated.
   dataset, with the original two-file pre-registration preserved and the
   residual unknowns (naive time zone, single `Volume`, gap structure) carried as
   explicit caveats. Daily bars and the backtest are now unblocked.
+- RESOLVED (2026-10-07): The fixed UTC+02 daily bars were built from the accepted
+  master (2,260 bars, 2018-01-02→2026-10-02, SHA-256 `57c5b63e…da1f5b`) and the
+  frozen baseline SMA200 long-only backtest was run over
+  `2020-09-28`–`2026-09-28` without tuning. Result: +9.91% total / +1.59% CAGR /
+  -25.92% max drawdown versus buy-and-hold +121.02% / +14.14% / -26.60%.
+- RESOLVED (2026-10-07): Historical commission and financing/swap inventory is
+  complete — no reliable records exist, so the result is net of quoted spread
+  only, disclosed explicitly; it MUST NOT be called fully net of costs.
 - OPEN (carried caveat, not a blocker): The naive `DateTime` time zone and the
-  meaning of the single `Volume` column remain unverified and must be disclosed
-  in any derived evidence.
+  meaning of the single `Volume` column remain unverified and are disclosed in
+  the EXP002 derived evidence.
 
 ## Last Session
 
 [S006 — Project Principles Elevated to First-Class Artifacts](../research/sessions/S006-project-principles-as-artifacts.md)
 
-The four project requirements (provenance and fitness; raw data immutable and
-derived data traceable; architecture is not an implementation plan; AI is part
-of the operating model) were added as first-class principle artifacts PR002–PR005
-under `principles/`. G001 now references them instead of restating them and was
-bumped to version 1.1. All registries (README, artifact-registry.json,
-manifest.json) were synchronized.
-
-The earlier 2026-09-29 governance compliance review of Q001–Q003 changed no governance
-rule, methodology, or major assumption, so it required no session artifact
-(G001). Its outcome is recorded in the EXIT CHECK below and in commit
-`1cd7d17`.
-
-Latest work (2026-10-03): received and fully verified the complete
-`XAUUSD-TICK-full.csv` master (32,121,180,517 bytes, SHA-256 `4921484a…ad17d4`,
-732,112,910 rows, coverage 2003-05-05–2026-10-02) with an independent streaming
-pass, recording the result in EXP002 raw `README.md`/`provenance.md` along with
-the verification tooling and derived evidence. Synchronized the stale registry
-versions (`Q003` → v3.6, `SRC006` → v2.2; `artifact-registry.json` → 1.19.1,
-2026-10-03) to match artifact front matter (commit `5892610`). No session
-artifact was required: no rule, methodology, or belief changed. The open
-format/route deviations remain recorded and undecided.
+Latest work (2026-10-07, no session artifact; no rule, methodology, or belief
+changed — G001): built the fixed UTC+02 daily bars from the accepted EXP002
+master (`tools/build_daily_bars.py` → `evidence/derived/daily-bars-utc02.csv`,
+2,260 bars, SHA-256 `57c5b63e…da1f5b`) and ran the frozen baseline SMA200
+long-only backtest (`tools/backtest_sma200.py`) over `2020-09-28`–`2026-09-28`
+without tuning. Result recorded in `evidence/derived/README.md`: +9.91% total /
++1.59% CAGR / -25.92% max drawdown versus buy-and-hold +121.02% / +14.14% /
+-26.60%. Historical commission and financing/swap inventory completed — no
+reliable records exist, so the result is net of quoted spread only and MUST NOT
+be described as fully net of costs. This is a weak/negative result recorded as
+evidence, not a profitable edge. Registry versions were reconciled to the
+current artifact front matter — `Q003` → v3.7, `SRC006` → v2.3,
+`artifact-registry.json` → 1.19.2 (2026-10-07).
 
 ## EXIT CHECK
 
@@ -113,9 +111,13 @@ format/route deviations remain recorded and undecided.
   derived evidence (status/report/log); registry versions `Q003` → v3.6,
   `SRC006` → v2.2, `artifact-registry.json` → 1.19.1. No belief, decision,
   methodology, or governance rule changed.
-- [ ] What is the exact next action? Reconcile `Q003`, `SRC006`, and the EXP002
-  raw `README.md`/`provenance.md` (and registries) to DEC002; then build fixed
-  UTC+02 daily bars from the accepted master and run the frozen baseline SMA200
-  long-only backtest over `2020-09-28`–`2026-09-28` without examining strategy
-  returns before the freeze, and inventory historical commissions and
-  financing/swap charges.
+- [x] What is the exact next action? Build fixed UTC+02 daily bars from the
+  accepted master and run the frozen baseline SMA200 long-only backtest over
+  `2020-09-28`–`2026-09-28` without examining strategy returns before the freeze,
+  and inventory historical commissions and financing/swap charges (done
+  2026-10-07; recorded in EXP002 `evidence/derived/README.md`).
+- [ ] What is the exact next action? Evaluate the frozen baseline result and
+  decide the next research step: interpret the result and update the gold
+  question/hypothesis stance, run the related Q003 sub-questions (trend
+  robustness; risk/drawdown; benchmark gap), or park the question. Do not tune
+  the frozen rules against the evaluation period.

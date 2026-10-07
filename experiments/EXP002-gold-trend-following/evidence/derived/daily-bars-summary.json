@@ -1,0 +1,16 @@
+{
+  "bad_numeric_rows": 0,
+  "bars_written": 2260,
+  "data_rows": 732112910,
+  "elapsed_s": 858.2,
+  "emit_from": "20180101",
+  "first_bar": "20180102",
+  "header_ok": true,
+  "last_bar": "20261002",
+  "malformed_rows": 0,
+  "max_rows_per_bar": 843111,
+  "min_rows_per_bar": 4732,
+  "skipped_before_emit": 263046806,
+  "source": "D:\\project-zero\\experiments\\EXP002-gold-trend-following\\evidence\\raw\\XAUUSD-TICK-full.csv",
+  "sum_rows_in_bars": 469066104
+}

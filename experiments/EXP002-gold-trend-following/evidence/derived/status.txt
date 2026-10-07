@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-    import os,subprocess; p=os.path.join('experiments','EXP002-gold-trend-following','evidence','derived','verification-report.json'); L=os.path.join('experiments','EXP002-gold-trend-following','evidence','derived','status.txt'); open(L,'w').write('REPORT_EXISTS' if os.path.exists(p) else 'REPORT_MISSING'); print(open(L).read())
-                                                                                                                                                                                                                                      ~~~~^^^^^^^
-PermissionError: [Errno 13] Permission denied: 'experiments\\EXP002-gold-trend-following\\evidence\\derived\\status.txt'

@@ -1,0 +1,28 @@
+{
+  "avg_holding_days": 31.1,
+  "bars_in_window": 1549,
+  "bars_invested": 700,
+  "benchmark_cagr": 0.141352,
+  "benchmark_final_equity": 2.21024,
+  "benchmark_max_drawdown": -0.266017,
+  "benchmark_total_return": 1.21024,
+  "cost_treatment": "spread_only (Ask entry / Bid exit); commissions and financing/swap NOT included (no reliable records)",
+  "exit_reasons": {
+    "signal": 31,
+    "time_stop": 1,
+    "window_end": 0
+  },
+  "first_bar": "2020-09-28",
+  "last_bar": "2026-09-28",
+  "max_holding_days": 365,
+  "n_trades": 32,
+  "pct_time_invested": 45.19,
+  "rules_frozen": "Q003 Locked Baseline Strategy, approved 2026-09-29",
+  "starting_capital": 1.0,
+  "strategy_cagr": 0.015877,
+  "strategy_final_equity": 1.099101,
+  "strategy_max_drawdown": -0.259231,
+  "strategy_total_return": 0.099101,
+  "window_end": "2026-09-28",
+  "window_start": "2020-09-28"
+}
