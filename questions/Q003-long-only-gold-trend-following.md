@@ -3,7 +3,7 @@ id: Q003
 type: question
 title: Long-Only Trend Following in Gold
 status: draft
-version: 3.8
+version: 3.9
 
 owner: Project Zero
 
@@ -131,6 +131,17 @@ time stop, 0 window-end exits.
 The result is **net of quoted spread only** (Ask entries / Bid exits).
 Reliable commission and financing/swap records were unavailable, so those
 costs are excluded and the result MUST NOT be described as fully net of costs.
+
+**Status — parked (2026-10-09).** After this result the researcher chose to
+park Q003's active pursuit and turn the project's single direction elsewhere,
+recorded in [DEC003](../../decisions/DEC003-park-gold-question.md). Q003 is
+retained as `draft` with all evidence preserved and is **not** promoted,
+deprecated, or archived; parking is a prioritization decision, not a lifecycle
+state ([G004](../../governance/G004-artifact-lifecycle.md)). The frozen rules
+MUST NOT be tuned against the already-examined `2020-09-28`–`2026-09-28`
+window; any resumption should use a fresh out-of-sample window or a materially
+different, separately frozen design. See the
+[Parking Lot](../../operating-system/PARKING-LOT.md).
 
 **Stance.** For the frozen baseline the primary success criterion is, at best,
 marginally and fragilely met: the +9.91% spread-only margin would plausibly be
@@ -348,6 +359,7 @@ designated as a holdout subject to that report and subsequent data validation.
 - related-to: governance/agent-contracts/AC001-question-formulation.md (AC001)
 - cites: sources/SRC006-dukascopy-historical-data-export.md (SRC006)
 - resolved-by: decisions/DEC002-accept-amended-exp002-registration.md (DEC002)
+- decided-by: decisions/DEC003-park-gold-question.md (DEC003)
 
 ---
 
@@ -418,3 +430,4 @@ preserved as Evidence from a reproducible experiment.
 | 3.6 | 2026-10-02 | Recorded the delivered raw master `XAUUSD-TICK-full.csv`: a single combined `DateTime,Bid,Ask,Volume` CSV (no OHLC) obtained via manual SQX download, observed coverage `2003-05-05`–`2026-10-02`, structure verified by a full streaming pass with no returns computed. Coverage deviation resolved; format and route deviations from the pre-registered two-file Tick OHLCV public-site exports remain open and require reconciliation before use. |
 | 3.7 | 2026-10-06 | Recorded DEC002: the researcher accepted an amended registration for the delivered single combined `DateTime,Bid,Ask,Volume` CSV master (manual SQX route), superseding the pre-registered two-file Tick OHLCV public-site exports; the fixed-UTC+02 daily aggregation is applied per side to the `Bid`/`Ask` tick fields and the locked baseline is unchanged. Residual unknowns (naive time zone, single `Volume`, gap structure) carried as explicit caveats. Format/route deviations resolved; daily bars and the backtest unblocked. |
 | 3.8 | 2026-10-09 | Recorded the EXP002 frozen-baseline evaluation outcome and stance: +9.91% total / +1.59% CAGR net of quoted spread only, -25.92% max drawdown, versus buy-and-hold +121.02% / +14.14% CAGR. Recorded as a weak/negative result that does not establish a profitable edge; premises kept unverified, rules not tuned, no hypothesis created. See S007. |
+| 3.9 | 2026-10-09 | Parked Q003's active pursuit by DEC003 after the weak/negative baseline; retained as `draft` with evidence preserved, no lifecycle transition. Frozen rules must not be tuned against the already-examined window. Added to the Parking Lot under Questions and Things to Revisit. |

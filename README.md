@@ -20,7 +20,7 @@ typed units of knowledge connected by explicit relationships
 
 # Status
 
-Snapshot as of 2026-09-28:
+Snapshot as of 2026-10-09:
 
 | Area | State |
 |------|-------|
@@ -32,7 +32,7 @@ Snapshot as of 2026-09-28:
 | Experiments | EXP001 design active; execution step 1 complete — sources verified pre-download, raw data retrieved, hashed, and provenance-recorded (TB3MS verified; workbook verifies at step 2). The manual computation phase (steps 2–7) is fully pre-registered — spreadsheet recipes, metric definitions, robustness variants, and the stage-gated [RESULTS.md](experiments/EXP001/RESULTS.md) scaffold, all committed and pushed before any data examination; the manual build has not started |
 | Discoveries | None. Correct: no evidence has been produced |
 | Software | None. Deliberate: [DEC001](decisions/DEC001-no-software-before-method.md) prohibits custom software until the manual method proves itself |
-| Sessions | S000-S006; S004 retained with a provenance correction; S005 records the second valid AC001 test; S007 interprets the EXP002 frozen baseline |
+| Sessions | S000-S007; S004 retained with a provenance correction; S005 records the second valid AC001 test; S007 interprets the EXP002 frozen baseline |
 
 The framework is deliberately "method before automation"
 ([RG001](governance/rules/RG001-automation-follows-stability.md)). The next
@@ -77,12 +77,12 @@ concepts to trusted knowledge as confidence increases.
 |-----------|------|------------------|
 | [principles/](principles/) | Timeless beliefs | PR001-PR005 |
 | [research/](research/README.md) | Foundational concepts and research documents | research-000 to 003; sessions/ |
-| [questions/](questions/README.md) | Structured uncertainties and observations | Q001, Q003 draft; Q002 deprecated |
+| [questions/](questions/README.md) | Structured uncertainties and observations | Q001, Q003 draft (Q003 parked); Q002 deprecated |
 | [hypotheses/](hypotheses/) | Testable claims | H000, H001 |
-| [experiments/](experiments/README.md) | Investigations and their evidence | EXP001 (design accepted; computation phase pre-registered; not executed) |
+| [experiments/](experiments/README.md) | Investigations and their evidence | EXP001 (design accepted; computation phase pre-registered; not executed); EXP002 (gold SMA200 baseline executed — weak/negative) |
 | [discoveries/](discoveries/README.md) | Evidence-backed findings | Empty — no evidence produced yet |
-| [decisions/](decisions/) | Operational and architectural decisions | DEC001 |
-| [sources/](sources/README.md) | Registered external sources (papers, sites, datasets) | SRC001-SRC005, cited by EXP001 |
+| [decisions/](decisions/) | Operational and architectural decisions | DEC001-DEC003 |
+| [sources/](sources/README.md) | Registered external sources (papers, sites, datasets) | SRC001-SRC006 (SRC006 cited by EXP002) |
 | [governance/](governance/README.md) | Long-term project rules and agent contracts | G000-G006, rules RG001-RG009, templates, agent contracts, manifest, registry |
 | [software/](software/README.md) | Implementation | Empty by design (DEC001) |
 
@@ -112,7 +112,7 @@ index; new artifacts MUST be registered here.
 |----|-------|--------|----------|
 | Q001 | Conditional Mean Reversion in AUDCAD, AUDNZD, and NZDCAD | draft | [questions/Q001-conditional-mean-reversion-aud-crosses.md](questions/Q001-conditional-mean-reversion-aud-crosses.md) |
 | Q002 | Invalid Assistant-Generated Crypto Idea | deprecated | [questions/Q002-crypto-relative-mean-reversion.md](questions/Q002-crypto-relative-mean-reversion.md) |
-| Q003 | Long-Only Trend Following in Gold | draft | [questions/Q003-long-only-gold-trend-following.md](questions/Q003-long-only-gold-trend-following.md) |
+| Q003 | Long-Only Trend Following in Gold | draft (parked, DEC003) | [questions/Q003-long-only-gold-trend-following.md](questions/Q003-long-only-gold-trend-following.md) |
 
 ## Principles
 
@@ -136,12 +136,15 @@ index; new artifacts MUST be registered here.
 | ID | Title | Status | Executed | Tests | Location |
 |----|-------|--------|----------|-------|----------|
 | EXP001 | Manual Replication of a Published Momentum Anomaly | active | no | H001 (sub-claim C1) | [experiments/EXP001/EXP001-momentum-replication.md](experiments/EXP001/EXP001-momentum-replication.md) |
+| EXP002 | Gold Trend Following (Long-Only SMA200 Baseline) | active | yes | — | [experiments/EXP002-gold-trend-following/](experiments/EXP002-gold-trend-following/) |
 
 ## Decisions
 
 | ID | Title | Status | Location |
 |----|-------|--------|----------|
 | DEC001 | No Software Before Method | accepted | [decisions/DEC001-no-software-before-method.md](decisions/DEC001-no-software-before-method.md) |
+| DEC002 | Accept Amended EXP002 Registration | accepted | [decisions/DEC002-accept-amended-exp002-registration.md](decisions/DEC002-accept-amended-exp002-registration.md) |
+| DEC003 | Park the Gold Question | accepted | [decisions/DEC003-park-gold-question.md](decisions/DEC003-park-gold-question.md) |
 
 ## Sources
 

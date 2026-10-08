@@ -2,30 +2,31 @@
 
 ## Current Direction
 
-Continue the manual Question / Observation workflow with clear input
-provenance, then resolve the open scope decisions in Q003 before proposing any
-hypothesis or experiment.
+The gold trend-following question (Q003) has been **parked** (DEC003) after its
+frozen baseline returned a weak/negative result. With no open experiment, the
+next direction is to select a **new single research question** under the manual
+Question / Observation workflow (AC001) with clear input provenance — not to
+re-tune or revive the parked gold question.
 
 ## Current Objective
 
-Decide the next research step after the EXP002 frozen baseline was interpreted
-and the gold trend-following question stance updated in S007 — strengthen,
-refine, or park the gold question — without treating the premise or the result
-as established.
+Choose and register the next single research question now that Q003 has been
+parked by DEC003, keeping the project's one-question-at-a-time discipline and
+not carrying over any assumption from the parked gold work.
 
 ## NEXT ACTION
 
-The EXP002 frozen baseline has been interpreted and recorded in S007
-([S007-exp002-baseline-interpretation.md](../research/sessions/S007-exp002-baseline-interpretation.md)),
-which updated Q003's stance to a **weak/negative result** (frozen baseline
-+9.91% total / +1.59% CAGR net of quoted spread only, -25.92% max drawdown,
-versus buy-and-hold +121.02% / +14.14% CAGR). Q003 remains `draft`; no
-hypothesis was created and the locked rules were not tuned. Decide the next
-research step: (a) address one of Q003's related-but-independent questions
-(long-run trend; robust trend/exit definitions; acceptable risk/drawdown;
-benchmark gap), (b) refine or re-scope the gold question with a new frozen
-design, or (c) park the question. Do not tune the frozen rules against the
-already-examined evaluation period.
+The researcher chose option (c) and parked the gold question, recorded in
+[DEC003](../decisions/DEC003-park-gold-question.md). Q003 remains `draft` with
+all EXP002 evidence preserved and is listed under Questions and Things to
+Revisit in the [Parking Lot](PARKING-LOT.md); parking is a prioritization
+decision, not a lifecycle transition. No experiment is currently open.
+
+Next: select and register a **new single research question** through the manual
+AC001 workflow, with explicit input provenance, before proposing any hypothesis
+or experiment. Do not tune the frozen EXP002 rules against the already-examined
+`2020-09-28`–`2026-09-28` window, and do not resume Q003 except with a fresh
+out-of-sample window or a materially different, separately frozen design.
 
 ## Why This Matters
 
@@ -92,6 +93,12 @@ remains `draft`; its related-but-independent questions remain open. Registry
 versions synchronized — `Q003` → v3.8, `artifact-registry.json` → 1.19.3
 (2026-10-09).
 
+Work (2026-10-09): recorded DEC003, parking the gold question (Q003) after the
+weak/negative EXP002 baseline. Q003 is retained as `draft` with evidence
+preserved (no lifecycle transition); added to the Parking Lot; no hypothesis
+created and no rules tuned. Registry versions synchronized — `Q003` → v3.9,
+`artifact-registry.json` → 1.19.4 (2026-10-09).
+
 Prior work (2026-10-07, no session artifact; no rule, methodology, or belief
 changed — G001): built the fixed UTC+02 daily bars from the accepted EXP002
 master (`tools/build_daily_bars.py` → `evidence/derived/daily-bars-utc02.csv`,
@@ -127,8 +134,13 @@ NOT be described as fully net of costs.
 - [x] What is the exact next action? Interpret the frozen baseline result and
   update the gold question/hypothesis stance (done 2026-10-09; recorded in
   S007 and Q003 v3.8).
-- [ ] What is the exact next action? Decide the next research step after S007:
+- [x] What is the exact next action? Decide the next research step after S007:
   address a related-but-independent question in Q003 (long-run trend; robust
   trend/exit definitions; acceptable risk/drawdown; benchmark gap), refine or
   re-scope the gold question with a new frozen design, or park the question. Do
   not tune the frozen rules against the already-examined evaluation period.
+  (Done 2026-10-09: option (c) park; recorded in DEC003.)
+- [ ] What is the exact next action? Select and register a new single research
+  question via the manual AC001 workflow with explicit input provenance — now
+  that Q003 is parked and no experiment is open. Do not re-tune the parked
+  rules or carry over its assumptions.
