@@ -3,12 +3,12 @@ id: Q003
 type: question
 title: Long-Only Trend Following in Gold
 status: draft
-version: 3.7
+version: 3.8
 
 owner: Project Zero
 
 created: 2026-09-28
-last-reviewed: 2026-10-06
+last-reviewed: 2026-10-09
 
 created-by-type: human + agent
 created-by: |
@@ -114,6 +114,35 @@ daily aggregation is applied per side directly to the tick `Bid`/`Ask` fields
 baseline rules are unchanged. The naive `DateTime` time zone, the meaning of the
 single `Volume` column, and the internal gap/empty-day structure remain
 unverified and MUST be disclosed in any derived evidence.
+
+---
+
+# Evaluation Outcome (EXP002 Frozen Baseline)
+
+The locked baseline was executed as
+[EXP002](../experiments/EXP002-gold-trend-following/) against the DEC002
+amended master, before any tuning. Over the fixed inclusive window
+`2020-09-28`–`2026-09-28` (1,549 daily bars) the strategy returned
+**+9.91% total / +1.59% CAGR** with a **-25.92%** maximum drawdown, versus
+buy-and-hold **+121.02% / +14.14% CAGR** with a **-26.60%** maximum drawdown.
+Activity: 32 trades; invested 45.19% of the time; 31 signal exits, 1 one-year
+time stop, 0 window-end exits.
+
+The result is **net of quoted spread only** (Ask entries / Bid exits).
+Reliable commission and financing/swap records were unavailable, so those
+costs are excluded and the result MUST NOT be described as fully net of costs.
+
+**Stance.** For the frozen baseline the primary success criterion is, at best,
+marginally and fragilely met: the +9.91% spread-only margin would plausibly be
+erased by unmodelled commissions and any overnight financing, and the strategy
+was dwarfed by buy-and-hold. The outcome is recorded as a **weak/negative
+result**; it does **not** establish a profitable edge. The long-run gold price
+premise remains user-reported and unverified, and the observed buy-and-hold
+rise over this single window is not promoted to a project claim. The locked
+rules were not tuned against the evaluation period. See
+[S007](../research/sessions/S007-exp002-baseline-interpretation.md) and the
+[derived evidence README](../experiments/EXP002-gold-trend-following/evidence/derived/README.md)
+for the full record. No hypothesis was created.
 
 ---
 
@@ -388,3 +417,4 @@ preserved as Evidence from a reproducible experiment.
 | 3.5 | 2026-09-29 | Recorded the correction that each Ask tick has equal OHLC values and repeated second-level timestamps; reinstated the approved fixed-UTC+02 daily aggregation pending full-file validation. |
 | 3.6 | 2026-10-02 | Recorded the delivered raw master `XAUUSD-TICK-full.csv`: a single combined `DateTime,Bid,Ask,Volume` CSV (no OHLC) obtained via manual SQX download, observed coverage `2003-05-05`–`2026-10-02`, structure verified by a full streaming pass with no returns computed. Coverage deviation resolved; format and route deviations from the pre-registered two-file Tick OHLCV public-site exports remain open and require reconciliation before use. |
 | 3.7 | 2026-10-06 | Recorded DEC002: the researcher accepted an amended registration for the delivered single combined `DateTime,Bid,Ask,Volume` CSV master (manual SQX route), superseding the pre-registered two-file Tick OHLCV public-site exports; the fixed-UTC+02 daily aggregation is applied per side to the `Bid`/`Ask` tick fields and the locked baseline is unchanged. Residual unknowns (naive time zone, single `Volume`, gap structure) carried as explicit caveats. Format/route deviations resolved; daily bars and the backtest unblocked. |
+| 3.8 | 2026-10-09 | Recorded the EXP002 frozen-baseline evaluation outcome and stance: +9.91% total / +1.59% CAGR net of quoted spread only, -25.92% max drawdown, versus buy-and-hold +121.02% / +14.14% CAGR. Recorded as a weak/negative result that does not establish a profitable edge; premises kept unverified, rules not tuned, no hypothesis created. See S007. |

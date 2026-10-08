@@ -32,7 +32,7 @@ Snapshot as of 2026-09-28:
 | Experiments | EXP001 design active; execution step 1 complete — sources verified pre-download, raw data retrieved, hashed, and provenance-recorded (TB3MS verified; workbook verifies at step 2). The manual computation phase (steps 2–7) is fully pre-registered — spreadsheet recipes, metric definitions, robustness variants, and the stage-gated [RESULTS.md](experiments/EXP001/RESULTS.md) scaffold, all committed and pushed before any data examination; the manual build has not started |
 | Discoveries | None. Correct: no evidence has been produced |
 | Software | None. Deliberate: [DEC001](decisions/DEC001-no-software-before-method.md) prohibits custom software until the manual method proves itself |
-| Sessions | S000-S003; S004 retained with a provenance correction; S005 records the second valid AC001 test |
+| Sessions | S000-S006; S004 retained with a provenance correction; S005 records the second valid AC001 test; S007 interprets the EXP002 frozen baseline |
 
 The framework is deliberately "method before automation"
 ([RG001](governance/rules/RG001-automation-follows-stability.md)). The next
@@ -169,6 +169,7 @@ Registered external sources that project artifacts cite
 | S004 | Second Question Formulation Test (provenance corrected) | completed | [research/sessions/S004-question-formulation-second-test.md](research/sessions/S004-question-formulation-second-test.md) |
 | S005 | Gold Question Formulation Test | completed | [research/sessions/S005-gold-question-formulation-test.md](research/sessions/S005-gold-question-formulation-test.md) |
 | S006 | Project Principles Elevated to First-Class Artifacts | completed | [research/sessions/S006-project-principles-as-artifacts.md](research/sessions/S006-project-principles-as-artifacts.md) |
+| S007 | EXP002 Frozen Baseline — Result Interpretation and Gold Question Stance | completed | [research/sessions/S007-exp002-baseline-interpretation.md](research/sessions/S007-exp002-baseline-interpretation.md) |
 
 ## Templates
 

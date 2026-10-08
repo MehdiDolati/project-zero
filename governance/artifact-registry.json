@@ -1,6 +1,6 @@
 {
-  "registry-version": "1.19.2",
-  "updated": "2026-10-07",
+  "registry-version": "1.19.3",
+  "updated": "2026-10-09",
   "description": "Machine-addressable index of Project Zero artifacts by stable identity. Resolve an artifact identity here before assuming a file is missing or renamed.",
   "coverage-note": "Coverage includes governance artifacts, rules, templates, agent contracts, questions, experiments, and sources. Documents, principles, hypotheses, decisions, and sessions are registered in README.md only. Closing that gap is an open governance issue, not an intentional scope limit.",
   "artifacts": [
@@ -169,7 +169,7 @@
       "type": "question",
       "title": "Long-Only Trend Following in Gold",
       "path": "questions/Q003-long-only-gold-trend-following.md",
-      "version": "3.7",
+      "version": "3.8",
       "status": "draft"
     },
     {

@@ -8,22 +8,24 @@ hypothesis or experiment.
 
 ## Current Objective
 
-Evaluate the frozen baseline SMA200 long-only result recorded as EXP002 derived
-evidence and decide the next research step (strengthen, refine, or close the
-gold trend-following question), without treating the premise or the result as
-established.
+Decide the next research step after the EXP002 frozen baseline was interpreted
+and the gold trend-following question stance updated in S007 — strengthen,
+refine, or park the gold question — without treating the premise or the result
+as established.
 
 ## NEXT ACTION
 
-Review the just-recorded EXP002 derived evidence
-([derived/README.md](../experiments/EXP002-gold-trend-following/evidence/derived/README.md)):
-the frozen baseline produced **+9.91%** total return (~+1.59% CAGR) net of
-quoted spread only versus buy-and-hold **+121.02%** — a weak/negative effect. In
-light of this, decide whether to (a) record a session that interprets the result
-and updates the gold question/hypothesis stance, (b) test the related but
-independent questions in Q003 (trend robustness; risk/drawdown; benchmark gap),
-or (c) park the question. Do not tune the frozen rules against the evaluation
-period, and do not describe the result as fully net of costs.
+The EXP002 frozen baseline has been interpreted and recorded in S007
+([S007-exp002-baseline-interpretation.md](../research/sessions/S007-exp002-baseline-interpretation.md)),
+which updated Q003's stance to a **weak/negative result** (frozen baseline
++9.91% total / +1.59% CAGR net of quoted spread only, -25.92% max drawdown,
+versus buy-and-hold +121.02% / +14.14% CAGR). Q003 remains `draft`; no
+hypothesis was created and the locked rules were not tuned. Decide the next
+research step: (a) address one of Q003's related-but-independent questions
+(long-run trend; robust trend/exit definitions; acceptable risk/drawdown;
+benchmark gap), (b) refine or re-scope the gold question with a new frozen
+design, or (c) park the question. Do not tune the frozen rules against the
+already-examined evaluation period.
 
 ## Why This Matters
 
@@ -77,21 +79,27 @@ the freeze. The full files and historical costs remain unvalidated.
 
 ## Last Session
 
-[S006 — Project Principles Elevated to First-Class Artifacts](../research/sessions/S006-project-principles-as-artifacts.md)
+[S007 — EXP002 Frozen Baseline: Result Interpretation and Gold Question Stance](../research/sessions/S007-exp002-baseline-interpretation.md)
 
-Latest work (2026-10-07, no session artifact; no rule, methodology, or belief
+Work (2026-10-09): interpreted the recorded EXP002 frozen baseline SMA200
+long-only result and updated Q003's stance. The baseline returned **+9.91% total
+/ +1.59% CAGR** net of quoted spread only (-25.92% max drawdown) versus
+buy-and-hold **+121.02% / +14.14% CAGR** (-26.60% max drawdown) over
+`2020-09-28`–`2026-09-28`. Recorded as a **weak/negative result** that does not
+establish a profitable edge; the long-run gold premise stays user-reported and
+unverified; no hypothesis was created and the locked rules were not tuned. Q003
+remains `draft`; its related-but-independent questions remain open. Registry
+versions synchronized — `Q003` → v3.8, `artifact-registry.json` → 1.19.3
+(2026-10-09).
+
+Prior work (2026-10-07, no session artifact; no rule, methodology, or belief
 changed — G001): built the fixed UTC+02 daily bars from the accepted EXP002
 master (`tools/build_daily_bars.py` → `evidence/derived/daily-bars-utc02.csv`,
 2,260 bars, SHA-256 `57c5b63e…da1f5b`) and ran the frozen baseline SMA200
 long-only backtest (`tools/backtest_sma200.py`) over `2020-09-28`–`2026-09-28`
-without tuning. Result recorded in `evidence/derived/README.md`: +9.91% total /
-+1.59% CAGR / -25.92% max drawdown versus buy-and-hold +121.02% / +14.14% /
--26.60%. Historical commission and financing/swap inventory completed — no
-reliable records exist, so the result is net of quoted spread only and MUST NOT
-be described as fully net of costs. This is a weak/negative result recorded as
-evidence, not a profitable edge. Registry versions were reconciled to the
-current artifact front matter — `Q003` → v3.7, `SRC006` → v2.3,
-`artifact-registry.json` → 1.19.2 (2026-10-07).
+without tuning. Historical commission and financing/swap inventory completed —
+no reliable records exist, so the result is net of quoted spread only and MUST
+NOT be described as fully net of costs.
 
 ## EXIT CHECK
 
@@ -116,8 +124,11 @@ current artifact front matter — `Q003` → v3.7, `SRC006` → v2.3,
   `2020-09-28`–`2026-09-28` without examining strategy returns before the freeze,
   and inventory historical commissions and financing/swap charges (done
   2026-10-07; recorded in EXP002 `evidence/derived/README.md`).
-- [ ] What is the exact next action? Evaluate the frozen baseline result and
-  decide the next research step: interpret the result and update the gold
-  question/hypothesis stance, run the related Q003 sub-questions (trend
-  robustness; risk/drawdown; benchmark gap), or park the question. Do not tune
-  the frozen rules against the evaluation period.
+- [x] What is the exact next action? Interpret the frozen baseline result and
+  update the gold question/hypothesis stance (done 2026-10-09; recorded in
+  S007 and Q003 v3.8).
+- [ ] What is the exact next action? Decide the next research step after S007:
+  address a related-but-independent question in Q003 (long-run trend; robust
+  trend/exit definitions; acceptable risk/drawdown; benchmark gap), refine or
+  re-scope the gold question with a new frozen design, or park the question. Do
+  not tune the frozen rules against the already-examined evaluation period.
